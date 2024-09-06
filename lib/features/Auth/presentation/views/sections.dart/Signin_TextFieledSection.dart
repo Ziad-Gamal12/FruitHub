@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
 
@@ -26,6 +25,14 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
             validator: (value) {
               if (value!.isEmpty || value == "") {
                 return "الرجاء ادخال البريد الإلكتروني";
+              } else if (!RegExp(
+                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                  .hasMatch(value)) {
+                return "الرجاء ادخال بريد الإلكتروني صالح";
+              } else if (value.contains("")) {
+                return "لا يجب ان يحتوى البريد الإلكتروني على فارغ";
+              } else {
+                return null;
               }
             },
             controller: variables.LoginemailController,
@@ -40,6 +47,7 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
               if (value!.isEmpty || value == "") {
                 return "الرجاء ادخال كلمة المرور";
               }
+              return null;
             },
             controller: variables.LoginPasswordController,
             hintText: "كلمة المرور",
@@ -52,7 +60,7 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
                 },
                 icon: Icon(
                   obscureText ? Icons.visibility_off : Icons.visibility,
-                  color: Color(0xff949D9E),
+                  color: const Color(0xff949D9E),
                 ),
               ),
             ))
