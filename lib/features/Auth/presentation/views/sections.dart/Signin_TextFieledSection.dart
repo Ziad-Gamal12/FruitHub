@@ -29,7 +29,7 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
                       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                   .hasMatch(value)) {
                 return "الرجاء ادخال بريد الإلكتروني صالح";
-              } else if (value.contains("")) {
+              } else if (value.contains(" ")) {
                 return "لا يجب ان يحتوى البريد الإلكتروني على فارغ";
               } else {
                 return null;
@@ -44,7 +44,7 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
             keyboardType: TextInputType.visiblePassword,
             obscureText: obscureText,
             validator: (value) {
-              if (value!.isEmpty || value == "") {
+              if (value!.isEmpty || value == " ") {
                 return "الرجاء ادخال كلمة المرور";
               }
               return null;

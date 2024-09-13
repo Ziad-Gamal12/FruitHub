@@ -23,11 +23,7 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
           validator: (value) {
             if (value!.isEmpty || value == "") {
               return "الرجاء ادخال الاسم كامل";
-            } else if (!RegExp(
-                    r"^[أ-ىa-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~@]+")
-                .hasMatch(value)) {
-              return "الرجاء ادخال الاسم كامل صالح";
-            } else if (value.startsWith(" ")) {
+            } else if (value.contains(" ")) {
               return "لا يجب ان يحتوى الاسم كامل على فارغ";
             } else {
               return null;
