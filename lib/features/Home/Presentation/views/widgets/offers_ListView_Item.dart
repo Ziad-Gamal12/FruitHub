@@ -12,7 +12,7 @@ class OffersListviewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width,
+      width: width - 50,
       child: AspectRatio(
         aspectRatio: 342 / 158,
         child: Stack(
@@ -29,6 +29,9 @@ class OffersListviewItem extends StatelessWidget {
             Container(
               width: width * .5,
               decoration: const BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.only(
+                      topStart: Radius.circular(4),
+                      bottomStart: Radius.circular(4)),
                   image: DecorationImage(
                       fit: BoxFit.fill,
                       image: svg.Svg(
