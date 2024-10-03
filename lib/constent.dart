@@ -2,3 +2,4 @@
 
 const KIsonboaringseen = "KIsonboaringseen";
 const KHorizentalPadding = 16.0;
+const KVerticalPadding = 16.0;

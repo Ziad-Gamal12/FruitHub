@@ -13,13 +13,13 @@ class TermsAndConditions extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: KHorizentalPadding),
       child: Transform.translate(
-        offset: Offset(14, 0),
+        offset: const Offset(14, 0),
         child: Row(
           children: [
             Termscheckbox(
               onChanged: onChanged,
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Expanded(

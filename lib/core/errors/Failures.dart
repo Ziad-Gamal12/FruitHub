@@ -4,5 +4,5 @@ class Failure {
 }
 
 class ServerFailure extends Failure {
-  ServerFailure({required String message}) : super(message: message);
+  ServerFailure({required super.message});
 }

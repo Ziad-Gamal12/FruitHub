@@ -41,7 +41,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  SignUp_TextFieledSection(),
+                  const SignUp_TextFieledSection(),
                   const SizedBox(
                     height: 16,
                   ),
@@ -72,7 +72,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                         }
                       },
                       text: "إنشاء حساب جديد"),
-                  SizedBox(
+                  const SizedBox(
                     height: 26,
                   ),
                   Row(

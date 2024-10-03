@@ -34,7 +34,10 @@ class Fruit_Hub extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       locale: const Locale("ar"),
-      theme: ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
+      theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          fontFamily: "Cairo",
+          primaryColor: AppColors.MainColor),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

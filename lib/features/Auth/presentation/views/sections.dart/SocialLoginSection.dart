@@ -38,7 +38,7 @@ class SocialLoginSection extends StatelessWidget {
                 ),
               ],
             )
-          : SizedBox(),
+          : const SizedBox(),
       SocialLoginButton(
           onPressed: () {
             BlocProvider.of<SignInCubit>(context).signinWithFacebook();
