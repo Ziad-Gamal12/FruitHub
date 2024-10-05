@@ -14,6 +14,46 @@ class Assets {
   /// assets/images/Arrowleft.svg
   static const String assetsImagesArrowleft = "assets/images/Arrowleft.svg";
 
+  /// Assets for assetsImagesBestSellerItemTest
+  /// assets/images/bestSellerItem_test.svg
+  static const String assetsImagesBestSellerItemTest = "assets/images/bestSellerItem_test.svg";
+
+  /// Assets for assetsImagesBestSellerItemTest2
+  /// assets/images/bestSellerItem_test2.png
+  static const String assetsImagesBestSellerItemTest2 = "assets/images/bestSellerItem_test2.png";
+
+  /// Assets for assetsImagesBottomNavigationBarCategeriesActiveIcon
+  /// assets/images/bottomNavigationBar_CategeriesActiveIcon.svg
+  static const String assetsImagesBottomNavigationBarCategeriesActiveIcon = "assets/images/bottomNavigationBar_CategeriesActiveIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarCategeriesIcon
+  /// assets/images/bottomNavigationBar_CategeriesIcon.svg
+  static const String assetsImagesBottomNavigationBarCategeriesIcon = "assets/images/bottomNavigationBar_CategeriesIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarHomeActiveIcon
+  /// assets/images/bottomNavigationBar_HomeActiveIcon.svg
+  static const String assetsImagesBottomNavigationBarHomeActiveIcon = "assets/images/bottomNavigationBar_HomeActiveIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarHomeIcon
+  /// assets/images/bottomNavigationBar_HomeIcon.svg
+  static const String assetsImagesBottomNavigationBarHomeIcon = "assets/images/bottomNavigationBar_HomeIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarMarketBinActiveIcon
+  /// assets/images/bottomNavigationBar_MarketBinActiveIcon.svg
+  static const String assetsImagesBottomNavigationBarMarketBinActiveIcon = "assets/images/bottomNavigationBar_MarketBinActiveIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarMarketBinIcon
+  /// assets/images/bottomNavigationBar_MarketBinIcon.svg
+  static const String assetsImagesBottomNavigationBarMarketBinIcon = "assets/images/bottomNavigationBar_MarketBinIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarProfileActiveIcon
+  /// assets/images/bottomNavigationBar_ProfileActiveIcon.svg
+  static const String assetsImagesBottomNavigationBarProfileActiveIcon = "assets/images/bottomNavigationBar_ProfileActiveIcon.svg";
+
+  /// Assets for assetsImagesBottomNavigationBarProfileIcon
+  /// assets/images/bottomNavigationBar_ProfileIcon.svg
+  static const String assetsImagesBottomNavigationBarProfileIcon = "assets/images/bottomNavigationBar_ProfileIcon.svg";
+
   /// Assets for assetsImagesCheckedIcon
   /// assets/images/Checked_icon.svg
   static const String assetsImagesCheckedIcon = "assets/images/Checked_icon.svg";
@@ -21,6 +61,10 @@ class Assets {
   /// Assets for assetsImagesFacebookIcon
   /// assets/images/FacebookIcon.svg
   static const String assetsImagesFacebookIcon = "assets/images/FacebookIcon.svg";
+
+  /// Assets for assetsImagesFavouriteIcon
+  /// assets/images/favourite_Icon.svg
+  static const String assetsImagesFavouriteIcon = "assets/images/favourite_Icon.svg";
 
   /// Assets for assetsImagesFilterIcon
   /// assets/images/filter_icon.svg

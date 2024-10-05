@@ -38,7 +38,7 @@ class OffersListviewItem extends StatelessWidget {
                         Assets.assetsImagesOfferBackGround,
                       ))),
               child: Padding(
-                padding: const EdgeInsets.only(right: 36),
+                padding: const EdgeInsets.only(right: 32),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

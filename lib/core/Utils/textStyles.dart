@@ -11,4 +11,6 @@ class textStyles {
       TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
   static const textstyle13 =
       TextStyle(fontSize: 13, fontWeight: FontWeight.w600);
+  static const textstyle11 =
+      TextStyle(fontSize: 11, fontWeight: FontWeight.w600);
 }
