@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/core/widgets/CustomNotification_Icon.dart';
 import 'package:svg_flutter/svg.dart';
 
 class customHomeAppBar extends StatelessWidget {
@@ -21,13 +22,7 @@ class customHomeAppBar extends StatelessWidget {
         style: textStyles.textstyle16
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
-      trailing: Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            color: const Color(0xffEEF8ED),
-            borderRadius: BorderRadius.circular(50)),
-        child: SvgPicture.asset(Assets.assetsImagesNotification),
-      ),
+      trailing: CustomNotification_Icon(),
     );
   }
 }
