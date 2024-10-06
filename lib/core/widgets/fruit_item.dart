@@ -56,12 +56,12 @@ class fruit_item extends StatelessWidget {
                               "20جنية /",
                               style: textStyles.textstyle13.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.KsecoderyColor),
+                                  color: AppColors.KsecondaryColor),
                             ),
                             Text(
                               "الكيلو",
                               style: textStyles.textstyle13.copyWith(
-                                  color: AppColors.KLightsecoderyColor),
+                                  color: AppColors.KlightSecondaryColor),
                             ),
                           ],
                         ),

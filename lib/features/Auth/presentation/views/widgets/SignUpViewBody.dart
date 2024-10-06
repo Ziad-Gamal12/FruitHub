@@ -6,8 +6,6 @@ import 'package:fruits/features/Auth/presentation/manager/SignUp/sign_up_cubit.d
 import 'package:fruits/features/Auth/presentation/views/widgets/SignUpView_body_blocConsumer_builder.dart';
 
 class SignUpViewBody extends StatelessWidget {
-  const SignUpViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(

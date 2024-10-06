@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -23,7 +24,7 @@ void main() async {
   await shared_preferences_Services.init();
 
   runApp(
-    const Fruit_Hub(), // Wrap your app
+    Fruit_Hub(), // Wrap your app
   );
 }
 
@@ -33,11 +34,8 @@ class Fruit_Hub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale("ar"),
-      theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          fontFamily: "Cairo",
-          primaryColor: AppColors.MainColor),
+      locale: Locale("ar"),
+      theme: ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

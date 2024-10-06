@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruits/core/Helper_Funcitions/getUserData.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomNotification_Icon.dart';
-import 'package:svg_flutter/svg.dart';
 
 class customHomeAppBar extends StatelessWidget {
   const customHomeAppBar({super.key});
@@ -18,11 +18,11 @@ class customHomeAppBar extends StatelessWidget {
             fontWeight: FontWeight.w400, color: const Color(0xff949D9E)),
       ),
       subtitle: Text(
-        "أحمد مصطفي",
+        getUserData().name,
         style: textStyles.textstyle16
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
-      trailing: CustomNotification_Icon(),
+      trailing: const CustomNotification_Icon(),
     );
   }
 }

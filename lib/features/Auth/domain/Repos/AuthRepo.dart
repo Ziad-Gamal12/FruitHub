@@ -10,6 +10,4 @@ abstract class AuthRepo {
   Future<Either<Failure, UserEntity>> signinWithGoogle();
   Future<Either<Failure, UserEntity>> signinWithFaceBook();
   Future<Either<Failure, UserEntity>> signinWithApple();
-  Future addUserToFirestore({required UserEntity user});
-  Future<UserEntity> getUSerData({required String docId});
 }
