@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:fruits/core/Utils/assets.dart';
 
 class BottomnavigationbarEntity {

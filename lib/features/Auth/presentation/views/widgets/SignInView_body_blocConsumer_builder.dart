@@ -1,4 +1,5 @@
-import 'package:flutter/rendering.dart';
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/widgets.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/variables.dart';

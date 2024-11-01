@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:fruits/features/Home/Domain/Entities/BottomNavigationBar_Entity.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/CustomBottomNavigationBar_Item.dart';

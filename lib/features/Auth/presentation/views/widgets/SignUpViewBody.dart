@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +8,8 @@ import 'package:fruits/features/Auth/presentation/manager/SignUp/sign_up_cubit.d
 import 'package:fruits/features/Auth/presentation/views/widgets/SignUpView_body_blocConsumer_builder.dart';
 
 class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(

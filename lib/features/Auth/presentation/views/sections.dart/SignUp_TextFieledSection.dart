@@ -1,8 +1,12 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
 
 class SignUp_TextFieledSection extends StatefulWidget {
+  const SignUp_TextFieledSection({super.key});
+
   @override
   State<SignUp_TextFieledSection> createState() =>
       _SignUp_TextFieledSectionState();
@@ -22,6 +26,7 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
             if (value!.isEmpty || value == "") {
               return "الرجاء ادخال الاسم كامل";
             }
+            return null;
           },
           obscureText: false,
           keyboardType: TextInputType.name,
@@ -36,6 +41,7 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
             if (value!.isEmpty || value == "") {
               return "الرجاء ادخال البريد الإلكتروني";
             }
+            return null;
           },
           obscureText: false,
           keyboardType: TextInputType.emailAddress,
@@ -50,6 +56,7 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
               if (value!.isEmpty || value == "") {
                 return "الرجاء ادخال كلمة المرور";
               }
+              return null;
             },
             obscureText: obscureText,
             keyboardType: TextInputType.visiblePassword,
@@ -62,7 +69,7 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
                 },
                 icon: Icon(
                   obscureText ? Icons.visibility_off : Icons.visibility,
-                  color: Color(0xff949D9E),
+                  color: const Color(0xff949D9E),
                 ),
               ),
             ))

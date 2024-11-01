@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
@@ -13,13 +15,13 @@ class TermsAndConditions extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: KHorizentalPadding),
       child: Transform.translate(
-        offset: Offset(14, 0),
+        offset: const Offset(14, 0),
         child: Row(
           children: [
             Termscheckbox(
               onChanged: onChanged,
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Expanded(

@@ -1,5 +1,5 @@
 // ignore: file_names
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, file_names, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +41,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  SignUp_TextFieledSection(),
+                  const SignUp_TextFieledSection(),
                   const SizedBox(
                     height: 16,
                   ),
@@ -72,7 +72,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                         }
                       },
                       text: "إنشاء حساب جديد"),
-                  SizedBox(
+                  const SizedBox(
                     height: 26,
                   ),
                   Row(

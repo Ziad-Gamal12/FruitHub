@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
@@ -5,7 +7,7 @@ import 'package:svg_flutter/svg_flutter.dart';
 
 class Termscheckbox extends StatefulWidget {
   final ValueChanged<bool> onChanged;
-  Termscheckbox({
+  const Termscheckbox({
     super.key,
     required this.onChanged,
   });
@@ -34,7 +36,8 @@ class _TermscheckboxState extends State<Termscheckbox> {
             shape: RoundedRectangleBorder(
               side: BorderSide(
                   width: 1.50,
-                  color: isChecked ? Colors.transparent : Color(0xFFDCDEDE)),
+                  color:
+                      isChecked ? Colors.transparent : const Color(0xFFDCDEDE)),
               borderRadius: BorderRadius.circular(8),
             ),
           ),

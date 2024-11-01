@@ -1,14 +1,16 @@
 // ignore_for_file: camel_case_types
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:svg_flutter/svg.dart';
 
 class fruit_item extends StatelessWidget {
-  const fruit_item({super.key});
-
+  const fruit_item({super.key, required this.product});
+  final Productsentity product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,13 +30,13 @@ class fruit_item extends StatelessWidget {
           ),
           Positioned.fill(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
                   height: 20,
                 ),
-                Image.asset(
-                  Assets.assetsImagesBestSellerItemTest2,
+                CachedNetworkImage(
+                  imageUrl: product.imageUrl!,
                   fit: BoxFit.fill,
                 ),
                 const Spacer(),
@@ -43,8 +45,8 @@ class fruit_item extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "بطيخ",
+                        Text(
+                          product.name,
                           style: textStyles.textstyle13,
                         ),
                         const SizedBox(
@@ -53,7 +55,7 @@ class fruit_item extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              "20جنية /",
+                              "${product.price}جنية /",
                               style: textStyles.textstyle13.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.KsecondaryColor),

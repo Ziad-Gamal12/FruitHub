@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/features/Auth/presentation/manager/SignIn/sign_in_cubit.dart';
 import 'package:fruits/features/Auth/presentation/views/widgets/SignInView_body_blocConsumer_builder.dart';
+import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 
 class signinViewBody extends StatelessWidget {
   const signinViewBody({super.key});
@@ -15,11 +16,7 @@ class signinViewBody extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInSuccess) {
-          successdialog(
-                  context: context,
-                  SuccessMessage: "تم تسجيل الدخول بنجاح",
-                  btnOkOnPress: () {})
-              .show();
+          Navigator.of(context).pushReplacementNamed(Homeview.homeView);
         } else if (state is SignInFailure) {
           errordialog(context, state.message).show();
         }

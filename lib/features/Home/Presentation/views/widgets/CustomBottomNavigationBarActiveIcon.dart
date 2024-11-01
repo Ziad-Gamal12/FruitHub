@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
@@ -13,7 +15,8 @@ class Custombottomnavigationbaractiveicon extends StatelessWidget {
     return Container(
       alignment: Alignment.centerRight,
       decoration: BoxDecoration(
-          color: Color(0xffeeeeee), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0xffeeeeee),
+          borderRadius: BorderRadius.circular(30)),
       child: Padding(
         padding: const EdgeInsets.only(left: 10),
         child: Row(

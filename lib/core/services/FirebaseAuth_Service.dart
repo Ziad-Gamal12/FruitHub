@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:math' as math;
@@ -5,7 +7,6 @@ import 'dart:math' as math;
 import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-
 import 'package:fruits/core/errors/Exceptioons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -170,7 +171,7 @@ class firebaseAuthService {
   }
 
   String generateNonce([int length = 32]) {
-    final charset =
+    const charset =
         '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
     final random = math.Random.secure();
     return List.generate(length, (_) => charset[random.nextInt(charset.length)])
@@ -212,5 +213,17 @@ class firebaseAuthService {
     final UserCredential userCredential =
         await FirebaseAuth.instance.signInWithCredential(oauthCredential);
     return userCredential.user!;
+  }
+
+  Future<void> deleteUser() async {
+    await auth.currentUser!.delete();
+  }
+
+  Future<void> signout() async {
+    await auth.signOut();
+  }
+
+  Future<bool> isLoggedin() async {
+    return auth.currentUser != null;
   }
 }

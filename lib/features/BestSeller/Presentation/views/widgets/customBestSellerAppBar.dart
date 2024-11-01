@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
@@ -30,7 +32,7 @@ class Custombestsellerappbar extends StatelessWidget {
           "الأكثر مبيعًا",
           style: textStyles.textstyle19,
         ),
-        CustomNotification_Icon()
+        const CustomNotification_Icon()
       ],
     );
   }

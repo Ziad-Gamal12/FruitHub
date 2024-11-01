@@ -33,6 +33,7 @@ class onboarding_pageview_item extends StatelessWidget {
               SvgPicture.asset(
                 BackGroundImage,
                 fit: BoxFit.fill,
+                width: double.infinity,
               ),
               Positioned(
                   right: 0, left: 0, bottom: 0, child: SvgPicture.asset(Logo)),

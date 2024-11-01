@@ -1,5 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/features/Home/Domain/Entities/BottomNavigationBar_Entity.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/CustomBottomNavigationBarActiveIcon.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custombottomnavigationbar_inActiveicon.dart';

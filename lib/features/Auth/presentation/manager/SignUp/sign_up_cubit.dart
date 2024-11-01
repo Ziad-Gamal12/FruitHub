@@ -1,5 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
-import 'package:fruits/core/errors/Failures.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fruits/features/Auth/domain/Entity/UserEntity.dart';
 import 'package:fruits/features/Auth/domain/Repos/AuthRepo.dart';
 
@@ -23,6 +25,9 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   @override
   void onChange(Change<SignUpState> change) {
-    print(change);
+    super.onChange(change);
+    if (kDebugMode) {
+      print(change);
+    }
   }
 }

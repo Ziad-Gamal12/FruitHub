@@ -1,5 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:fruits/core/widgets/fruit_item.dart';
 
 class BestsellerGideviewBestSellerBody extends StatelessWidget {
   const BestsellerGideviewBestSellerBody({super.key});
@@ -13,7 +14,7 @@ class BestsellerGideviewBestSellerBody extends StatelessWidget {
             mainAxisSpacing: 8,
             crossAxisSpacing: 16),
         itemBuilder: (context, index) {
-          return fruit_item();
+          return Container(); //fruit_item();
         });
   }
 }

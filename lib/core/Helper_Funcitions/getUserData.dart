@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:fruits/core/Utils/Backend_EndPoints.dart';
