@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:fruits/core/Entities/ProductsEntity.dart';
+import 'package:fruits/core/Entities/ReviewsEntity.dart';
 import 'package:fruits/core/Models/ReviewsModel.dart';
 
 class Productsmodel {
@@ -53,6 +54,8 @@ class Productsmodel {
   }
   Productsentity toEntity() {
     return Productsentity(
+        avgRating: getAvgRating(
+            productsreviews: reviews.map((e) => e.toEntity()).toList()),
         name: name,
         reviews: reviews.map((e) => e.toEntity()).toList(),
         price: price,
@@ -65,6 +68,18 @@ class Productsmodel {
         imageUrl: imageUrl,
         rating: rating,
         isFeature: isFeature);
+  }
+
+  double getAvgRating({required List<Reviewsentity> productsreviews}) {
+    double sum = 0.0;
+    if (productsreviews.isEmpty) {
+      return 0.0;
+    } else {
+      for (int i = 0; i < productsreviews.length; i++) {
+        sum += productsreviews[i].reating;
+      }
+      return sum / productsreviews.length;
+    }
   }
 
   toMap() {

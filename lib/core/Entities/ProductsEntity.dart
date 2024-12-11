@@ -11,7 +11,7 @@ class Productsentity {
   final String price;
   final double amout;
   final int caloriesUnit;
-
+  final double avgRating;
   final int expirnationsMonths;
   bool isOrganic = false;
   double rating = 0.0;
@@ -29,5 +29,6 @@ class Productsentity {
       required this.description,
       this.imageUrl,
       required this.rating,
+      required this.avgRating,
       required this.isFeature});
 }

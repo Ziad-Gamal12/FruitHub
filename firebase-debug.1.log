@@ -1,0 +1,53 @@
+[debug] [2024-11-19T12:02:36.678Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:02:36.685Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js apps:sdkconfig web 1:42782022592:web:a70787ad9c2549262fc625 --json
+[debug] [2024-11-19T12:02:36.686Z] CLI Version:   13.20.2
+[debug] [2024-11-19T12:02:36.686Z] Platform:      win32
+[debug] [2024-11-19T12:02:36.686Z] Node Version:  v20.18.0
+[debug] [2024-11-19T12:02:36.687Z] Time:          Tue Nov 19 2024 14:02:36 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-11-19T12:02:36.687Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:02:36.877Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[debug] [2024-11-19T12:02:36.887Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:02:36.888Z] > authorizing via signed-in user (zozazezogamal@gmail.com)
+[debug] [2024-11-19T12:02:36.898Z] Checked if tokens are valid: true, expires at: 1732021353314
+[debug] [2024-11-19T12:02:36.899Z] Checked if tokens are valid: true, expires at: 1732021353314
+[debug] [2024-11-19T12:02:36.904Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42782022592:web:a70787ad9c2549262fc625/config [none]
+[debug] [2024-11-19T12:02:38.197Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42782022592:web:a70787ad9c2549262fc625/config 200
+[debug] [2024-11-19T12:02:38.197Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42782022592:web:a70787ad9c2549262fc625/config {"projectId":"fruithub-973f6","appId":"1:42782022592:web:a70787ad9c2549262fc625","storageBucket":"fruithub-973f6.appspot.com","locationId":"us-central","apiKey":"AIzaSyALhU4lS4uwzoGhYX-nRDybZGtNeQ0cM1A","authDomain":"fruithub-973f6.firebaseapp.com","messagingSenderId":"42782022592","measurementId":"G-Z15M3BFL0D"}
+[info] // Copy and paste this into your JavaScript code to initialize the Firebase SDK.
+// You will also need to load the Firebase SDK.
+// See https://firebase.google.com/docs/web/setup for more details.
+
+firebase.initializeApp({
+  "projectId": "fruithub-973f6",
+  "appId": "1:42782022592:web:a70787ad9c2549262fc625",
+  "storageBucket": "fruithub-973f6.appspot.com",
+  "locationId": "us-central",
+  "apiKey": "AIzaSyALhU4lS4uwzoGhYX-nRDybZGtNeQ0cM1A",
+  "authDomain": "fruithub-973f6.firebaseapp.com",
+  "messagingSenderId": "42782022592",
+  "measurementId": "G-Z15M3BFL0D"
+});
+
+[debug] [2024-11-19T12:02:38.202Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Ora.stopAndPersist (C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\ora\index.js:376:15)
+    at Ora.succeed (C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\ora\index.js:351:15)
+    at Command.actionFn (C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\apps-sdkconfig.js:76:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-11-19T12:02:38.204Z] Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:61:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:87:40
+    at new Promise (<anonymous>)
+    at C:\Users\elbostan\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:86:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.

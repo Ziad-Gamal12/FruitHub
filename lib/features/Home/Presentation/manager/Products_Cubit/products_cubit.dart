@@ -12,7 +12,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   final Productsrepo productsrepo;
   Future<void> getBestSellingProducts() async {
     emit(ProductsLoading());
-    final result = await productsrepo.getBestSellingProducts();
+    final result = await productsrepo.getBestSellingProducts(
+        query: {"orderBy": "sellingCount", "descending": true, "limit": 10});
     result.fold((failure) {
       emit(ProductsFailure(errMessage: failure.message));
     }, (productsEntity) {

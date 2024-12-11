@@ -6,5 +6,6 @@ import 'package:fruits/core/errors/Failures.dart';
 
 abstract class Productsrepo {
   Future<Either<Failure, List<Productsentity>>> getProducts();
-  Future<Either<Failure, List<Productsentity>>> getBestSellingProducts();
+  Future<Either<Failure, List<Productsentity>>> getBestSellingProducts(
+      {required Map<String, dynamic> query});
 }

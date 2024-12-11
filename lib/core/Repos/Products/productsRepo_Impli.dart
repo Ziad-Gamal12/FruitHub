@@ -30,11 +30,11 @@ class ProductsrepoImpli implements Productsrepo {
   }
 
   @override
-  Future<Either<Failure, List<Productsentity>>> getBestSellingProducts() async {
+  Future<Either<Failure, List<Productsentity>>> getBestSellingProducts(
+      {required Map<String, dynamic> query}) async {
     try {
       List products = await datebaseservice.getData(
-          path: BackendEndpoints.getProducts,
-          query: {"orderBy": "sellingCount", "descending": true, "limit": 10});
+          path: BackendEndpoints.getProducts, query: query);
       List<Productsmodel> productsModel =
           products.map((e) => Productsmodel.fromJson(e)).toList();
       List<Productsentity> productsEntity =

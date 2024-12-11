@@ -4,11 +4,11 @@ class Reviewsentity {
   final String name;
   final String imageUrl;
   final num reating;
-  final String reviewDescriptionl;
+  final String reviewDescription;
   Reviewsentity({
     required this.name,
     required this.imageUrl,
     required this.reating,
-    required this.reviewDescriptionl,
+    required this.reviewDescription,
   });
 }
