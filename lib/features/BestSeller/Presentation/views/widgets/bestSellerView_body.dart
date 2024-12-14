@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
+import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
 import 'package:fruits/features/BestSeller/Presentation/manager/get_best_seller_products_cubit/get_best_seller_products_cubit.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/widgets/BestsellerGideviewBestSellerBody.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/widgets/bestSellerGrideViewHeader.dart';
@@ -43,30 +44,33 @@ class _bestSellerView_bodyState extends State<bestSellerView_body> {
       builder: (context, state) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: KHorizentalPadding),
-          child: CustomScrollView(
-            slivers: [
-              const SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Custombestsellerappbar(),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    bestSellerGrideViewHeader(),
-                    SizedBox(
-                      height: 8,
-                    ),
-                  ],
+          child: CustomSkeletonizerwidget(
+            enabled: state is GetBestSellerProductsCubitLoading ? true : false,
+            child: CustomScrollView(
+              slivers: [
+                const SliverToBoxAdapter(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Custombestsellerappbar(),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      bestSellerGrideViewHeader(),
+                      SizedBox(
+                        height: 8,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              BestsellerGideviewBestSellerBody(
-                products: products,
-              ),
-            ],
+                BestsellerGideviewBestSellerBody(
+                  products: products,
+                ),
+              ],
+            ),
           ),
         );
       },

@@ -7,8 +7,9 @@ import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/core/widgets/Custom_Search_textfield.dart';
+import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
-import 'package:fruits/features/Home/Presentation/views/widgets/BestSeller_gideView.dart';
+import 'package:fruits/features/Home/Presentation/views/widgets/BestSeller_gridView.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_BestSeller_Header.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_Home_AppBar.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/offers_ListView.dart';
@@ -46,43 +47,45 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           padding: const EdgeInsets.symmetric(
             horizontal: KHorizentalPadding,
           ),
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    const customHomeAppBar(),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    CustomSearchTextfield(
-                      controller: controller,
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    const AspectRatio(
-                      aspectRatio: 342 / 158,
-                      child: offersListView(),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    const CustomBestsellerHeader(),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                  ],
+          child: CustomSkeletonizerwidget(
+            enabled: state is ProductsLoading ? true : false,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const customHomeAppBar(),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      CustomSearchTextfield(
+                        controller: controller,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      const AspectRatio(
+                        aspectRatio: 342 / 158,
+                        child: offersListView(),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      const CustomBestsellerHeader(),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              BestsellerGideview(
-                products: products ?? [],
-                isLoading: state is ProductsLoading,
-              )
-            ],
+                BestsellerGridview(
+                  products: products ?? [],
+                )
+              ],
+            ),
           ),
         );
       },

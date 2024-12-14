@@ -7,19 +7,42 @@ import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_BottomNavigationBar.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/HomeViewBody.dart';
+import 'package:fruits/features/products/presentation/views/widgets/Productsview_Body.dart';
 
-class Homeview extends StatelessWidget {
+class Homeview extends StatefulWidget {
   static const homeView = 'homeView';
   const Homeview({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
+  State<Homeview> createState() => _HomeviewState();
+}
+
+class _HomeviewState extends State<Homeview> {
+  List<Widget> pages = [
+    BlocProvider(
       create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
-      child: const Scaffold(
-        bottomNavigationBar: CustomBottomnavigationbar(),
-        body: SafeArea(child: HomeViewBody()),
+      child: const HomeViewBody(),
+    ),
+    BlocProvider(
+      create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
+      child: const ProductsviewBody(),
+    ),
+    const SizedBox(),
+    const SizedBox()
+  ];
+
+  int currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: CustomBottomnavigationbar(
+        currentIndex: (value) {
+          currentIndex = value;
+          setState(() {});
+        },
       ),
+      body: SafeArea(child: pages[currentIndex]),
     );
   }
 }

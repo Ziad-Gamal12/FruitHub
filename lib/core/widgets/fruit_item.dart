@@ -1,12 +1,12 @@
 // ignore_for_file: camel_case_types
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/core/widgets/Custom_CachedNetworkImage.dart';
 import 'package:svg_flutter/svg.dart';
 
 class fruit_item extends StatelessWidget {
@@ -36,10 +36,7 @@ class fruit_item extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                CachedNetworkImage(
-                  imageUrl: product.imageUrl!,
-                  fit: BoxFit.fill,
-                ),
+                CustomCachedNetWorkImage(imageUrl: product.imageUrl!),
                 const Spacer(),
                 Row(
                   children: [

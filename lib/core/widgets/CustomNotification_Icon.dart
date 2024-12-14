@@ -16,7 +16,10 @@ class CustomNotification_Icon extends StatelessWidget {
       decoration: BoxDecoration(
           color: const Color(0xffEEF8ED),
           borderRadius: BorderRadius.circular(50)),
-      child: SvgPicture.asset(Assets.assetsImagesNotification),
+      child: Badge(
+        alignment: Alignment.topCenter,
+        child: SvgPicture.asset(Assets.assetsImagesNotification),
+      ),
     );
   }
 }

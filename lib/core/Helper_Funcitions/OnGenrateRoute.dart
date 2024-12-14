@@ -7,6 +7,7 @@ import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dar
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
+import 'package:fruits/features/products/presentation/views/ProductsView.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
   switch (setting.name) {
@@ -19,10 +20,12 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case signupview.signupView:
       return MaterialPageRoute(builder: (context) => const signupview());
     case Homeview.homeView:
-      return MaterialPageRoute(builder: (context) => const Homeview());
+      return MaterialPageRoute(builder: (context) => Homeview());
     case bestSellerView.routeName:
       return MaterialPageRoute(builder: (context) => const bestSellerView());
+    case Productsview.routename:
+      return MaterialPageRoute(builder: (context) => const Productsview());
     default:
-      return MaterialPageRoute(builder: (context) => const Scaffold());
+      return MaterialPageRoute(builder: (context) => const Splash_View());
   }
 }
