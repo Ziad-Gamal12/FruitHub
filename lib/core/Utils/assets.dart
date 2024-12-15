@@ -78,6 +78,10 @@ class Assets {
   /// assets/images/filter_icon.svg
   static const String assetsImagesFilterIcon = "assets/images/filter_icon.svg";
 
+  /// Assets for assetsImagesGallery
+  /// assets/images/gallery.svg
+  static const String assetsImagesGallery = "assets/images/gallery.svg";
+
   /// Assets for assetsImagesGoogleIcon
   /// assets/images/GoogleIcon.svg
   static const String assetsImagesGoogleIcon = "assets/images/GoogleIcon.svg";
@@ -114,6 +118,10 @@ class Assets {
   /// assets/images/PageViewItem2_Image.svg
   static const String assetsImagesPageViewItem2Image = "assets/images/PageViewItem2_Image.svg";
 
+  /// Assets for assetsImagesProductImageTest
+  /// assets/images/ProductImageTest.png
+  static const String assetsImagesProductImageTest = "assets/images/ProductImageTest.png";
+
   /// Assets for assetsImagesProfilePicture
   /// assets/images/Profile_Picture.png
   static const String assetsImagesProfilePicture = "assets/images/Profile_Picture.png";
@@ -133,5 +141,9 @@ class Assets {
   /// Assets for assetsImagesSplashTree
   /// assets/images/Splash_tree.svg
   static const String assetsImagesSplashTree = "assets/images/Splash_tree.svg";
+
+  /// Assets for assetsImagesTrash
+  /// assets/images/trash.svg
+  static const String assetsImagesTrash = "assets/images/trash.svg";
 }
 
