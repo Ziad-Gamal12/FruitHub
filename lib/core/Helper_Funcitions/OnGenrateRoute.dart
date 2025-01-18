@@ -5,6 +5,7 @@ import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dart';
 import 'package:fruits/features/Cart/presentation/views/CartView.dart';
+import 'package:fruits/features/CheckOut/presentation/views/CheckoutView.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
@@ -28,6 +29,8 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const Productsview());
     case Cartview.routename:
       return MaterialPageRoute(builder: (context) => const Cartview());
+    case Checkoutview.routeName:
+      return MaterialPageRoute(builder: (context) => const Checkoutview());
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());
   }

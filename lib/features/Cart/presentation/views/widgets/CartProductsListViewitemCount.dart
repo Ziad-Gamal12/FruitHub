@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
+import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CountActionButton.dart';
 
 class Cartproductslistviewitemcount extends StatefulWidget {
@@ -33,8 +35,7 @@ class _CartproductslistviewitemcountState
             if (widget.product.count >= 0) {
               widget.product.count += 1;
               widget.count(widget.product.count);
-
-              setState(() {});
+              context.read<CartCubit>().updateCartItem(product: widget.product);
             }
           },
         ),
@@ -57,10 +58,14 @@ class _CartproductslistviewitemcountState
             size: 12,
           ),
           ontap: () {
-            if (widget.product.count > 0) {
+            if (widget.product.count > 1) {
               widget.product.count -= 1;
               widget.count(widget.product.count);
-              setState(() {});
+              context.read<CartCubit>().updateCartItem(product: widget.product);
+            } else {
+              context
+                  .read<CartCubit>()
+                  .removeCartProduct(product: widget.product);
             }
           },
         ),

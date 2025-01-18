@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits/core/widgets/CustomButton.dart';
-import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:fruits/features/Cart/presentation/views/widgets/CartBodyPayButton.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CartProductsListView.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CartProductsListViewHeader.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/customCartAppBar.dart';
 
-class CartviewBody extends StatelessWidget {
+class CartviewBody extends StatefulWidget {
   const CartviewBody({super.key});
+
+  @override
+  State<CartviewBody> createState() => _CartviewBodyState();
+}
+
+class _CartviewBodyState extends State<CartviewBody> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       children: [
-        const CustomScrollView(
+        CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: SizedBox(
@@ -33,20 +37,10 @@ class CartviewBody extends StatelessWidget {
                 height: 24,
               ),
             ),
-            Cartproductslistview(
-              products: [],
-            ),
+            Cartproductslistview(),
           ],
         ),
-        Positioned(
-          bottom: 67,
-          left: 16,
-          right: 16,
-          child: CustomButton(
-              onPressed: () {},
-              text:
-                  "الدفع  ${context.read<CartCubit>().getTotalPrice().toString()}جنيه"),
-        ),
+        CartBodyPayButton(),
       ],
     );
   }

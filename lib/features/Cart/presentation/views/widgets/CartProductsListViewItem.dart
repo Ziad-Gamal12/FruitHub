@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
+import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CartProductListViewItemDetails.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CartProductsListViewItemImage.dart';
 import 'package:fruits/features/Cart/presentation/views/widgets/CartProductsListViewitemCount.dart';
@@ -20,62 +22,79 @@ class Cartproductslistviewitem extends StatefulWidget {
 class _CartproductslistviewitemState extends State<Cartproductslistviewitem> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Cartproductslistviewitemimage(
-            product: widget.product,
-          ),
-          const SizedBox(
-            width: 17,
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return BlocBuilder<CartCubit, CartState>(
+      buildWhen: (previous, current) {
+        if (current is CartItemUpdated) {
+          if (current.product == widget.product) {
+            return true;
+          }
+        }
+        return false;
+      },
+      builder: (context, state) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Cartproductslistviewitemimage(
+                product: widget.product,
+              ),
+              const SizedBox(
+                width: 17,
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CartProductListViewItemDetails(
-                      product: widget.product,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CartProductListViewItemDetails(
+                          product: widget.product,
+                        ),
+                        const Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: InkWell(
+                              onTap: () {
+                                context
+                                    .read<CartCubit>()
+                                    .removeCartProduct(product: widget.product);
+                              },
+                              child:
+                                  SvgPicture.asset(Assets.assetsImagesTrash)),
+                        ),
+                      ],
                     ),
                     const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                          onTap: () {},
-                          child: SvgPicture.asset(Assets.assetsImagesTrash)),
+                    Row(
+                      children: [
+                        Cartproductslistviewitemcount(
+                          product: widget.product,
+                          count: (value) {
+                            setState(() {});
+                          },
+                        ),
+                        const Spacer(),
+                        Text(
+                          "${widget.product.calclulateTotalPrice()} جنيه ",
+                          style: textStyles.textstyle16.copyWith(
+                              color: AppColors.KsecondaryColor,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
                     ),
-                  ],
-                ),
-                const Spacer(),
-                Row(
-                  children: [
-                    Cartproductslistviewitemcount(
-                      product: widget.product,
-                      count: (value) {
-                        setState(() {});
-                      },
-                    ),
-                    const Spacer(),
-                    Text(
-                      "${widget.product.calclulateTotalPrice()} جنيه ",
-                      style: textStyles.textstyle16.copyWith(
-                          color: AppColors.KsecondaryColor,
-                          fontWeight: FontWeight.bold),
+                    const SizedBox(
+                      height: 5,
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 5,
-                )
-              ],
-            ),
-          )
-        ],
-      ),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }

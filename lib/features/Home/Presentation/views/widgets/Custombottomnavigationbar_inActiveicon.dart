@@ -10,6 +10,11 @@ class Custombottomnavigationbar_inActiveicon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(inactiveIconPath);
+    return Container(
+        color: Colors.transparent,
+        child: SvgPicture.asset(
+          inactiveIconPath,
+          fit: BoxFit.scaleDown,
+        ));
   }
 }

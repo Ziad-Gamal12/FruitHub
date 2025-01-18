@@ -20,6 +20,10 @@ class Cartentity {
     return left(false);
   }
 
+  removeCartItem({required Cartproductentity product}) {
+    products.remove(product);
+  }
+
   double getTotalPrice() {
     double totalPrice = 0;
     for (var cartProductitem in products) {

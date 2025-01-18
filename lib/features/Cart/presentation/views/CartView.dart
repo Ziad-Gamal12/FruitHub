@@ -3,7 +3,7 @@ import 'package:fruits/features/Cart/presentation/views/widgets/CartviewBody.dar
 
 class Cartview extends StatelessWidget {
   const Cartview({super.key});
-  static const routename = "/Cartview";
+  static const routename = "Cartview";
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
