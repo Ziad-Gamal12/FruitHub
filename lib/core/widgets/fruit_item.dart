@@ -23,7 +23,7 @@ class fruit_item extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 20),
-        child: Stack(children: [
+        child: Stack(fit: StackFit.expand, children: [
           Positioned(
             top: 8,
             right: 8,
@@ -31,61 +31,70 @@ class fruit_item extends StatelessWidget {
               child: SvgPicture.asset(Assets.assetsImagesFavouriteIcon),
             ),
           ),
-          Positioned.fill(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 20,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                flex: 3,
+                child: SizedBox(
+                    child:
+                        CustomCachedNetWorkImage(imageUrl: product.imageUrl!)),
+              ),
+              const Expanded(
+                flex: 1,
+                child: SizedBox(
+                  height: 24,
                 ),
-                CustomCachedNetWorkImage(imageUrl: product.imageUrl!),
-                const Spacer(),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          product.name,
-                          style: textStyles.textstyle13,
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "${product.price}جنية /",
-                              style: textStyles.textstyle13.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.KsecondaryColor),
-                            ),
-                            Text(
-                              "الكيلو",
-                              style: textStyles.textstyle13.copyWith(
-                                  color: AppColors.KlightSecondaryColor),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        context.read<CartCubit>().addProduct(product: product);
-                      },
-                      child: const CircleAvatar(
-                        backgroundColor: AppColors.MainColor,
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ),
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.name,
+                        style: textStyles.textstyle13,
                       ),
-                    )
-                  ],
-                )
-              ],
-            ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "${product.price}جنية /",
+                            style: textStyles.textstyle13.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.KsecondaryColor),
+                          ),
+                          Text(
+                            "الكيلو",
+                            style: textStyles.textstyle13.copyWith(
+                                color: AppColors.KlightSecondaryColor),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      context.read<CartCubit>().addProduct(product: product);
+                    },
+                    child: const CircleAvatar(
+                      backgroundColor: AppColors.MainColor,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
           ),
         ]),
       ),

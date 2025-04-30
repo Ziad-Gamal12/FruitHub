@@ -21,7 +21,8 @@ class CartBodyPayButton extends StatelessWidget {
               ? const SizedBox()
               : CustomButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, Checkoutview.routeName);
+                    Navigator.pushNamed(context, Checkoutview.routeName,
+                        arguments: context.read<CartCubit>().cartentity);
                   },
                   text:
                       "الدفع  ${context.read<CartCubit>().getTotalPrice().toString()}جنيه"),

@@ -6,6 +6,8 @@ import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/services/FirebaseAuth_Service.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
+import 'package:fruits/core/widgets/AwesomeDialog.dart';
+import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
 import 'package:svg_flutter/svg.dart';
@@ -19,9 +21,10 @@ class SplashView_body extends StatefulWidget {
 
 class _SplashView_bodyState extends State<SplashView_body> {
   @override
+  @override
   void initState() {
-    onboardingNavigation();
     super.initState();
+    _navigateAfterDelay();
   }
 
   @override
@@ -42,21 +45,26 @@ class _SplashView_bodyState extends State<SplashView_body> {
     );
   }
 
-  void onboardingNavigation() async {
-    bool isonboardinviewSeen =
-        shared_preferences_Services.boolgetter(key: KIsonboaringseen);
-    bool isloggedin = await firebaseAuthService().isLoggedin();
-    Future.delayed(const Duration(seconds: 5), () {
-      if (isonboardinviewSeen == false) {
+  Future<void> _navigateAfterDelay() async {
+    try {
+      await Future.delayed(const Duration(seconds: 3));
+
+      final bool isOnboardingSeen =
+          await shared_preferences_Services.boolgetter(key: KIsonboaringseen);
+      final bool isLoggedIn = await firebaseAuthService().isLoggedin();
+
+      if (!mounted) return;
+
+      if (!isOnboardingSeen) {
         Navigator.of(context)
             .pushReplacementNamed(onboardingView.onboardingViewroute);
+      } else if (isLoggedIn) {
+        Navigator.of(context).pushReplacementNamed(Homeview.homeView);
       } else {
-        if (isloggedin) {
-          Navigator.of(context).pushReplacementNamed(Homeview.homeView);
-        } else {
-          Navigator.of(context).pushReplacementNamed(Homeview.homeView);
-        }
+        Navigator.of(context).pushReplacementNamed(SignIn_View.LoginViewRoute);
       }
-    });
+    } catch (e) {
+      errordialog(context, "حدث خطأ ما").show();
+    }
   }
 }

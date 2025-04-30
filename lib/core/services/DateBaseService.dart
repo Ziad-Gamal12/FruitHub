@@ -2,9 +2,7 @@
 
 abstract class Datebaseservice {
   Future<void> addData(
-      {required String key,
-      required Map<String, dynamic> value,
-      required String docId});
+      {required String key, required Map<String, dynamic> value, String docId});
   Future<dynamic> getData(
       {required String path, String? docuementId, Map<String, dynamic>? query});
   Future<bool> checkIfDataExists(

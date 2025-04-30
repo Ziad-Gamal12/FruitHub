@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dart';
+import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
 import 'package:fruits/features/Cart/presentation/views/CartView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/CheckoutView.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
@@ -30,7 +31,10 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case Cartview.routename:
       return MaterialPageRoute(builder: (context) => const Cartview());
     case Checkoutview.routeName:
-      return MaterialPageRoute(builder: (context) => const Checkoutview());
+      return MaterialPageRoute(
+          builder: (context) => Checkoutview(
+                cartentity: setting.arguments as Cartentity,
+              ));
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());
   }

@@ -10,8 +10,12 @@ class FirebaseFirestoreservice implements Datebaseservice {
   Future<void> addData(
       {required String key,
       required Map<String, dynamic> value,
-      required String docId}) {
-    return firestore.collection(key).doc(docId).set(value);
+      String? docId}) {
+    if (docId == null) {
+      return firestore.collection(key).add(value);
+    } else {
+      return firestore.collection(key).doc(docId).set(value);
+    }
   }
 
   @override

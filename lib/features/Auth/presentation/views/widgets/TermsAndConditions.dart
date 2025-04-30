@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
-import 'package:fruits/features/Auth/presentation/views/widgets/TermsCheckBox.dart';
+import 'package:fruits/core/widgets/CustomCheckBox.dart';
 
 class TermsAndConditions extends StatelessWidget {
   final ValueChanged<bool> onChanged;
@@ -18,7 +18,7 @@ class TermsAndConditions extends StatelessWidget {
         offset: const Offset(14, 0),
         child: Row(
           children: [
-            Termscheckbox(
+            CustomCheckBox(
               onChanged: onChanged,
             ),
             const SizedBox(

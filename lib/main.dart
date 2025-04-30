@@ -12,16 +12,15 @@ import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
 import 'package:fruits/firebase_options.dart';
 import 'package:fruits/generated/l10n.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   Bloc.observer = Custom_Blocobserver();
   setup_Getit();
   await shared_preferences_Services.init();
-
   runApp(
     const Fruit_Hub(), // Wrap your app
   );

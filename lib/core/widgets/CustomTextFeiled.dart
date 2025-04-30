@@ -10,11 +10,13 @@ class CustomTextFeiled extends StatelessWidget {
   final bool obscureText;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
+  void Function(String?)? onSaved;
   CustomTextFeiled(
       {super.key,
       required this.controller,
       required this.hintText,
       this.suffix,
+      this.onSaved,
       required this.validator,
       required this.obscureText,
       required this.keyboardType});
@@ -28,6 +30,7 @@ class CustomTextFeiled extends StatelessWidget {
       borderRadius: BorderRadius.circular(4),
     );
     return TextFormField(
+      onSaved: onSaved,
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
