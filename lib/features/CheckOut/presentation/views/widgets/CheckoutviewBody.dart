@@ -5,8 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
+import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
+import 'package:fruits/features/CheckOut/presentation/views/AddOrderSuccessView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/Address/AdressViewBody.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/CheckoutStepsListView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/Paying/payingViewBody.dart';
@@ -34,12 +36,9 @@ class _CheckoutviewBodyState extends State<CheckoutviewBody> {
     return BlocListener<AddOrderCubit, AddOrderState>(
       listener: (context, state) {
         if (state is AddOrderSuccess) {
-          successdialog(
-              context: context,
-              SuccessMessage: "تم الطلب بنجاح",
-              btnOkOnPress: () {
-                Navigator.of(context).pop();
-              });
+          Navigator.of(context).pushReplacementNamed(
+              AddrOderSuccessView.routeName,
+              arguments: context.read<Orderentity>());
         } else if (state is AddOrderFailure) {
           errordialog(context, state.errmessage).show();
         }

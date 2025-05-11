@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/features/CheckOut/domain/CheckoutStepItem_entity.dart';
+import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/CheckOutStepItem.dart';
 
 class CheckoutStepsListView extends StatelessWidget {
@@ -21,11 +24,15 @@ class CheckoutStepsListView extends StatelessWidget {
             padding: EdgeInsets.only(left: index == 3 ? 0 : 24),
             child: GestureDetector(
               onTap: () {
-                // context.read<ProccessStepsCubit>().changeStep(index);
-                // variables.checkoutProccessPageViewController.animateToPage(
-                //     index,
-                //     duration: const Duration(milliseconds: 500),
-                //     curve: Curves.easeInOut);
+                if (index < currentStep) {
+                  context
+                      .read<ProccessStepsCubit>()
+                      .changeStep(isIcrease: false, stepchangenumber: index);
+                  variables.checkoutProccessPageViewController.animateToPage(
+                      index,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut);
+                }
               },
               child: Checkoutstepitem(
                   isSelected: currentStep >= index ? true : false,

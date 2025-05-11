@@ -15,6 +15,7 @@ class OrdersrepoImpl implements OrdersRepo {
       {required Orderentity orderEntity}) async {
     try {
       await datebaseservice.addData(
+        docId: orderEntity.id,
         key: BackendEndpoints.addOrder,
         value: Ordermodel.fromEntity(orderEntity: orderEntity).toJson(),
       );

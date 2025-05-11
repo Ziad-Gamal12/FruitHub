@@ -6,29 +6,33 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+  CustomAppBar({
     super.key,
     required this.appBartitle,
+    this.isBack,
   });
   final String appBartitle;
+  bool? isBack;
 
   @override
   AppBar build(BuildContext context) {
     return AppBar(
       leadingWidth: 40,
-      leading: Padding(
-        padding: const EdgeInsets.only(right: 10),
-        child: InkWell(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: SvgPicture.asset(
-            Assets.assetsImagesArrowleft,
-            height: 20,
-            width: 20,
-          ),
-        ),
-      ),
+      leading: isBack == null || isBack == false
+          ? const SizedBox()
+          : Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: SvgPicture.asset(
+                  Assets.assetsImagesArrowleft,
+                  height: 20,
+                  width: 20,
+                ),
+              ),
+            ),
       title: Text(
         appBartitle,
         style: textStyles.textstyle19.copyWith(color: Colors.black),
