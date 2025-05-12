@@ -22,7 +22,7 @@ void main() async {
   setup_Getit();
   await shared_preferences_Services.init();
   runApp(
-    const Fruit_Hub(), // Wrap your app
+    const Fruit_Hub(),
   );
 }
 

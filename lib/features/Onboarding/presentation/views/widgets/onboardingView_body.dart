@@ -58,11 +58,13 @@ class _onboardingView_bodyState extends State<onboardingView_body> {
             padding:
                 const EdgeInsets.only(left: 16, right: 16, bottom: 43, top: 29),
             child: CustomButton(
-                onPressed: () {
-                  shared_preferences_Services.boolSetter(
+                onPressed: () async {
+                  await shared_preferences_Services.boolSetter(
                       key: KIsonboaringseen, value: true);
-                  Navigator.of(context)
-                      .pushReplacementNamed(SignIn_View.LoginViewRoute);
+                  if (mounted) {
+                    Navigator.of(context)
+                        .pushReplacementNamed(SignIn_View.LoginViewRoute);
+                  }
                 },
                 text: "ابدأ الان"),
           ),

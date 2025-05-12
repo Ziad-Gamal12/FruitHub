@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
+import 'package:fruits/features/OrderTraking/domain/orderStatusItemEntity.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/widgets/CustomOrderInfo.dart';
+import 'package:fruits/features/OrderTraking/presentation/Views/widgets/orderStatusListView.dart';
 
 class Ordertrakingviewbody extends StatelessWidget {
   const Ordertrakingviewbody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: KHorizentalPadding),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: KHorizentalPadding),
       child: Column(
         children: [
-          Customorderinfo(),
+          const Customorderinfo(),
+          const SizedBox(
+            height: 20,
+          ),
+          Expanded(
+              child: Orderstatuslistview(
+                  statusList: Orderstatusitementity.orderStatus()))
         ],
       ),
     );

@@ -1,6 +1,8 @@
 // ignore: file_names
 // ignore_for_file: file_names, duplicate_ignore, camel_case_types
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/assets.dart';
@@ -52,16 +54,20 @@ class _SplashView_bodyState extends State<SplashView_body> {
       final bool isOnboardingSeen =
           await shared_preferences_Services.boolgetter(key: KIsonboaringseen);
       final bool isLoggedIn = await firebaseAuthService().isLoggedin();
-
+      log(isLoggedIn.toString());
+      log(isOnboardingSeen.toString());
       if (!mounted) return;
 
       if (!isOnboardingSeen) {
         Navigator.of(context)
             .pushReplacementNamed(onboardingView.onboardingViewroute);
-      } else if (isLoggedIn) {
-        Navigator.of(context).pushReplacementNamed(Homeview.homeView);
       } else {
-        Navigator.of(context).pushReplacementNamed(SignIn_View.LoginViewRoute);
+        if (isLoggedIn) {
+          Navigator.of(context).pushReplacementNamed(Homeview.homeView);
+        } else {
+          Navigator.of(context)
+              .pushReplacementNamed(SignIn_View.LoginViewRoute);
+        }
       }
     } catch (e) {
       errordialog(context, "حدث خطأ ما").show();

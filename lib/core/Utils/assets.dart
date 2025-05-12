@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for assetsImagesAcceptedStatusIcon
+  /// assets/images/AcceptedStatusIcon.svg
+  static const String assetsImagesAcceptedStatusIcon = "assets/images/AcceptedStatusIcon.svg";
+
   /// Assets for assetsImagesAppIcon
   /// assets/images/App_Icon.png
   static const String assetsImagesAppIcon = "assets/images/App_Icon.png";
@@ -66,6 +70,10 @@ class Assets {
   /// assets/images/completed_icon.svg
   static const String assetsImagesCompletedIcon = "assets/images/completed_icon.svg";
 
+  /// Assets for assetsImagesDeliveredStatusIcon
+  /// assets/images/DeliveredStatusIcon.svg
+  static const String assetsImagesDeliveredStatusIcon = "assets/images/DeliveredStatusIcon.svg";
+
   /// Assets for assetsImagesErrorIcon
   /// assets/images/errorIcon.png
   static const String assetsImagesErrorIcon = "assets/images/errorIcon.png";
@@ -118,6 +126,10 @@ class Assets {
   /// assets/images/offer_one.png
   static const String assetsImagesOfferOne = "assets/images/offer_one.png";
 
+  /// Assets for assetsImagesOrdertrakinginfoIcon
+  /// assets/images/ordertrakinginfoIcon.svg
+  static const String assetsImagesOrdertrakinginfoIcon = "assets/images/ordertrakinginfoIcon.svg";
+
   /// Assets for assetsImagesPageViewItem1BackgroundImage
   /// assets/images/PageViewItem1_BackgroundImage.svg
   static const String assetsImagesPageViewItem1BackgroundImage = "assets/images/PageViewItem1_BackgroundImage.svg";
@@ -138,6 +150,10 @@ class Assets {
   /// assets/images/PaypalIcon.svg
   static const String assetsImagesPaypalIcon = "assets/images/PaypalIcon.svg";
 
+  /// Assets for assetsImagesPenddingStatusIcon
+  /// assets/images/penddingStatusIcon.svg
+  static const String assetsImagesPenddingStatusIcon = "assets/images/penddingStatusIcon.svg";
+
   /// Assets for assetsImagesProductImageTest
   /// assets/images/ProductImageTest.png
   static const String assetsImagesProductImageTest = "assets/images/ProductImageTest.png";
@@ -149,6 +165,10 @@ class Assets {
   /// Assets for assetsImagesSearchIcon
   /// assets/images/Search_icon.svg
   static const String assetsImagesSearchIcon = "assets/images/Search_icon.svg";
+
+  /// Assets for assetsImagesShippedStatusIcons
+  /// assets/images/ShippedStatusIcons.svg
+  static const String assetsImagesShippedStatusIcons = "assets/images/ShippedStatusIcons.svg";
 
   /// Assets for assetsImagesSplashCircles
   /// assets/images/SplashCircles.svg

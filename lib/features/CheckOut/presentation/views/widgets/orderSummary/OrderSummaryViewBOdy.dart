@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/variables.dart';
-import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
@@ -24,8 +23,7 @@ class _OrdersummaryviewbodyState extends State<Ordersummaryviewbody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AddOrderCubit, AddOrderState>(
-        builder: (context, state) {
+    return BlocBuilder<AddOrderCubit, AddOrderState>(builder: (context, state) {
       return Column(
         children: [
           const SizedBox(
@@ -61,17 +59,6 @@ class _OrdersummaryviewbodyState extends State<Ordersummaryviewbody> {
                   text: "تأكيد الطلب")
         ],
       );
-    }, listener: (context, state) {
-      if (state is AddOrderSuccess) {
-        successdialog(
-            context: context,
-            SuccessMessage: "تم الطلب بنجاح",
-            btnOkOnPress: () {
-              Navigator.of(context).pop();
-            }).show();
-      } else if (state is AddOrderFailure) {
-        errordialog(context, state.errmessage).show();
-      }
     });
   }
 }
