@@ -5,6 +5,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Models/productsModel.dart';
 import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/Utils/Backend_EndPoints.dart';
+import 'package:fruits/core/errors/Exceptioons.dart';
 import 'package:fruits/core/errors/Failures.dart';
 import 'package:fruits/core/services/DateBaseService.dart';
 
@@ -43,6 +44,26 @@ class ProductsrepoImpli implements Productsrepo {
     } catch (e) {
       return left(ServerFailure(
           message: "فشل تحميل المنتجات,الرجاء المحاولة مرة اخرى"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> updateProduct(
+      {required String productCode,
+      required String field,
+      required dynamic data}) async {
+    try {
+      await datebaseservice.updateDate(
+          data: data,
+          collectionKey: BackendEndpoints.updateProdust,
+          doc: productCode,
+          field: field);
+      return right(null);
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      return left(ServerFailure(
+          message: "فشل تعديل المنتجات,الرجاء المحاولة مرة اخرى"));
     }
   }
 }

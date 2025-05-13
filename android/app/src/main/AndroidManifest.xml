@@ -5,6 +5,7 @@
         android:usesCleartextTraffic="true"
         android:label="Fruit Hub"
         android:name="${applicationName}"
+        android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

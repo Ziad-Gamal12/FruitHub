@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Helper_Funcitions/getUserData.dart';
 import 'package:fruits/core/Repos/Orders/orders_Repo.dart';
+import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/core/widgets/CustomAppBar.dart';
 import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
@@ -38,7 +39,9 @@ class _CheckoutviewState extends State<Checkoutview> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AddOrderCubit(getIt<OrdersRepo>())),
+        BlocProvider(
+            create: (context) =>
+                AddOrderCubit(getIt<OrdersRepo>(), getIt<Productsrepo>())),
         BlocProvider(
           create: (context) => ProccessStepsCubit(),
         )

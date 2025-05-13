@@ -7,4 +7,10 @@ abstract class Datebaseservice {
       {required String path, String? docuementId, Map<String, dynamic>? query});
   Future<bool> checkIfDataExists(
       {required String path, required String docuementId});
+  Future<void> updateDate({
+    required String collectionKey,
+    required doc,
+    required dynamic data,
+    required String field,
+  });
 }

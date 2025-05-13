@@ -16,11 +16,13 @@ class Productsentity {
   bool isOrganic = false;
   double rating = 0.0;
   final List<Reviewsentity> reviews;
+  final num sellingCount;
 
   Productsentity(
       {required this.name,
       required this.reviews,
       required this.price,
+      required this.sellingCount,
       required this.caloriesUnit,
       required this.expirnationsMonths,
       required this.isOrganic,

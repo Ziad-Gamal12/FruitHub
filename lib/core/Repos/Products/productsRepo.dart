@@ -8,4 +8,8 @@ abstract class Productsrepo {
   Future<Either<Failure, List<Productsentity>>> getProducts();
   Future<Either<Failure, List<Productsentity>>> getBestSellingProducts(
       {required Map<String, dynamic> query});
+  Future<Either<Failure, void>> updateProduct(
+      {required String productCode,
+      required String field,
+      required dynamic data});
 }

@@ -44,7 +44,7 @@ class Productsmodel {
       caloriesUnit: json["caloriesUnit"],
       expirnationsMonths: json["expirnationsMonths"],
       isOrganic: json["isOrganic"],
-      amout: json["amout"],
+      amout: (json["amout"]).toDouble(),
       code: json["code"],
       description: json["description"],
       imageUrl: json["imageUrl"],
@@ -52,8 +52,28 @@ class Productsmodel {
       isFeature: json["isFeature"],
     );
   }
+  factory Productsmodel.fromEntity({required Productsentity productsentity}) {
+    return Productsmodel(
+        name: productsentity.name,
+        sellingCount: productsentity.sellingCount,
+        reviews: productsentity.reviews
+            .map((e) => Reviewmodel.fromEntity(entity: e))
+            .toList(),
+        price: productsentity.price,
+        caloriesUnit: productsentity.caloriesUnit,
+        expirnationsMonths: productsentity.expirnationsMonths,
+        isOrganic: productsentity.isOrganic,
+        amout: productsentity.amout,
+        code: productsentity.code,
+        description: productsentity.description,
+        imageUrl: productsentity.imageUrl,
+        rating: productsentity.rating,
+        isFeature: productsentity.isFeature);
+  }
+
   Productsentity toEntity() {
     return Productsentity(
+        sellingCount: sellingCount,
         avgRating: getAvgRating(
             productsreviews: reviews.map((e) => e.toEntity()).toList()),
         name: name,
@@ -82,7 +102,7 @@ class Productsmodel {
     }
   }
 
-  toMap() {
+  Map<String, dynamic> toMap() {
     return {
       "name": name,
       "price": price,
@@ -91,6 +111,7 @@ class Productsmodel {
       "code": code,
       "description": description,
       "isFeature": isFeature,
+      "sellingCount": sellingCount,
       "caloriesUnit": caloriesUnit,
       "expirnationsMonths": expirnationsMonths,
       "isOrganic": isOrganic,

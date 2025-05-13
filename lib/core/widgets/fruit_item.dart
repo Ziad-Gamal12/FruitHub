@@ -9,6 +9,7 @@ import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/Custom_CachedNetworkImage.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 import 'package:svg_flutter/svg.dart';
 
 class fruit_item extends StatelessWidget {
@@ -35,19 +36,32 @@ class fruit_item extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 20,
-              ),
               Expanded(
-                flex: 3,
-                child: SizedBox(
-                    child:
-                        CustomCachedNetWorkImage(imageUrl: product.imageUrl!)),
-              ),
-              const Expanded(
-                flex: 1,
-                child: SizedBox(
-                  height: 24,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                        Productdetailsview.routeName,
+                        arguments: product);
+                  },
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: SizedBox(
+                            child: CustomCachedNetWorkImage(
+                                imageUrl: product.imageUrl!)),
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: SizedBox(
+                          height: 24,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Row(
@@ -80,18 +94,25 @@ class fruit_item extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      context.read<CartCubit>().addProduct(product: product);
-                    },
-                    child: const CircleAvatar(
-                      backgroundColor: AppColors.MainColor,
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      ),
-                    ),
-                  )
+                  product.amout == 0
+                      ? const Text(
+                          "غير متوفر",
+                          style: textStyles.textstyle13,
+                        )
+                      : GestureDetector(
+                          onTap: () {
+                            context
+                                .read<CartCubit>()
+                                .addProduct(product: product);
+                          },
+                          child: const CircleAvatar(
+                            backgroundColor: AppColors.MainColor,
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
                 ],
               )
             ],

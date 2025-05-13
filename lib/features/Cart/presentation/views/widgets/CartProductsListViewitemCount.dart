@@ -32,9 +32,16 @@ class _CartproductslistviewitemcountState
             size: 12,
           ),
           ontap: () {
-            if (widget.product.count >= 0) {
+            if (widget.product.count > 0) {
               widget.product.count += 1;
               widget.count(widget.product.count);
+              context.read<CartCubit>().updateCartItem(product: widget.product);
+            } else {
+              widget.product.count += 1;
+              widget.count(widget.product.count);
+              context
+                  .read<CartCubit>()
+                  .addProduct(product: widget.product.productsentity);
               context.read<CartCubit>().updateCartItem(product: widget.product);
             }
           },

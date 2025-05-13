@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dart';
@@ -10,6 +11,7 @@ import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/views/AddOrderSuccessView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/CheckoutView.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
+import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/OrderTrakingView.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
@@ -47,6 +49,11 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(
           builder: (context) => Checkoutview(
                 cartentity: setting.arguments as Cartentity,
+              ));
+    case Productdetailsview.routeName:
+      return MaterialPageRoute(
+          builder: (context) => Productdetailsview(
+                product: setting.arguments as Productsentity,
               ));
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());

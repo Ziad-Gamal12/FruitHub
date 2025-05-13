@@ -9,6 +9,7 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/services/BlocObserver.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/core/services/get_it_Service.dart';
+import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
 import 'package:fruits/firebase_options.dart';
 import 'package:fruits/generated/l10n.dart';
@@ -31,19 +32,23 @@ class Fruit_Hub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: const Locale("ar"),
-      theme: ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: Splash_View.routename,
+    return BlocProvider(
+      create: (context) => CartCubit(),
+      child: MaterialApp(
+        locale: const Locale("ar"),
+        theme:
+            ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: onGenerateRoute,
+        initialRoute: Splash_View.routename,
+      ),
     );
   }
 }

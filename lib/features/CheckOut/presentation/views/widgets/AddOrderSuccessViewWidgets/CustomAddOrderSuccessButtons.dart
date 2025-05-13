@@ -4,6 +4,7 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
+import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/OrderTrakingView.dart';
 
 class CustomAddOrderSuccessButtons extends StatelessWidget {
@@ -23,9 +24,15 @@ class CustomAddOrderSuccessButtons extends StatelessWidget {
       const SizedBox(
         height: 16,
       ),
-      Text(
-        "الرئيسية",
-        style: textStyles.textstyle16.copyWith(color: AppColors.MainColor),
+      InkWell(
+        onTap: () {
+          Navigator.pushNamedAndRemoveUntil(
+              context, Homeview.homeView, (route) => false);
+        },
+        child: Text(
+          "الرئيسية",
+          style: textStyles.textstyle16.copyWith(color: AppColors.MainColor),
+        ),
       ),
     ]);
   }
