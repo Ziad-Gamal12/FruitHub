@@ -154,9 +154,25 @@ class Assets {
   /// assets/images/penddingStatusIcon.svg
   static const String assetsImagesPenddingStatusIcon = "assets/images/penddingStatusIcon.svg";
 
+  /// Assets for assetsImagesProductExpirationIcon
+  /// assets/images/ProductExpirationIcon.svg
+  static const String assetsImagesProductExpirationIcon = "assets/images/ProductExpirationIcon.svg";
+
   /// Assets for assetsImagesProductImageTest
   /// assets/images/ProductImageTest.png
   static const String assetsImagesProductImageTest = "assets/images/ProductImageTest.png";
+
+  /// Assets for assetsImagesProductIsOrganicIcon
+  /// assets/images/ProductIsOrganicIcon.svg
+  static const String assetsImagesProductIsOrganicIcon = "assets/images/ProductIsOrganicIcon.svg";
+
+  /// Assets for assetsImagesProductStarRatingIcon
+  /// assets/images/productStarRatingIcon.svg
+  static const String assetsImagesProductStarRatingIcon = "assets/images/productStarRatingIcon.svg";
+
+  /// Assets for assetsImagesProductcaloriesUnitIcon
+  /// assets/images/ProductcaloriesUnitIcon.svg
+  static const String assetsImagesProductcaloriesUnitIcon = "assets/images/ProductcaloriesUnitIcon.svg";
 
   /// Assets for assetsImagesProfilePicture
   /// assets/images/Profile_Picture.png
@@ -181,6 +197,10 @@ class Assets {
   /// Assets for assetsImagesSplashTree
   /// assets/images/Splash_tree.svg
   static const String assetsImagesSplashTree = "assets/images/Splash_tree.svg";
+
+  /// Assets for assetsImagesStarIcon
+  /// assets/images/starIcon.svg
+  static const String assetsImagesStarIcon = "assets/images/starIcon.svg";
 
   /// Assets for assetsImagesSuccessIcon
   /// assets/images/SuccessIcon.svg

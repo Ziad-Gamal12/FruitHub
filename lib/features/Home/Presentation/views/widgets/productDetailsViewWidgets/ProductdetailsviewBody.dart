@@ -11,7 +11,7 @@ class Productdetailsviewbody extends StatelessWidget {
       children: [
         Expanded(flex: 6, child: productDetailsProductimgeSection()),
         SizedBox(height: 24),
-        Expanded(flex: 7, child: Productdetailsproductinfo()),
+        Expanded(flex: 8, child: Productdetailsproductinfo()),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/widgets/Custom_CachedNetworkImage.dart';
+import 'package:fruits/features/Home/Presentation/views/widgets/productDetailsViewWidgets/CustomProductDetailsBackButton.dart';
 import 'package:provider/provider.dart';
 
 class productDetailsProductimgeSection extends StatelessWidget {
@@ -12,32 +13,34 @@ class productDetailsProductimgeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     Productsentity product = context.read<Productsentity>();
     return Stack(
-      clipBehavior: Clip.none,
-      fit: StackFit.expand,
       children: [
         ClipPath(
           clipper: BottomCurveClipper(),
           child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 20),
             alignment: Alignment.center,
             height: double.infinity,
             color: const Color(0xFFF3F5F7),
             child: Row(
               children: [
-                const Spacer(),
-                Expanded(
+                const Spacer(
                   flex: 2,
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: CustomCachedNetWorkImage(
-                      imageUrl: product.imageUrl ?? "",
-                    ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: CustomCachedNetWorkImage(
+                    imageUrl: product.imageUrl ?? "",
                   ),
                 ),
-                const Spacer(),
+                const Spacer(
+                  flex: 2,
+                ),
               ],
             ),
           ),
-        )
+        ),
+        const Positioned(
+            top: 50, right: 20, child: CustomProductDetailsBackButton())
       ],
     );
   }

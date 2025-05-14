@@ -5,15 +5,20 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.text});
+  CustomButton(
+      {super.key,
+      required this.onPressed,
+      this.buttonColor,
+      required this.text});
   final void Function() onPressed;
   final String text;
+  Color? buttonColor;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       height: 54,
       minWidth: double.infinity,
-      color: AppColors.MainColor,
+      color: buttonColor ?? AppColors.MainColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       onPressed: onPressed,
       child: Text(

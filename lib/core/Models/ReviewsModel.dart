@@ -5,7 +5,7 @@ import 'package:fruits/core/Entities/ReviewsEntity.dart';
 class Reviewmodel {
   final String name;
   final String imageUrl;
-  final num reating;
+  final int reating;
   final String reviewDescription;
   Reviewmodel({
     required this.name,

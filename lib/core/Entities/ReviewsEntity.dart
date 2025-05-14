@@ -3,7 +3,7 @@
 class Reviewsentity {
   final String name;
   final String imageUrl;
-  final num reating;
+  final int reating;
   final String reviewDescription;
   Reviewsentity({
     required this.name,

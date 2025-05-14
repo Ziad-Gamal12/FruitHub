@@ -20,4 +20,13 @@ class ProductsCubit extends Cubit<ProductsState> {
       emit(ProductsSuccess(products: productsEntity));
     });
   }
+
+  double getproductStarRate({required Productsentity product}) {
+    int ratings = 0;
+    if (product.reviews.isEmpty) return 0.0;
+    for (var review in product.reviews) {
+      ratings += (review.reating.round());
+    }
+    return (ratings / product.reviews.length);
+  }
 }
