@@ -5,6 +5,7 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
+import 'package:fruits/features/Home/Presentation/views/ProductreviewsView.dart';
 import 'package:svg_flutter/svg.dart';
 
 class ProductDetailsRating extends StatelessWidget {
@@ -37,10 +38,18 @@ class ProductDetailsRating extends StatelessWidget {
               color: const Color(0xff616A6B), fontWeight: FontWeight.w400),
         ),
         const SizedBox(width: 8),
-        Text(
-          "المراجعه",
-          style: textStyles.textstyle13.copyWith(
-              color: AppColors.MainColor, fontWeight: FontWeight.w700),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              ProductreviewsView.routeName,
+              arguments: product,
+            );
+          },
+          child: Text(
+            "المراجعه",
+            style: textStyles.textstyle13.copyWith(
+                color: AppColors.MainColor, fontWeight: FontWeight.w700),
+          ),
         )
       ],
     );

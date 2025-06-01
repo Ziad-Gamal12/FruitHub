@@ -10,6 +10,7 @@ import 'package:fruits/features/Cart/presentation/views/CartView.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/views/AddOrderSuccessView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/CheckoutView.dart';
+import 'package:fruits/features/Home/Presentation/views/ProductreviewsView.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
@@ -53,6 +54,11 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case Productdetailsview.routeName:
       return MaterialPageRoute(
           builder: (context) => Productdetailsview(
+                product: setting.arguments as Productsentity,
+              ));
+    case ProductreviewsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => ProductreviewsView(
                 product: setting.arguments as Productsentity,
               ));
     default:

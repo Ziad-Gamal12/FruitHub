@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Models/productsModel.dart';
@@ -62,6 +64,7 @@ class ProductsrepoImpli implements Productsrepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
     } catch (e) {
+      log(e.toString());
       return left(ServerFailure(
           message: "فشل تعديل المنتجات,الرجاء المحاولة مرة اخرى"));
     }

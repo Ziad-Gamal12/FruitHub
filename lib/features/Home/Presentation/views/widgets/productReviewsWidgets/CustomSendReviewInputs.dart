@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits/core/Entities/ProductsEntity.dart';
+import 'package:fruits/core/Entities/ReviewsEntity.dart';
+import 'package:fruits/core/Helper_Funcitions/getUserData.dart';
+import 'package:fruits/core/Helper_Funcitions/showSnackBar.dart';
+import 'package:fruits/features/Home/Presentation/manager/reviews_cubit/reviews_cubit.dart';
+import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/SendReviewTextField.dart';
+import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/StarRatingSelector.dart';
+
+class CustomSendReviewInputs extends StatefulWidget {
+  const CustomSendReviewInputs({super.key, required this.addReviewController});
+
+  final TextEditingController addReviewController;
+
+  @override
+  State<CustomSendReviewInputs> createState() => _CustomSendReviewInputsState();
+}
+
+class _CustomSendReviewInputsState extends State<CustomSendReviewInputs> {
+  int rating = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<ReviewsCubit, ReviewsState>(
+      listener: (context, state) {
+        if (state is AddReviewSuccess) {
+          widget.addReviewController.clear();
+          showSnackBar(
+            message: "تم اضافة التعليق",
+            context: context,
+            color: Colors.green,
+            textColor: Colors.white,
+          );
+        } else if (state is AddReviewFailure) {
+          showSnackBar(
+            message: state.errMessage,
+            context: context,
+            color: Colors.red,
+            textColor: Colors.white,
+          );
+        }
+      },
+      builder: (context, state) {
+        return Column(
+          children: [
+            SendReviewTextField(
+              controller: widget.addReviewController,
+              isLoading: state is AddReviewLoading,
+              onSend: () {
+                addReview(context, widget.addReviewController);
+                setState(() {});
+              },
+            ),
+            const SizedBox(height: 10),
+            StarRatingSelector(
+              onSelected: (value) {
+                rating = value;
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void addReview(
+      BuildContext context, TextEditingController addReviewController) {
+    if (widget.addReviewController.text.isEmpty) {
+      showSnackBar(message: "يرجى ادخال التعليق", context: context);
+      return;
+    }
+
+    if (rating == 0) {
+      showSnackBar(message: "يرجى تقييم المنتج", context: context);
+      return;
+    }
+
+    Reviewsentity review = Reviewsentity(
+      imageUrl:
+          "https://firebasestorage.googleapis.com/v0/b/fruithub-973f6.appspot.com/o/Profile_Picture.png?alt=media&token=ee6ba1fc-d5d2-4d6b-9f5f-36e05dae9a78",
+      name: getUserData().name,
+      reating: rating,
+      reviewDescription: addReviewController.text,
+    );
+
+    context.read<Productsentity>().reviews.add(review);
+    context
+        .read<ReviewsCubit>()
+        .addReview(product: context.read<Productsentity>());
+  }
+}

@@ -35,7 +35,7 @@ class Reviewmodel {
         reviewDescription: reviewDescription);
   }
 
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       "name": name,
       "imageUrl": imageUrl,
