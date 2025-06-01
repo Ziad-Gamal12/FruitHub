@@ -31,8 +31,17 @@ class FirebaseFirestoreservice implements Datebaseservice {
       Query data = firestore.collection(path);
       if (query != null) {
         if (query['orderBy'] != null) {
-          data =
-              data.orderBy(query['orderBy'], descending: query['descending']);
+          data = data.orderBy(
+            query['orderBy'],
+            descending: query['descending'],
+          );
+          if (query['startWith'] != null) {
+            data = data.startAt([query['startWith']]).endAt(
+                [query['startWith'] + '\uf8ff']);
+          }
+        }
+        if (query['field'] != null) {
+          data = data.where(query['field'], isEqualTo: query['value']);
         }
         if (query["limit"] != null) {
           data = data.limit(query["limit"]);

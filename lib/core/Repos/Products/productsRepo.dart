@@ -12,4 +12,6 @@ abstract class Productsrepo {
       {required String productCode,
       required String field,
       required dynamic data});
+  Future<Either<Failure, List<Productsentity>>> getSeachProducts(
+      {required String keyword});
 }

@@ -69,4 +69,26 @@ class ProductsrepoImpli implements Productsrepo {
           message: "فشل تعديل المنتجات,الرجاء المحاولة مرة اخرى"));
     }
   }
+
+  @override
+  Future<Either<Failure, List<Productsentity>>> getSeachProducts(
+      {required String keyword}) async {
+    try {
+      List products = await datebaseservice
+          .getData(path: BackendEndpoints.getProducts, query: {
+        "startWith": keyword.trim().toLowerCase(),
+        "orderBy": "name",
+        "descending": false
+      });
+      List<Productsentity> productsEntity =
+          products.map((e) => Productsmodel.fromJson(e).toEntity()).toList();
+      return right(productsEntity);
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      log(e.toString());
+      return left(ServerFailure(
+          message: "فشل تحميل المنتجات,الرجاء المحاولة مرة اخرى"));
+    }
+  }
 }

@@ -8,16 +8,11 @@ import 'package:fruits/features/Home/Presentation/manager/reviews_cubit/reviews_
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/SendReviewTextField.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/StarRatingSelector.dart';
 
-class CustomSendReviewInputs extends StatefulWidget {
-  const CustomSendReviewInputs({super.key, required this.addReviewController});
+class CustomSendReviewInputs extends StatelessWidget {
+  CustomSendReviewInputs({super.key, required this.addReviewController});
 
   final TextEditingController addReviewController;
 
-  @override
-  State<CustomSendReviewInputs> createState() => _CustomSendReviewInputsState();
-}
-
-class _CustomSendReviewInputsState extends State<CustomSendReviewInputs> {
   int rating = 0;
 
   @override
@@ -25,7 +20,7 @@ class _CustomSendReviewInputsState extends State<CustomSendReviewInputs> {
     return BlocConsumer<ReviewsCubit, ReviewsState>(
       listener: (context, state) {
         if (state is AddReviewSuccess) {
-          widget.addReviewController.clear();
+          addReviewController.clear();
           showSnackBar(
             message: "تم اضافة التعليق",
             context: context,
@@ -45,11 +40,10 @@ class _CustomSendReviewInputsState extends State<CustomSendReviewInputs> {
         return Column(
           children: [
             SendReviewTextField(
-              controller: widget.addReviewController,
+              controller: addReviewController,
               isLoading: state is AddReviewLoading,
               onSend: () {
-                addReview(context, widget.addReviewController);
-                setState(() {});
+                addReview(context, addReviewController);
               },
             ),
             const SizedBox(height: 10),
@@ -66,7 +60,7 @@ class _CustomSendReviewInputsState extends State<CustomSendReviewInputs> {
 
   void addReview(
       BuildContext context, TextEditingController addReviewController) {
-    if (widget.addReviewController.text.isEmpty) {
+    if (addReviewController.text.isEmpty) {
       showSnackBar(message: "يرجى ادخال التعليق", context: context);
       return;
     }

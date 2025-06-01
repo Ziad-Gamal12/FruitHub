@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
@@ -15,7 +14,9 @@ import 'package:fruits/features/Home/Presentation/views/widgets/Custom_Home_AppB
 import 'package:fruits/features/Home/Presentation/views/widgets/offers_ListView.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();

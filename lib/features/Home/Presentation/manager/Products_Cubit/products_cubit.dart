@@ -29,4 +29,69 @@ class ProductsCubit extends Cubit<ProductsState> {
     }
     return (ratings / product.reviews.length);
   }
+
+  void getSearchProducts({required String keyword}) async {
+    emit(ProductsLoading());
+    final result = await productsrepo.getSeachProducts(
+      keyword: keyword,
+    );
+    result.fold((failure) {
+      emit(ProductsFailure(errMessage: failure.message));
+    }, (productsEntity) {
+      emit(ProductsSuccess(products: productsEntity));
+    });
+  }
+
+  List<Productsentity> sortProductsByPrice(
+      {required List<Productsentity> products, required bool isDescending}) {
+    if (products.length <= 1) {
+      return products;
+    }
+    int middleIndex = products.length ~/ 2;
+    List<Productsentity> left = sortProductsByPrice(
+        isDescending: isDescending, products: products.sublist(0, middleIndex));
+    List<Productsentity> right = sortProductsByPrice(
+        isDescending: isDescending,
+        products: products.sublist(middleIndex, products.length));
+    return merge(left: left, right: right, isDescending: isDescending);
+  }
+
+  List<Productsentity> merge(
+      {required List<Productsentity> left,
+      required List<Productsentity> right,
+      required bool isDescending}) {
+    int i = 0;
+    int j = 0;
+    List<Productsentity> sortedProducts = [];
+    while (i < left.length && j < right.length) {
+      double price1 = double.parse(left[i].price);
+      double price2 = double.parse(right[j].price);
+      if (!isDescending) {
+        if (price1 <= price2) {
+          sortedProducts.add(left[i]);
+          i += 1;
+        } else {
+          sortedProducts.add(right[j]);
+          j += 1;
+        }
+      } else {
+        if (price1 >= price2) {
+          sortedProducts.add(left[i]);
+          i += 1;
+        } else {
+          sortedProducts.add(right[j]);
+          j += 1;
+        }
+      }
+    }
+    while (i < left.length) {
+      sortedProducts.add(left[i]);
+      i += 1;
+    }
+    while (j < right.length) {
+      sortedProducts.add(right[j]);
+      j += 1;
+    }
+    return sortedProducts;
+  }
 }

@@ -8,6 +8,7 @@ import 'package:svg_flutter/svg.dart';
 class CustomSearchTextfield extends StatelessWidget {
   const CustomSearchTextfield({super.key, required this.controller});
   final TextEditingController controller;
+
   @override
   Widget build(BuildContext context) {
     var outlineInputBorder = OutlineInputBorder(
@@ -32,11 +33,6 @@ class CustomSearchTextfield extends StatelessWidget {
         controller: controller,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-            suffixIcon: SizedBox(
-                width: 20,
-                height: 20,
-                child: Center(
-                    child: SvgPicture.asset(Assets.assetsImagesFilterIcon))),
             prefixIcon: SizedBox(
               height: 20,
               width: 20,

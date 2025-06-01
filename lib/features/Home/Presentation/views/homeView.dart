@@ -8,7 +8,7 @@ import 'package:fruits/features/Cart/presentation/views/widgets/CartviewBody.dar
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_BottomNavigationBar.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/HomeViewBody.dart';
-import 'package:fruits/features/products/presentation/views/widgets/Productsview_Body.dart';
+import 'package:fruits/features/products/presentation/views/Productsview_Body.dart';
 
 class Homeview extends StatefulWidget {
   static const homeView = 'homeView';
@@ -19,24 +19,28 @@ class Homeview extends StatefulWidget {
 }
 
 class _HomeviewState extends State<Homeview> {
-  List<Widget> pages = [
-    BlocProvider(
-      create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
-      child: const HomeViewBody(),
-    ),
-    BlocProvider(
-      create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
-      child: const ProductsviewBody(),
-    ),
-    const CartviewBody(),
-    const SizedBox()
-  ];
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = [
+      BlocProvider(
+        create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
+        child: const HomeViewBody(),
+      ),
+      BlocProvider(
+        create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
+        child: ProductsviewBody(
+          scaffoldKey: scaffoldKey,
+        ),
+      ),
+      const CartviewBody(),
+      const SizedBox()
+    ];
     return Scaffold(
+      key: scaffoldKey,
       bottomNavigationBar: CustomBottomnavigationbar(
         currentIndex: (value) {
           currentIndex = value;
