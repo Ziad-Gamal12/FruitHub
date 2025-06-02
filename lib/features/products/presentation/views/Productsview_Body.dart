@@ -36,8 +36,10 @@ class _ProductsviewBodyState extends State<ProductsviewBody> {
   void _onSearchChanged() {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
     _debounce = Timer(const Duration(milliseconds: 500), () {
-      BlocProvider.of<ProductsCubit>(context)
-          .getSearchProducts(keyword: controller.text.trim());
+      if (controller.text.isNotEmpty) {
+        BlocProvider.of<ProductsCubit>(context)
+            .getSearchProducts(keyword: controller.text.trim());
+      }
     });
   }
 
@@ -53,10 +55,10 @@ class _ProductsviewBodyState extends State<ProductsviewBody> {
   Widget build(BuildContext context) {
     return BlocListener<ProductsCubit, ProductsState>(
       listener: (context, state) {
-        if (state is ProductsSuccess) {
+        if (state is GetSearchProductsSuccess) {
           _products.clear();
           _products.addAll(state.products);
-        } else if (state is ProductsFailure) {
+        } else if (state is GetSearchProductsFailure) {
           errordialog(context, state.errMessage).show();
         }
       },
@@ -75,7 +77,7 @@ class _ProductsviewBodyState extends State<ProductsviewBody> {
                 child: BlocBuilder<ProductsCubit, ProductsState>(
                   builder: (context, state) {
                     return Skeletonizer(
-                      enabled: state is ProductsLoading,
+                      enabled: state is GetSearchProductsLoading,
                       child: CustomScrollView(
                         slivers: [
                           SliverToBoxAdapter(

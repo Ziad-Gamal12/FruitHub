@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
+import 'package:fruits/core/Helper_Funcitions/showSnackBar.dart';
 import 'package:fruits/core/Utils/variables.dart';
-import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
@@ -33,14 +33,20 @@ class _CheckoutviewBodyState extends State<CheckoutviewBody> {
   ];
   @override
   Widget build(BuildContext context) {
+    Orderentity order = context.read<Orderentity>();
     return BlocListener<AddOrderCubit, AddOrderState>(
       listener: (context, state) {
         if (state is AddOrderSuccess) {
           Navigator.of(context).pushReplacementNamed(
               AddrOderSuccessView.routeName,
               arguments: context.read<Orderentity>());
+          order.cartentity.products.cast();
         } else if (state is AddOrderFailure) {
-          errordialog(context, state.errmessage).show();
+          showSnackBar(
+              message: state.errmessage,
+              context: context,
+              color: Colors.red,
+              textColor: Colors.white);
         }
       },
       child: BlocBuilder<ProccessStepsCubit, ProccessStepsState>(

@@ -18,3 +18,17 @@ final class ProductsFailure extends ProductsState {
 
   ProductsFailure({required this.errMessage});
 }
+
+final class GetSearchProductsLoading extends ProductsState {}
+
+final class GetSearchProductsSuccess extends ProductsState {
+  final List<Productsentity> products;
+
+  GetSearchProductsSuccess({required this.products});
+}
+
+final class GetSearchProductsFailure extends ProductsState {
+  final String errMessage;
+
+  GetSearchProductsFailure({required this.errMessage});
+}

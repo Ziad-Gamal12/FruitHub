@@ -36,13 +36,16 @@ class ProductDetailsTile extends StatelessWidget {
                 color: AppColors.KlightSecondaryColor,
                 fontWeight: FontWeight.w600)),
       ])),
-      trailing: IntrinsicWidth(
-        child: productdetailsCounterWidget(
-          product: cubit.cartentity.products.firstWhere(
-            (element) => element.productsentity.code == product.code,
-            orElse: () {
-              return context.read<Cartproductentity>();
-            },
+      trailing: Visibility(
+        visible: product.amout == 0 ? false : true,
+        child: IntrinsicWidth(
+          child: productdetailsCounterWidget(
+            product: cubit.cartentity.products.firstWhere(
+              (element) => element.productsentity.code == product.code,
+              orElse: () {
+                return context.read<Cartproductentity>();
+              },
+            ),
           ),
         ),
       ),

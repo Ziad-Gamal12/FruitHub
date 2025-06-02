@@ -31,14 +31,14 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 
   void getSearchProducts({required String keyword}) async {
-    emit(ProductsLoading());
+    emit(GetSearchProductsLoading());
     final result = await productsrepo.getSeachProducts(
       keyword: keyword,
     );
     result.fold((failure) {
-      emit(ProductsFailure(errMessage: failure.message));
+      emit(GetSearchProductsFailure(errMessage: failure.message));
     }, (productsEntity) {
-      emit(ProductsSuccess(products: productsEntity));
+      emit(GetSearchProductsSuccess(products: productsEntity));
     });
   }
 

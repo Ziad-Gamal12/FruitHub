@@ -26,28 +26,25 @@ class _HomeviewState extends State<Homeview> {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      BlocProvider(
-        create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
-        child: const HomeViewBody(),
-      ),
-      BlocProvider(
-        create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
-        child: ProductsviewBody(
-          scaffoldKey: scaffoldKey,
-        ),
+      const HomeViewBody(),
+      ProductsviewBody(
+        scaffoldKey: scaffoldKey,
       ),
       const CartviewBody(),
       const SizedBox()
     ];
-    return Scaffold(
-      key: scaffoldKey,
-      bottomNavigationBar: CustomBottomnavigationbar(
-        currentIndex: (value) {
-          currentIndex = value;
-          setState(() {});
-        },
+    return BlocProvider(
+      create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),
+      child: Scaffold(
+        key: scaffoldKey,
+        bottomNavigationBar: CustomBottomnavigationbar(
+          currentIndex: (value) {
+            currentIndex = value;
+            setState(() {});
+          },
+        ),
+        body: SafeArea(child: pages[currentIndex]),
       ),
-      body: SafeArea(child: pages[currentIndex]),
     );
   }
 }

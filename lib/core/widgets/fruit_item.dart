@@ -2,13 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/core/widgets/CustomAddProductToCartButton.dart';
 import 'package:fruits/core/widgets/Custom_CachedNetworkImage.dart';
-import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -99,20 +98,7 @@ class fruit_item extends StatelessWidget {
                           "غير متوفر",
                           style: textStyles.textstyle13,
                         )
-                      : GestureDetector(
-                          onTap: () {
-                            context
-                                .read<CartCubit>()
-                                .addProduct(product: product);
-                          },
-                          child: const CircleAvatar(
-                            backgroundColor: AppColors.MainColor,
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )
+                      : CustomAddProductToCartButton(productsentity: product)
                 ],
               )
             ],
