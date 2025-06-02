@@ -13,7 +13,7 @@ abstract class shared_preferences_Services {
     await sharedPreferences.setBool(key, value);
   }
 
-  static boolgetter({required String key}) {
+  static bool boolgetter({required String key}) {
     return sharedPreferences.getBool(key) ?? false;
   }
 

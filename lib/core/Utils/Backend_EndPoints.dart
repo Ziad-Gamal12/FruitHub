@@ -9,4 +9,5 @@ class BackendEndpoints {
   static const isUserExists = "users";
   static const KuserData = "userData";
   static const addOrder = "orders";
+  static const isNotifacationAllowed = "isNotifacationAllowed";
 }

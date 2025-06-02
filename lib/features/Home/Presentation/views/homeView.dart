@@ -8,6 +8,7 @@ import 'package:fruits/features/Cart/presentation/views/widgets/CartviewBody.dar
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_BottomNavigationBar.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/HomeViewBody.dart';
+import 'package:fruits/features/Profile/presentation/views/ProfileView.dart';
 import 'package:fruits/features/products/presentation/views/Productsview_Body.dart';
 
 class Homeview extends StatefulWidget {
@@ -31,7 +32,7 @@ class _HomeviewState extends State<Homeview> {
         scaffoldKey: scaffoldKey,
       ),
       const CartviewBody(),
-      const SizedBox()
+      const ProfileView()
     ];
     return BlocProvider(
       create: (context) => ProductsCubit(productsrepo: getIt<Productsrepo>()),

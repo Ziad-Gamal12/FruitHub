@@ -23,6 +23,7 @@
         "flutter_facebook_auth",
         "flutter_localizations",
         "flutter_paypal_payment",
+        "flutter_svg",
         "flutter_svg_provider",
         "font_awesome_flutter",
         "get_it",
@@ -211,6 +212,17 @@
         "flutter",
         "flutter_svg",
         "http"
+      ]
+    },
+    {
+      "name": "flutter_svg",
+      "version": "2.1.0",
+      "dependencies": [
+        "flutter",
+        "http",
+        "vector_graphics",
+        "vector_graphics_codec",
+        "vector_graphics_compiler"
       ]
     },
     {
@@ -781,17 +793,6 @@
       "dependencies": [
         "flutter",
         "google_sign_in_platform_interface"
-      ]
-    },
-    {
-      "name": "flutter_svg",
-      "version": "2.1.0",
-      "dependencies": [
-        "flutter",
-        "http",
-        "vector_graphics",
-        "vector_graphics_codec",
-        "vector_graphics_compiler"
       ]
     },
     {

@@ -64,10 +64,10 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                                 .show();
                           } else {
                             BlocProvider.of<SignUpCubit>(context).signUp(
-                                email: variables.SignupemailController.text,
-                                password:
-                                    variables.SignupPasswordController.text,
-                                name: variables.signUpUserNameController.text);
+                              email: variables.SignupemailController.text,
+                              password: variables.SignupPasswordController.text,
+                              name: variables.signUpUserNameController.text,
+                            );
                           }
                         }
                       },
