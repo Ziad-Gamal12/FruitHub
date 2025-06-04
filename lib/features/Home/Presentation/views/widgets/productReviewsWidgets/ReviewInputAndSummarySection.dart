@@ -28,7 +28,7 @@ class ReviewInputAndSummarySection extends StatelessWidget {
         Align(
             alignment: Alignment.centerRight,
             child: Text(
-              "${product.reviews.length} مراجعه",
+              "${product.reviews!.length} مراجعه",
               style: textStyles.textstyle13
                   .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
             )),

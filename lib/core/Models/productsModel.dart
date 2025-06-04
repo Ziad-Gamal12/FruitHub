@@ -55,20 +55,20 @@ class Productsmodel {
   factory Productsmodel.fromEntity({required Productsentity productsentity}) {
     return Productsmodel(
         name: productsentity.name,
-        sellingCount: productsentity.sellingCount,
-        reviews: productsentity.reviews
+        sellingCount: productsentity.sellingCount ?? 0,
+        reviews: (productsentity.reviews ?? [])
             .map((e) => Reviewmodel.fromEntity(entity: e))
             .toList(),
         price: productsentity.price,
-        caloriesUnit: productsentity.caloriesUnit,
-        expirnationsMonths: productsentity.expirnationsMonths,
-        isOrganic: productsentity.isOrganic,
-        amout: productsentity.amout,
+        caloriesUnit: productsentity.caloriesUnit ?? 0,
+        expirnationsMonths: productsentity.expirnationsMonths ?? 0,
+        isOrganic: productsentity.isOrganic ?? false,
+        amout: productsentity.amout ?? 0,
         code: productsentity.code,
-        description: productsentity.description,
+        description: productsentity.description ?? "",
         imageUrl: productsentity.imageUrl,
-        rating: productsentity.rating,
-        isFeature: productsentity.isFeature);
+        rating: productsentity.rating ?? 0,
+        isFeature: productsentity.isFeature ?? false);
   }
 
   Productsentity toEntity() {

@@ -2,6 +2,7 @@
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits/core/widgets/CustomButton.dart';
 
 AwesomeDialog errordialog(context, String? error) {
   return AwesomeDialog(
@@ -28,15 +29,25 @@ AwesomeDialog successdialog(
       btnOkColor: Colors.green);
 }
 
-AwesomeDialog warningdialog(context, String? WarningMessage) {
+AwesomeDialog warningdialog(
+  context,
+  String? WarningMessage,
+  void Function()? btnOkOnPress,
+) {
   return AwesomeDialog(
       context: context,
       dialogType: DialogType.warning,
       animType: AnimType.bottomSlide,
       title: 'تحذير',
       desc: WarningMessage,
-      btnOkOnPress: () {},
-      btnOkColor: Colors.yellow);
+      btnCancel: CustomButton(
+        onPressed: () {},
+        text: "اغلاق",
+        buttonColor: Colors.white,
+        textColor: Colors.black,
+        borderSide: const BorderSide(color: Colors.black),
+      ),
+      btnOkText: 'تأكيد');
 }
 
 AwesomeDialog infodialog({

@@ -29,11 +29,11 @@ class CustomProfileImageWidget extends StatelessWidget {
           left: 0,
           child: Container(
             alignment: Alignment.center,
-            height: 25,
-            width: 25,
+            height: 32,
+            width: 32,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: const Color(0xffF9F9F9),
               border: Border.all(color: Colors.white, width: 2),
             ),
             child: const Icon(

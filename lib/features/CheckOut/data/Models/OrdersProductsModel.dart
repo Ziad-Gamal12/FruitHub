@@ -1,3 +1,4 @@
+import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
 
 class Ordersproductsmodel {
@@ -20,6 +21,25 @@ class Ordersproductsmodel {
         quantity: entity.count,
         price: entity.calclulateTotalPrice());
   }
+  factory Ordersproductsmodel.fromJson(Map<String, dynamic> json) {
+    return Ordersproductsmodel(
+        code: json["code"],
+        name: json["name"],
+        image: json["image"],
+        quantity: json["quantity"],
+        price: json["price"]);
+  }
+  Cartproductentity toEntity() {
+    return Cartproductentity(
+        productsentity: Productsentity(
+          code: code,
+          name: name,
+          imageUrl: image,
+          price: price.toString(),
+        ),
+        count: quantity);
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "code": code,

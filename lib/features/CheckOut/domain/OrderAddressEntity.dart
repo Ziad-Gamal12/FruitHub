@@ -1,10 +1,11 @@
 class Orderaddressentity {
-  String? fullname, email, address, city, flatNumber, phoneNumber;
+  String? userId, fullname, email, address, city, flatNumber, phoneNumber;
 
   Orderaddressentity(
       {this.phoneNumber,
       this.fullname,
       this.email,
+      this.userId,
       this.address,
       this.city,
       this.flatNumber});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/features/Profile/presentation/views/MyOrdersView.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/CustomProfileActionsItem.dart';
 
 class ProfileActionsList extends StatelessWidget {
@@ -17,15 +18,15 @@ class ProfileActionsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Customprofileactionsitem(
-          image: Assets.assetsImagesUserIcon,
-          title: "تعديل الملف الشخصي",
-          trailing: Image.asset(Assets.assetsImagesArrowRight),
-        ),
-        Customprofileactionsitem(
-          image: Assets.assetsImagesOrdersIcon,
-          title: "طلباتي",
-          trailing: Image.asset(Assets.assetsImagesArrowRight),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, MyOrdersView.routeName);
+          },
+          child: Customprofileactionsitem(
+            image: Assets.assetsImagesOrdersIcon,
+            title: "طلباتي",
+            trailing: Image.asset(Assets.assetsImagesArrowRight),
+          ),
         ),
         Customprofileactionsitem(
           image: Assets.assetsImagesFavouritesIcon,

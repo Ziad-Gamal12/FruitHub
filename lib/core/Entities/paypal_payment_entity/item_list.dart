@@ -1,4 +1,4 @@
-import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
+import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
 
 import 'item.dart';
 
@@ -7,11 +7,10 @@ class ItemList {
 
   ItemList({this.items});
 
-  factory ItemList.fromEntity({required Cartentity cartentity}) {
+  factory ItemList.fromEntity({required List<Cartproductentity> cartProducts}) {
     return ItemList(
-        items: cartentity.products
-            .map((product) => Item.fromEntity(product))
-            .toList());
+        items:
+            cartProducts.map((product) => Item.fromEntity(product)).toList());
   }
 
   Map<String, dynamic> toJson() => {

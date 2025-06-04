@@ -14,23 +14,23 @@ class CustomRatingBarsColumn extends StatelessWidget {
       children: [
         Customstarratinginfoitem(
             title: "5",
-            percent: getPercent(productsreviews: product.reviews, stars: 5)),
+            percent: getPercent(productsreviews: product.reviews!, stars: 5)),
         const SizedBox(height: 8),
         Customstarratinginfoitem(
             title: "4",
-            percent: getPercent(productsreviews: product.reviews, stars: 4)),
+            percent: getPercent(productsreviews: product.reviews!, stars: 4)),
         const SizedBox(height: 8),
         Customstarratinginfoitem(
             title: "3",
-            percent: getPercent(productsreviews: product.reviews, stars: 3)),
+            percent: getPercent(productsreviews: product.reviews!, stars: 3)),
         const SizedBox(height: 8),
         Customstarratinginfoitem(
             title: "2",
-            percent: getPercent(productsreviews: product.reviews, stars: 2)),
+            percent: getPercent(productsreviews: product.reviews!, stars: 2)),
         const SizedBox(height: 8),
         Customstarratinginfoitem(
             title: "1",
-            percent: getPercent(productsreviews: product.reviews, stars: 1)),
+            percent: getPercent(productsreviews: product.reviews!, stars: 1)),
       ],
     );
   }

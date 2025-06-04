@@ -33,7 +33,7 @@ class ProductDetailsRating extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         Text(
-          "(${product.reviews.length})",
+          "(${product.reviews!.length})",
           style: textStyles.textstyle13.copyWith(
               color: const Color(0xff616A6B), fontWeight: FontWeight.w400),
         ),

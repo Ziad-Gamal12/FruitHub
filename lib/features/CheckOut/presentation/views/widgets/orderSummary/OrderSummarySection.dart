@@ -27,7 +27,7 @@ class OrderSummarySection extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  "${context.read<Orderentity>().cartentity.getTotalPrice().toString()} جنيه",
+                  "${context.read<Orderentity>().getOrderTotalPrice().toString()} جنيه",
                   style: textStyles.textstyle16.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w600),
@@ -74,7 +74,7 @@ class OrderSummarySection extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  "${(context.read<Orderentity>().cartentity.getTotalPrice() + 30).toString()} جنيه",
+                  "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} جنيه",
                   style: textStyles.textstyle19.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700),

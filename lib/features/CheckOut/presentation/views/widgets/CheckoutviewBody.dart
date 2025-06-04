@@ -40,7 +40,6 @@ class _CheckoutviewBodyState extends State<CheckoutviewBody> {
           Navigator.of(context).pushReplacementNamed(
               AddrOderSuccessView.routeName,
               arguments: context.read<Orderentity>());
-          order.cartentity.products.cast();
         } else if (state is AddOrderFailure) {
           showSnackBar(
               message: state.errmessage,

@@ -52,7 +52,8 @@ class _SplashView_bodyState extends State<SplashView_body> {
       await Future.delayed(const Duration(seconds: 3));
 
       final bool isOnboardingSeen =
-          await shared_preferences_Services.boolgetter(key: KIsonboaringseen);
+          shared_preferences_Services.boolgetter(key: KIsonboaringseen) ??
+              false;
       final bool isLoggedIn = await firebaseAuthService().isLoggedin();
       log(isLoggedIn.toString());
       log(isOnboardingSeen.toString());

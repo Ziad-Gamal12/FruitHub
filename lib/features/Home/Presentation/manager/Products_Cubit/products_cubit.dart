@@ -23,11 +23,11 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   double getproductStarRate({required Productsentity product}) {
     int ratings = 0;
-    if (product.reviews.isEmpty) return 0.0;
-    for (var review in product.reviews) {
+    if (product.reviews!.isEmpty) return 0.0;
+    for (var review in product.reviews!) {
       ratings += (review.reating.round());
     }
-    return (ratings / product.reviews.length);
+    return (ratings / product.reviews!.length);
   }
 
   void getSearchProducts({required String keyword}) async {

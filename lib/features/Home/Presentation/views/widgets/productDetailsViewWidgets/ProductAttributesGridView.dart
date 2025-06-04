@@ -26,7 +26,7 @@ class Productattributesgridview extends StatelessWidget {
           icon: Assets.assetsImagesProductExpirationIcon,
         ),
         Productattributeitem(
-          title: product.isOrganic ? "100%" : "غير",
+          title: product.isOrganic ?? false ? "100%" : "غير",
           description: "اوجانيك",
           icon: Assets.assetsImagesProductIsOrganicIcon,
         ),

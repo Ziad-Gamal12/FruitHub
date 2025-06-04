@@ -10,7 +10,7 @@ class CustomReviewsSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Reviewsentity> reviews = context.read<Productsentity>().reviews;
+    List<Reviewsentity> reviews = context.read<Productsentity>().reviews!;
     return reviews.isEmpty
         ? const SliverToBoxAdapter(
             child: CustomNoReviewsWidget(),

@@ -12,12 +12,12 @@ class Shippingoptionsentity {
           title: "الدفع أونلاين ",
           subtitle: "التسليم من المكان",
           price:
-              "${context.read<Orderentity>().cartentity.getTotalPrice().toString()} جنيه"),
+              "${context.read<Orderentity>().getOrderTotalPrice().toString()} جنيه"),
       Shippingoptionsentity(
           title: "اشتري الان وادفع لاحقا",
           subtitle: "يرجي تحديد طريقه الدفع",
           price:
-              "${(context.read<Orderentity>().cartentity.getTotalPrice() + 30).toString()} جنيه"),
+              "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} جنيه"),
     ];
   }
 }

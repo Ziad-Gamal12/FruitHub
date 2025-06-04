@@ -5,32 +5,32 @@ import 'package:fruits/core/Entities/ReviewsEntity.dart';
 class Productsentity {
   final String name;
   final String code;
-  final String description;
+  String? description;
   String? imageUrl;
-  final bool isFeature;
-  final String price;
-  final double amout;
-  final int caloriesUnit;
-  final double avgRating;
-  final int expirnationsMonths;
-  bool isOrganic = false;
-  double rating = 0.0;
-  final List<Reviewsentity> reviews;
-  final num sellingCount;
+  bool? isFeature;
+  String price;
+  double? amout;
+  int? caloriesUnit;
+  double? avgRating;
+  int? expirnationsMonths;
+  bool? isOrganic = false;
+  double? rating = 0.0;
+  List<Reviewsentity>? reviews;
+  num? sellingCount;
 
   Productsentity(
       {required this.name,
-      required this.reviews,
+      this.reviews,
       required this.price,
-      required this.sellingCount,
-      required this.caloriesUnit,
-      required this.expirnationsMonths,
-      required this.isOrganic,
-      required this.amout,
+      this.sellingCount,
+      this.caloriesUnit,
+      this.expirnationsMonths,
+      this.isOrganic,
+      this.amout,
       required this.code,
-      required this.description,
+      this.description,
       this.imageUrl,
-      required this.rating,
-      required this.avgRating,
-      required this.isFeature});
+      this.rating,
+      this.avgRating,
+      this.isFeature});
 }

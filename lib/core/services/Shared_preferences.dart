@@ -13,8 +13,8 @@ abstract class shared_preferences_Services {
     await sharedPreferences.setBool(key, value);
   }
 
-  static bool boolgetter({required String key}) {
-    return sharedPreferences.getBool(key) ?? false;
+  static bool? boolgetter({required String key}) {
+    return sharedPreferences.getBool(key);
   }
 
   static Future<void> stringSetter(

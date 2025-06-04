@@ -12,7 +12,7 @@ class ReviewsCubit extends Cubit<ReviewsState> {
 
   void addReview({required Productsentity product}) async {
     emit(AddReviewLoading());
-    List<Map<String, dynamic>> reviews = product.reviews.map((e) {
+    List<Map<String, dynamic>> reviews = product.reviews!.map((e) {
       return Reviewmodel.fromEntity(entity: e).toJson();
     }).toList();
     final result = await productsrepo.updateProduct(

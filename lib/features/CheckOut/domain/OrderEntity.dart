@@ -1,18 +1,19 @@
-import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
+import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
 import 'package:fruits/features/CheckOut/domain/OrderAddressEntity.dart';
 
 class Orderentity {
-  final Cartentity cartentity;
+  final List<Cartproductentity> orderProducts;
   final String id, status;
   final DateTime createdAt;
   bool? isPaidOnline;
-  Orderaddressentity addressEntity = Orderaddressentity();
+  Orderaddressentity? addressEntity;
 
   Orderentity({
     required this.id,
     required this.status,
     required this.createdAt,
-    required this.cartentity,
+    required this.orderProducts,
+    this.addressEntity,
     this.isPaidOnline,
   });
   double getShippingcost() {
@@ -28,7 +29,10 @@ class Orderentity {
   }
 
   getOrderTotalPrice() {
-    return ((cartentity.getTotalPrice() + geteshippingDiscount()) *
+    return ((orderProducts
+                .map((e) => e.calclulateTotalPrice())
+                .reduce((a, b) => a + b) +
+            geteshippingDiscount()) *
         ((100 - geteshippingDiscount()) / 100));
   }
 }

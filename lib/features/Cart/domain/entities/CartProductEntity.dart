@@ -9,6 +9,6 @@ class Cartproductentity {
   }
 
   double calclulateTotalWeight() {
-    return productsentity.amout * count;
+    return productsentity.amout! * count;
   }
 }

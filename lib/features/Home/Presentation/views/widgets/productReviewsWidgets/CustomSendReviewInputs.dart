@@ -78,7 +78,7 @@ class CustomSendReviewInputs extends StatelessWidget {
       reviewDescription: addReviewController.text,
     );
 
-    context.read<Productsentity>().reviews.add(review);
+    context.read<Productsentity>().reviews!.add(review);
     context
         .read<ReviewsCubit>()
         .addReview(product: context.read<Productsentity>());

@@ -226,4 +226,35 @@ class firebaseAuthService {
   Future<bool> isLoggedin() async {
     return auth.currentUser != null;
   }
+
+  Future<void> updateUserEmail({required String email}) async {
+    await auth.currentUser!.verifyBeforeUpdateEmail(email);
+  }
+
+  Future<void> updateUserName({required String name}) async {
+    await auth.currentUser!.updateDisplayName(name);
+  }
+
+  Future<bool> reauthenticateUser(String enteredPassword) async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        return false;
+      }
+
+      final cred = EmailAuthProvider.credential(
+        email: user.email!,
+        password: enteredPassword,
+      );
+
+      await user.reauthenticateWithCredential(cred);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<void> updateUserPassword({required String password}) async {
+    await auth.currentUser!.updatePassword(password);
+  }
 }

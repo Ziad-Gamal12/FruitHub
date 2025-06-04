@@ -15,12 +15,13 @@ class ProfileViewBody extends StatefulWidget {
 }
 
 class _ProfileViewBodyState extends State<ProfileViewBody> {
-  bool isNotificationAllowed = false;
+  late bool isNotificationAllowed;
   @override
   void initState() {
     isNotificationAllowed = shared_preferences_Services.boolgetter(
-      key: BackendEndpoints.isNotifacationAllowed,
-    );
+          key: BackendEndpoints.isNotifacationAllowed,
+        ) ??
+        true;
     super.initState();
   }
 

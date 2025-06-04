@@ -9,7 +9,10 @@ class Details {
   factory Details.fromEntity({required Orderentity orederentity}) {
     return Details(
         shipping: orederentity.getShippingcost().toString(),
-        subtotal: orederentity.cartentity.getTotalPrice().toString(),
+        subtotal: orederentity.orderProducts
+            .map((e) => e.productsentity.price)
+            .reduce((a, b) => a + b)
+            .toString(),
         shippingDiscount: orederentity.geteshippingDiscount());
   }
 

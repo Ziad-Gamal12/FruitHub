@@ -13,7 +13,7 @@ class PaypalPaymentEntity {
       PaypalPaymentEntity(
           amount: Amount.formEnity(orderEntity: entity),
           description: "paypal payment",
-          itemList: ItemList.fromEntity(cartentity: entity.cartentity));
+          itemList: ItemList.fromEntity(cartProducts: entity.orderProducts));
   Map<String, dynamic> toJson() => {
         'amount': amount?.toJson(),
         'description': description,

@@ -1,9 +1,9 @@
 // ignore_for_file: file_names
 
 class UserEntity {
-  final String name;
-  final String email;
-  final String uid;
+  String name;
+  String email;
+  String uid;
   String? profilePic;
 
   UserEntity(

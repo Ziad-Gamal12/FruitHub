@@ -7,6 +7,7 @@ import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/core/widgets/CustomAppBar.dart';
 import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
 import 'package:fruits/features/CheckOut/domain/CheckoutStepItem_entity.dart';
+import 'package:fruits/features/CheckOut/domain/OrderAddressEntity.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
@@ -27,10 +28,11 @@ class _CheckoutviewState extends State<Checkoutview> {
   @override
   void initState() {
     orderentity = Orderentity(
+        addressEntity: Orderaddressentity(userId: getUserData().uid),
         id: "${DateTime.now().millisecond}-${getUserData().uid}",
         createdAt: DateTime.now(),
         status: "pending",
-        cartentity: widget.cartentity,
+        orderProducts: widget.cartentity.products,
         isPaidOnline: null);
     super.initState();
   }

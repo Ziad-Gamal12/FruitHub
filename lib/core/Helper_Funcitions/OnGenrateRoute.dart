@@ -15,6 +15,7 @@ import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 import 'package:fruits/features/Onboarding/presentation/views/onboardingView.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/OrderTrakingView.dart';
+import 'package:fruits/features/Profile/presentation/views/MyOrdersView.dart';
 import 'package:fruits/features/Splash/presentation/views/Splash_View.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
@@ -59,6 +60,9 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
           builder: (context) => ProductreviewsView(
                 product: setting.arguments as Productsentity,
               ));
+    case MyOrdersView.routeName:
+      return MaterialPageRoute(builder: (context) => const MyOrdersView());
+
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());
   }

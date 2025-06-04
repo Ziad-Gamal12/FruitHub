@@ -22,7 +22,7 @@ class CustomProductDetailsButton extends StatelessWidget {
     final existingProduct = cubit.cartentity.products.firstWhereOrNull(
       (element) => element.productsentity.code == product.code,
     );
-    return product.amout > 0
+    return product.amout! > 0
         ? CustomButton(
             buttonColor: AppColors.MainColor,
             onPressed: () {
