@@ -78,6 +78,10 @@ class Assets {
   /// assets/images/completed_icon.svg
   static const String assetsImagesCompletedIcon = "assets/images/completed_icon.svg";
 
+  /// Assets for assetsImagesCustomSolidFavoriteIcon
+  /// assets/images/CustomSolidFavoriteIcon.svg
+  static const String assetsImagesCustomSolidFavoriteIcon = "assets/images/CustomSolidFavoriteIcon.svg";
+
   /// Assets for assetsImagesDeliveredStatusIcon
   /// assets/images/DeliveredStatusIcon.svg
   static const String assetsImagesDeliveredStatusIcon = "assets/images/DeliveredStatusIcon.svg";

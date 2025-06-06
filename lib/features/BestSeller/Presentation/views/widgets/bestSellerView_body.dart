@@ -25,6 +25,7 @@ class _bestSellerView_bodyState extends State<bestSellerView_body> {
   void initState() {
     BlocProvider.of<GetBestSellerProductsCubitCubit>(context)
         .getBestSellerProducts();
+
     super.initState();
   }
 

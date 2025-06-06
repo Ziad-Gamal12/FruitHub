@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/features/Profile/presentation/views/MyFavoriteProductsView.dart';
 import 'package:fruits/features/Profile/presentation/views/MyOrdersView.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/CustomProfileActionsItem.dart';
 
@@ -28,10 +29,15 @@ class ProfileActionsList extends StatelessWidget {
             trailing: Image.asset(Assets.assetsImagesArrowRight),
           ),
         ),
-        Customprofileactionsitem(
-          image: Assets.assetsImagesFavouritesIcon,
-          title: "المفضلة",
-          trailing: Image.asset(Assets.assetsImagesArrowRight),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, Myfavoriteproductsview.routeName);
+          },
+          child: Customprofileactionsitem(
+            image: Assets.assetsImagesFavouritesIcon,
+            title: "المفضلة",
+            trailing: Image.asset(Assets.assetsImagesArrowRight),
+          ),
         ),
         Customprofileactionsitem(
           image: Assets.assetsImagesNotificationsIcon,

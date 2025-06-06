@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits/core/Helper_Funcitions/OnGenrateRoute.dart';
+import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
+import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/services/BlocObserver.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/core/services/get_it_Service.dart';
@@ -32,8 +34,12 @@ class Fruit_Hub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CartCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CartCubit()),
+        BlocProvider(
+            create: (context) => FavoriteProductsCubit(getIt<Productsrepo>())),
+      ],
       child: MaterialApp(
         locale: const Locale("ar"),
         theme:

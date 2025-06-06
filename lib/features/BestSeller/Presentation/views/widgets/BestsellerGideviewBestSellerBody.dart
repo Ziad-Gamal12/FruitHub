@@ -17,7 +17,9 @@ class BestsellerGideviewBestSellerBody extends StatelessWidget {
             mainAxisSpacing: 8,
             crossAxisSpacing: 16),
         itemBuilder: (context, index) {
-          return fruit_item(product: products[index]); //fruit_item();
+          return FruitItem(
+            product: products[index],
+          ); //fruit_item();
         });
   }
 }

@@ -3,7 +3,11 @@
 class BackendEndpoints {
   static const addUserPath = "users";
   static const getuserPath = "users";
+  static const addFavouriteProduct = "users";
+  static const removeFavouriteProduct = "users";
+  static const getFavouriteProducts = "users";
   static const getProducts = "products";
+  static const favouriteProducts = "favourites";
   static const updateProdust = "products";
   static const updateUser = "users";
   static const getMyOrders = "orders";

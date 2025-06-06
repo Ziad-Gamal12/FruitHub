@@ -21,7 +21,7 @@ class BestsellerGridview extends StatelessWidget {
             mainAxisSpacing: 8,
             crossAxisSpacing: 16),
         itemBuilder: (context, index) {
-          return fruit_item(
+          return FruitItem(
             product: products[index],
           );
         });

@@ -11,11 +11,30 @@ class FirebaseFirestoreservice implements Datebaseservice {
   Future<void> addData(
       {required String key,
       required Map<String, dynamic> value,
+      String? docId2,
+      String? subCollection,
       String? docId}) {
     if (docId == null) {
       return firestore.collection(key).add(value);
     } else {
-      return firestore.collection(key).doc(docId).set(value);
+      if (subCollection != null) {
+        if (docId2 != null) {
+          return firestore
+              .collection(key)
+              .doc(docId)
+              .collection(subCollection)
+              .doc(docId2)
+              .set(value);
+        } else {
+          return firestore
+              .collection(key)
+              .doc(docId)
+              .collection(subCollection)
+              .add(value);
+        }
+      } else {
+        return firestore.collection(key).doc(docId).set(value);
+      }
     }
   }
 
@@ -23,10 +42,20 @@ class FirebaseFirestoreservice implements Datebaseservice {
   Future getData(
       {required String path,
       String? docuementId,
+      String? subCollection,
       Map<String, dynamic>? query}) async {
     if (docuementId != null) {
-      var data = await firestore.collection(path).doc(docuementId).get();
-      return data.data();
+      if (subCollection != null) {
+        var data = await firestore
+            .collection(path)
+            .doc(docuementId)
+            .collection(subCollection)
+            .get();
+        return data.docs.map((e) => e.data()).toList();
+      } else {
+        var data = await firestore.collection(path).doc(docuementId).get();
+        return data.data();
+      }
     } else {
       Query data = firestore.collection(path);
       if (query != null) {
@@ -93,5 +122,25 @@ class FirebaseFirestoreservice implements Datebaseservice {
     } catch (e) {
       throw CustomException(message: "حدث خطأ ما");
     }
+  }
+
+  @override
+  Future<void> removeData(
+      {required String key,
+      required String docId,
+      String? docId2,
+      String? subCollection}) async {
+    try {
+      if (subCollection != null) {
+        await firestore
+            .collection(key)
+            .doc(docId)
+            .collection(subCollection)
+            .doc(docId2)
+            .delete();
+      } else {
+        await firestore.collection(key).doc(docId).delete();
+      }
+    } catch (e) {}
   }
 }

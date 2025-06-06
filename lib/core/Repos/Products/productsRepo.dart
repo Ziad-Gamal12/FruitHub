@@ -14,4 +14,11 @@ abstract class Productsrepo {
       required dynamic data});
   Future<Either<Failure, List<Productsentity>>> getSeachProducts(
       {required String keyword});
+
+  Future<Either<Failure, void>> addFavouriteProduct(
+      {required Productsentity product});
+
+  Future<Either<Failure, void>> removeFavouriteProduct(
+      {required Productsentity product});
+  Future<Either<Failure, List<Productsentity>>> getFavouriteProducts();
 }

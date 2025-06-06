@@ -7,6 +7,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
+import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/core/widgets/Custom_Search_textfield.dart';
 import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
@@ -30,12 +31,17 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   final List<Productsentity> searchProducts = [];
   Timer? _debounce;
   bool isSearching = false;
-
+  List<Productsentity>? products;
   @override
   void initState() {
     controller.addListener(_onSearchChanged);
 
-    BlocProvider.of<ProductsCubit>(context).getBestSellingProducts();
+    if (products == null) {
+      BlocProvider.of<ProductsCubit>(context).getBestSellingProducts();
+    }
+    if (context.read<FavoriteProductsCubit>().favouriteProducts.isEmpty) {
+      context.read<FavoriteProductsCubit>().getFavouriteProducts();
+    }
     super.initState();
   }
 
@@ -56,7 +62,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   TextEditingController controller = TextEditingController();
 
-  List<Productsentity>? products;
   @override
   void dispose() {
     controller.dispose();
@@ -70,8 +75,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       listener: (context, state) {
         if (state is ProductsSuccess) {
           products = state.products;
-        } else if (state is ProductsFailure) {
-          errordialog(context, state.errMessage).show();
+        } else if (state is ProductsFailure ||
+            state is GetFavoriteProductsFailure) {
+          errordialog(context, "حدث خطأ").show();
         } else if (state is GetSearchProductsSuccess) {
           searchProducts.clear();
           searchProducts.addAll(state.products);

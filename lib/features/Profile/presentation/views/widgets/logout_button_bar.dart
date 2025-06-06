@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
@@ -42,9 +44,9 @@ class LogoutButtonBar extends StatelessWidget {
                         Expanded(
                           child: CustomButton(
                             onPressed: () async {
-                              await firebaseAuthService().signout();
-                              Navigator.pushNamedAndRemoveUntil(context,
-                                  SignIn_View.LoginViewRoute, (route) => false);
+                              await logout(
+                                context,
+                              );
                             },
                             text: "تأكيد",
                             buttonColor: AppColors.MainColor,
@@ -54,7 +56,9 @@ class LogoutButtonBar extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                           child: CustomButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             text: "لا ارغب",
                             buttonColor: Colors.white,
                             textColor: AppColors.MainColor,
@@ -90,5 +94,14 @@ class LogoutButtonBar extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> logout(
+    BuildContext context,
+  ) async {
+    await firebaseAuthService().signout();
+
+    Navigator.pushNamedAndRemoveUntil(
+        context, SignIn_View.LoginViewRoute, (route) => false);
   }
 }
