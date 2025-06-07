@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:fruits/generated/l10n.dart';
+
 class CheckoutstepitemEntity {
   final String title;
 
@@ -7,12 +10,12 @@ class CheckoutstepitemEntity {
     required this.title,
     required this.index,
   });
-  static List<CheckoutstepitemEntity> checkoutstepitemEntityList() {
+  static List<CheckoutstepitemEntity> checkoutstepitemEntityList(
+      {required BuildContext context}) {
     return [
-      CheckoutstepitemEntity(title: "الشحن", index: 1),
-      CheckoutstepitemEntity(title: "العنوان", index: 2),
-      CheckoutstepitemEntity(title: "المراجعه", index: 3),
-      CheckoutstepitemEntity(title: "الدفع", index: 4),
+      CheckoutstepitemEntity(title: S.of(context).shipping, index: 1),
+      CheckoutstepitemEntity(title: S.of(context).address, index: 2),
+      CheckoutstepitemEntity(title: S.of(context).review, index: 3),
     ];
   }
 }

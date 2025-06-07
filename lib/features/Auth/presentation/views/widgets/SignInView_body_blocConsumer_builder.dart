@@ -28,7 +28,8 @@ class SignInView_body_blocConsumer_builder extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: KHorizentalPadding),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AuthAppBar(
                   appBarTitle: S.of(context).loginTitle,
@@ -44,18 +45,20 @@ class SignInView_body_blocConsumer_builder extends StatelessWidget {
                 const SizedBox(
                   height: 33,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    customSeparatedWidget(),
-                    SizedBox(
+                    const customSeparatedWidget(),
+                    const SizedBox(
                       width: 17,
                     ),
-                    Text("أو"),
-                    SizedBox(
+                    Text(
+                      S.of(context).or,
+                    ),
+                    const SizedBox(
                       width: 17,
                     ),
-                    customSeparatedWidget(),
+                    const customSeparatedWidget(),
                   ],
                 ),
                 const SizedBox(

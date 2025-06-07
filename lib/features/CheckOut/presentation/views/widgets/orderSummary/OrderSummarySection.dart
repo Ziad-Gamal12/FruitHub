@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/customSectionWidget.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class OrderSummarySection extends StatelessWidget {
   const OrderSummarySection({
@@ -12,7 +13,7 @@ class OrderSummarySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Customsectionwidget(
-      title: "ملخص الطلب :",
+      title: S.of(context).orderSummaryTitle,
       chid: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 15),
         child: Column(
@@ -20,14 +21,14 @@ class OrderSummarySection extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "المجموع الفرعي :",
+                  S.of(context).subtotalLabel,
                   style: textStyles.textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w400),
                 ),
                 const Spacer(),
                 Text(
-                  "${context.read<Orderentity>().getOrderTotalPrice().toString()} جنيه",
+                  "${context.read<Orderentity>().getOrderTotalPrice().toString()} ${S.of(context).currency}",
                   style: textStyles.textstyle16.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w600),
@@ -40,14 +41,14 @@ class OrderSummarySection extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "التوصيل  :",
+                  S.of(context).deliveryLabel,
                   style: textStyles.textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w400),
                 ),
                 const Spacer(),
                 Text(
-                  "30جنية",
+                  "30 ${S.of(context).currency}",
                   style: textStyles.textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w600),
@@ -67,14 +68,14 @@ class OrderSummarySection extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "الكلي",
+                  S.of(context).totalLabel,
                   style: textStyles.textstyle16.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700),
                 ),
                 const Spacer(),
                 Text(
-                  "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} جنيه",
+                  "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} ${S.of(context).currency}",
                   style: textStyles.textstyle19.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700),

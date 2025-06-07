@@ -5,6 +5,7 @@ import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomCheckBox.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class TermsAndConditions extends StatelessWidget {
   final ValueChanged<bool> onChanged;
@@ -28,11 +29,11 @@ class TermsAndConditions extends StatelessWidget {
               child: SizedBox(
                 child: Text.rich(TextSpan(children: [
                   TextSpan(
-                      text: "من خلال إنشاء حساب ، فإنك توافق على",
+                      text: S.of(context).agreeTermsText1,
                       style: textStyles.textstyle13
                           .copyWith(color: const Color(0xff949D9E))),
                   TextSpan(
-                      text: "الشروط والأحكام الخاصة بنا ",
+                      text: S.of(context).agreeTermsText2,
                       style: textStyles.textstyle13
                           .copyWith(color: AppColors.lightmaincolor))
                 ])),

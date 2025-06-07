@@ -13,6 +13,7 @@ import 'package:fruits/features/Auth/presentation/manager/SignUp/sign_up_cubit.d
 import 'package:fruits/features/Auth/presentation/views/sections.dart/SignUp_TextFieledSection.dart';
 import 'package:fruits/features/Auth/presentation/views/widgets/AuthAppBar.dart';
 import 'package:fruits/features/Auth/presentation/views/widgets/TermsAndConditions.dart';
+import 'package:fruits/generated/l10n.dart';
 
 // ignore: must_be_immutable
 class SignUpView_body_blocConsumer_builder extends StatelessWidget {
@@ -34,7 +35,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
               child: Column(
                 children: [
                   AuthAppBar(
-                      appBarTitle: "حساب جديد",
+                      appBarTitle: S.of(context).newAccount,
                       onTapIcon: () {
                         Navigator.of(context).pop();
                       }),
@@ -59,11 +60,11 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                           bool isTermsAccepted =
                               context.read<SignUpCubit>().isTermsAccepted;
                           if (!isTermsAccepted) {
-                            errordialog(context,
-                                    "يجب عليك الموافقة على الشروط والاحكام")
+                            errordialog(context, S.of(context).pleasAcceptTerms)
                                 .show();
                           } else {
                             BlocProvider.of<SignUpCubit>(context).signUp(
+                              context: context,
                               email: variables.SignupemailController.text,
                               password: variables.SignupPasswordController.text,
                               name: variables.signUpUserNameController.text,
@@ -71,7 +72,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                           }
                         }
                       },
-                      text: "إنشاء حساب جديد"),
+                      text: S.of(context).createAccount),
                   const SizedBox(
                     height: 26,
                   ),
@@ -79,7 +80,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "تمتلك حساب بالفعل؟ ",
+                        S.of(context).alreadyHaveAccount,
                         style: textStyles.textstyle16
                             .copyWith(color: const Color(0xFF949D9E)),
                       ),
@@ -88,7 +89,7 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                           Navigator.of(context).pop();
                         },
                         child: Text(
-                          "تسجيل دخول",
+                          S.of(context).loginTitle,
                           style: textStyles.textstyle16
                               .copyWith(color: const Color(0xFF1B5E37)),
                         ),

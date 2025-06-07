@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
-import 'package:fruits/core/services/LocalNotifications.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/core/widgets/Custom_Search_textfield.dart';
 import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
@@ -17,7 +16,7 @@ import 'package:fruits/features/Home/Presentation/views/widgets/BestSeller_gridV
 import 'package:fruits/features/Home/Presentation/views/widgets/CustomSearchBar.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_BestSeller_Header.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/Custom_Home_AppBar.dart';
-import 'package:fruits/features/Home/Presentation/views/widgets/offers_ListView.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({
@@ -79,7 +78,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           products = state.products;
         } else if (state is ProductsFailure ||
             state is GetFavoriteProductsFailure) {
-          errordialog(context, "حدث خطأ").show();
+          errordialog(context, S.of(context).unKnowenErrorMessage).show();
         } else if (state is GetSearchProductsSuccess) {
           searchProducts.clear();
           searchProducts.addAll(state.products);
@@ -116,24 +115,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       ),
                       Stack(
                         children: [
-                          Column(
+                          const Column(
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 12,
                               ),
-                              AspectRatio(
-                                aspectRatio: 342 / 158,
-                                child: InkWell(
-                                    onTap: () async {
-                                      await LocalNotifications
-                                          .sendPeriodicNotification(
-                                              id: 0,
-                                              title: "test",
-                                              body: "This is a test",
-                                              payload: "test");
-                                    },
-                                    child: const offersListView()),
-                              ),
+                              CustomBestsellerHeader(),
                             ],
                           ),
                           Visibility(
@@ -144,10 +131,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      const CustomBestsellerHeader(),
                       const SizedBox(
                         height: 8,
                       ),

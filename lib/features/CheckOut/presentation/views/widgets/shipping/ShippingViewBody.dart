@@ -7,6 +7,7 @@ import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/domain/ShippingOptionsEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/shipping/Shipping_option_Item.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Shippingviewbody extends StatefulWidget {
   const Shippingviewbody({
@@ -59,10 +60,11 @@ class _ShippingviewbodyState extends State<Shippingviewbody> {
                 context.read<Orderentity>().isPaidOnline =
                     variables.currentShippingOptionIndex == 0 ? true : false;
               } else {
-                errordialog(context, "الرجاء اختيار خيار الشحن").show();
+                errordialog(context, S.of(context).plaeseSelectShippingMethod)
+                    .show();
               }
             },
-            text: "التالي"),
+            text: S.of(context).next),
       ],
     );
   }

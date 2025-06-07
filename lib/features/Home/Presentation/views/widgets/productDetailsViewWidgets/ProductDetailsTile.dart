@@ -6,6 +6,7 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productDetailsViewWidgets/productdetailsCounterWidget.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class ProductDetailsTile extends StatelessWidget {
   const ProductDetailsTile({
@@ -27,11 +28,11 @@ class ProductDetailsTile extends StatelessWidget {
       ),
       subtitle: Text.rich(TextSpan(children: [
         TextSpan(
-            text: "${product.price} جنية /",
+            text: "${product.price} ${S.of(context).pound} /",
             style: textStyles.textstyle13.copyWith(
                 color: AppColors.KsecondaryColor, fontWeight: FontWeight.w700)),
         TextSpan(
-            text: "الكيلو",
+            text: S.of(context).kilo,
             style: textStyles.textstyle13.copyWith(
                 color: AppColors.KlightSecondaryColor,
                 fontWeight: FontWeight.w600)),

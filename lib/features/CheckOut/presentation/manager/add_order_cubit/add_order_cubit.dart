@@ -1,5 +1,11 @@
-import 'package:bloc/bloc.dart';
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
+import 'package:fruits/constent.dart';
+import 'package:fruits/core/Entities/paypal_payment_entity/paypal_payment_entity.dart';
 import 'package:fruits/core/Repos/Orders/orders_Repo.dart';
 import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/errors/Failures.dart';
@@ -65,5 +71,27 @@ class AddOrderCubit extends Cubit<AddOrderState> {
         }
       },
     );
+  }
+
+  paywithPaypal({required BuildContext context}) {
+    var orderEntity = context.read<Orderentity>();
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context1) => PaypalCheckoutView(
+        sandboxMode: true,
+        clientId: payPalClientId,
+        secretKey: payPalSecretKey,
+        transactions: [PaypalPaymentEntity.fromEntity(orderEntity).toJson()],
+        note: "Contact us for any questions on your order.",
+        onSuccess: (Map params) {
+          addOrder(orderEntity: orderEntity);
+        },
+        onError: (error) {
+          Navigator.of(context).pop();
+        },
+        onCancel: () {
+          log('cancelled:');
+        },
+      ),
+    ));
   }
 }

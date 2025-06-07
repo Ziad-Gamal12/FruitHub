@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class BottomnavigationbarEntity {
   final String activeIconPath, inActiveIconPath;
@@ -10,28 +12,29 @@ class BottomnavigationbarEntity {
       {required this.activeIconPath,
       required this.inActiveIconPath,
       required this.title});
-  static List<BottomnavigationbarEntity> bottomnavigationbarEntityList() {
+  static List<BottomnavigationbarEntity> bottomnavigationbarEntityList(
+      {required BuildContext context}) {
     return [
       BottomnavigationbarEntity(
           activeIconPath: Assets.assetsImagesBottomNavigationBarHomeActiveIcon,
           inActiveIconPath: Assets.assetsImagesBottomNavigationBarHomeIcon,
-          title: "الرئيسية"),
+          title: S.of(context).Home),
       BottomnavigationbarEntity(
           activeIconPath:
               Assets.assetsImagesBottomNavigationBarCategeriesActiveIcon,
           inActiveIconPath:
               Assets.assetsImagesBottomNavigationBarCategeriesIcon,
-          title: "المنتجات"),
+          title: S.of(context).products),
       BottomnavigationbarEntity(
           activeIconPath:
               Assets.assetsImagesBottomNavigationBarMarketBinActiveIcon,
           inActiveIconPath: Assets.assetsImagesBottomNavigationBarMarketBinIcon,
-          title: "سلة التسوق"),
+          title: S.of(context).cartTitle),
       BottomnavigationbarEntity(
           activeIconPath:
               Assets.assetsImagesBottomNavigationBarProfileActiveIcon,
           inActiveIconPath: Assets.assetsImagesBottomNavigationBarProfileIcon,
-          title: "حسابي"),
+          title: S.of(context).profile),
     ];
   }
 }

@@ -4,6 +4,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class FilterActionButton extends StatelessWidget {
   const FilterActionButton({super.key, required this.index});
@@ -17,7 +18,7 @@ class FilterActionButton extends StatelessWidget {
             products: context.read<List<Productsentity>>());
         Navigator.pop(context);
       },
-      text: "تصفيه",
+      text: S.of(context).filter,
       buttonColor: AppColors.MainColor,
     );
   }

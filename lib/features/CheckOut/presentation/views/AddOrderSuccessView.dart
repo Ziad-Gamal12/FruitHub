@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits/core/widgets/CustomAppBar.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/AddOrderSuccessViewWidgets/AddrOderSuccessViewBody.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class AddrOderSuccessView extends StatelessWidget {
@@ -12,7 +13,7 @@ class AddrOderSuccessView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        appBartitle: "الدفع",
+        appBartitle: S.of(context).payment,
         isBack: false,
       ),
       body:

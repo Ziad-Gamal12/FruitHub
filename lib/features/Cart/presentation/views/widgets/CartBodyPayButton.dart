@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/CheckoutView.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class CartBodyPayButton extends StatelessWidget {
   const CartBodyPayButton({
@@ -25,7 +26,7 @@ class CartBodyPayButton extends StatelessWidget {
                         arguments: context.read<CartCubit>().cartentity);
                   },
                   text:
-                      "الدفع  ${context.read<CartCubit>().getTotalPrice().toString()}جنيه"),
+                      "${S.of(context).pay}  ${context.read<CartCubit>().getTotalPrice().toString()} ${S.of(context).pound}"),
         );
       },
     );

@@ -6,6 +6,7 @@ import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/ProductreviewsView.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class ProductDetailsRating extends StatelessWidget {
@@ -46,7 +47,7 @@ class ProductDetailsRating extends StatelessWidget {
             );
           },
           child: Text(
-            "المراجعه",
+            S.of(context).reviews,
             style: textStyles.textstyle13.copyWith(
                 color: AppColors.MainColor, fontWeight: FontWeight.w700),
           ),

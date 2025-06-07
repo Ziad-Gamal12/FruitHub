@@ -43,7 +43,7 @@ class Fruit_Hub extends StatelessWidget {
             create: (context) => FavoriteProductsCubit(getIt<Productsrepo>())),
       ],
       child: MaterialApp(
-        locale: const Locale("ar"),
+        locale: const Locale("en"),
         theme:
             ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
         localizationsDelegates: const [

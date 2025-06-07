@@ -3,6 +3,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomFilterWidget.dart';
 import 'package:fruits/features/products/presentation/views/widgets/CustomFilterBottomSheet.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Productsviewbodygridviewheader extends StatelessWidget {
   const Productsviewbodygridviewheader(
@@ -20,7 +21,7 @@ class Productsviewbodygridviewheader extends StatelessWidget {
     return Row(
       children: [
         Text(
-          "$resluteCount نتائج",
+          "$resluteCount ${S.of(context).results}",
           style: textStyles.textstyle16.copyWith(
               fontWeight: FontWeight.bold, color: const Color(0xff0C0D0D)),
         ),

@@ -3,6 +3,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productDetailsViewWidgets/productattributeItem.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class Productattributesgridview extends StatelessWidget {
@@ -22,17 +23,17 @@ class Productattributesgridview extends StatelessWidget {
       children: [
         Productattributeitem(
           title: product.expirnationsMonths.toString(),
-          description: "شهر",
+          description: S.of(context).months,
           icon: Assets.assetsImagesProductExpirationIcon,
         ),
         Productattributeitem(
-          title: product.isOrganic ?? false ? "100%" : "غير",
-          description: "اوجانيك",
+          title: product.isOrganic ?? false ? "100%" : "0%",
+          description: S.of(context).Organic,
           icon: Assets.assetsImagesProductIsOrganicIcon,
         ),
         Productattributeitem(
           title: product.caloriesUnit.toString(),
-          description: "100 جرام",
+          description: "100 ${S.of(context).gram}",
           icon: Assets.assetsImagesProductcaloriesUnitIcon,
         ),
         Productattributeitem(
@@ -40,7 +41,7 @@ class Productattributesgridview extends StatelessWidget {
               .read<ProductsCubit>()
               .getproductStarRate(product: product)
               .toString(),
-          description: "تقييم",
+          description: S.of(context).starRating,
           icon: Assets.assetsImagesProductStarRatingIcon,
         ),
       ],

@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:fruits/features/Auth/domain/Entity/UserEntity.dart';
 import 'package:fruits/features/Auth/domain/Repos/AuthRepo.dart';
 
@@ -15,10 +16,11 @@ class SignUpCubit extends Cubit<SignUpState> {
   Future<void> signUp(
       {required String email,
       required String password,
+      required BuildContext context,
       required String name}) async {
     emit(SignUpLoading());
     final result = await authRepo.createUserWithEmailAndPassword(
-        email: email, password: password, name: name);
+        context: context, email: email, password: password, name: name);
     result.fold((failure) => emit(SignUpFailure(message: failure.message)),
         (userEntity) => emit(SignUpSuccess(userEntity: userEntity)));
   }

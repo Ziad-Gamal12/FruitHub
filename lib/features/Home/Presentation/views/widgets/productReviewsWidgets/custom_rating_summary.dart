@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class CustomRatingSummary extends StatelessWidget {
@@ -30,8 +31,8 @@ class CustomRatingSummary extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          "موصي بها",
-          style: textStyles.textstyle13
+          S.of(context).Recommended,
+          style: textStyles.textstyle11
               .copyWith(fontWeight: FontWeight.w400, color: Colors.black),
         ),
       ],

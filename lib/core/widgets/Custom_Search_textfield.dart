@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class CustomSearchTextfield extends StatelessWidget {
@@ -39,7 +40,7 @@ class CustomSearchTextfield extends StatelessWidget {
               child: Center(
                   child: SvgPicture.asset(Assets.assetsImagesSearchIcon)),
             ),
-            hintText: "ابحث عن.......",
+            hintText: S.of(context).searchHint,
             hintStyle: textStyles.textstyle13.copyWith(
                 fontWeight: FontWeight.w400, color: const Color(0xff949D9E)),
             filled: true,

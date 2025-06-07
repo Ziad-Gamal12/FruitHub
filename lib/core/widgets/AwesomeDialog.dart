@@ -3,13 +3,14 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
+import 'package:fruits/generated/l10n.dart';
 
 AwesomeDialog errordialog(context, String? error) {
   return AwesomeDialog(
       context: context,
       dialogType: DialogType.error,
       animType: AnimType.bottomSlide,
-      title: 'خطأ',
+      title: S.of(context).error,
       desc: error,
       btnOkOnPress: () {},
       btnOkColor: Colors.red);
@@ -23,7 +24,7 @@ AwesomeDialog successdialog(
       context: context,
       dialogType: DialogType.success,
       animType: AnimType.bottomSlide,
-      title: 'نجاح',
+      title: S.of(context).Success,
       desc: SuccessMessage,
       btnOkOnPress: btnOkOnPress,
       btnOkColor: Colors.green);

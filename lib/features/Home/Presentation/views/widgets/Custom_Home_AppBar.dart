@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits/core/Helper_Funcitions/getUserData.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class customHomeAppBar extends StatelessWidget {
   const customHomeAppBar({super.key});
@@ -14,7 +15,7 @@ class customHomeAppBar extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       leading: Image.asset(Assets.assetsImagesProfilePicture),
       title: Text(
-        "صباح الخير !..",
+        welcomeMessage(DateTime.now(), context),
         style: textStyles.textstyle16.copyWith(
             fontWeight: FontWeight.w400, color: const Color(0xff949D9E)),
       ),
@@ -24,5 +25,13 @@ class customHomeAppBar extends StatelessWidget {
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
     );
+  }
+
+  String welcomeMessage(DateTime time, BuildContext context) {
+    if (time.hour >= 12) {
+      return S.of(context).goodNightMessage;
+    } else {
+      return S.of(context).goodMorningMessage;
+    }
   }
 }

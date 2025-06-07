@@ -7,6 +7,7 @@ import 'package:fruits/core/Helper_Funcitions/showSnackBar.dart';
 import 'package:fruits/features/Home/Presentation/manager/reviews_cubit/reviews_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/SendReviewTextField.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/StarRatingSelector.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class CustomSendReviewInputs extends StatelessWidget {
   CustomSendReviewInputs({super.key, required this.addReviewController});
@@ -22,7 +23,7 @@ class CustomSendReviewInputs extends StatelessWidget {
         if (state is AddReviewSuccess) {
           addReviewController.clear();
           showSnackBar(
-            message: "تم اضافة التعليق",
+            message: S.of(context).reviewAdded,
             context: context,
             color: Colors.green,
             textColor: Colors.white,
@@ -61,12 +62,12 @@ class CustomSendReviewInputs extends StatelessWidget {
   void addReview(
       BuildContext context, TextEditingController addReviewController) {
     if (addReviewController.text.isEmpty) {
-      showSnackBar(message: "يرجى ادخال التعليق", context: context);
+      showSnackBar(message: S.of(context).enterReview, context: context);
       return;
     }
 
     if (rating == 0) {
-      showSnackBar(message: "يرجى تقييم المنتج", context: context);
+      showSnackBar(message: S.of(context).rateProduct, context: context);
       return;
     }
 

@@ -6,6 +6,7 @@ import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/customSectionWidget.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class AddressSummarySection extends StatelessWidget {
@@ -23,7 +24,7 @@ class AddressSummarySection extends StatelessWidget {
           Row(
             children: [
               Text(
-                "عنوان التوصيل",
+                S.of(context).deliveryAddressTitle,
                 style: textStyles.textstyle13
                     .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
               ),
@@ -48,7 +49,7 @@ class AddressSummarySection extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      "تعديل",
+                      S.of(context).editLabel,
                       style: textStyles.textstyle13.copyWith(
                           color: const Color(0xff949D9E),
                           fontWeight: FontWeight.w600),

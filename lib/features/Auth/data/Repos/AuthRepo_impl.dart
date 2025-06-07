@@ -1,10 +1,10 @@
-// ignore_for_file: file_names, camel_case_types
+// ignore_for_file: file_names, camel_case_types, use_build_context_synchronously
 
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/Backend_EndPoints.dart';
 import 'package:fruits/core/errors/Exceptioons.dart';
 import 'package:fruits/core/errors/Failures.dart';
@@ -14,6 +14,7 @@ import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/features/Auth/data/AuthModel/UserModel.dart';
 import 'package:fruits/features/Auth/domain/Entity/UserEntity.dart';
 import 'package:fruits/features/Auth/domain/Repos/AuthRepo.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class AuthRepo_impl implements AuthRepo {
   final firebaseAuthService authService;
@@ -25,7 +26,8 @@ class AuthRepo_impl implements AuthRepo {
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
       {required String name,
       required String email,
-      required String password}) async {
+      required String password,
+      required BuildContext context}) async {
     User? user;
     try {
       user = await authService.createUserWithEmailAndPassword(
@@ -45,12 +47,10 @@ class AuthRepo_impl implements AuthRepo {
       return left(ServerFailure(message: e.message));
     } catch (e) {
       await deleteUser(user);
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
+
       return left(
         ServerFailure(
-          message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+          message: S.of(context).unKnowenErrorMessage,
         ),
       );
     }
@@ -58,7 +58,9 @@ class AuthRepo_impl implements AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signinWithEmailAndPassword(
-      {required String email, required String password}) async {
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
     try {
       var user = await authService.signInWithEmailAndPassword(email, password);
       var userEntity = await getUserData(uid: user.uid);
@@ -69,19 +71,17 @@ class AuthRepo_impl implements AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.message));
     } catch (e) {
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
       return left(
         ServerFailure(
-          message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+          message: S.of(context).unKnowenErrorMessage,
         ),
       );
     }
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signinWithGoogle() async {
+  Future<Either<Failure, UserEntity>> signinWithGoogle(
+      {required BuildContext context}) async {
     User? user;
     bool? isUserExist;
     try {
@@ -103,19 +103,18 @@ class AuthRepo_impl implements AuthRepo {
       } else {
         deleteUser(user);
       }
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
+
       return left(
         ServerFailure(
-          message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+          message: S.of(context).unKnowenErrorMessage,
         ),
       );
     }
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signinWithFaceBook() async {
+  Future<Either<Failure, UserEntity>> signinWithFaceBook(
+      {required BuildContext context}) async {
     User? user;
     bool? isUserExist;
     try {
@@ -137,19 +136,17 @@ class AuthRepo_impl implements AuthRepo {
       } else {
         deleteUser(user);
       }
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
       return left(
         ServerFailure(
-          message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+          message: S.of(context).unKnowenErrorMessage,
         ),
       );
     }
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signinWithApple() async {
+  Future<Either<Failure, UserEntity>> signinWithApple(
+      {required BuildContext context}) async {
     User? user;
     bool? isUserExist;
     try {
@@ -171,12 +168,10 @@ class AuthRepo_impl implements AuthRepo {
       } else {
         deleteUser(user);
       }
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
+
       return left(
         ServerFailure(
-          message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+          message: S.of(context).unKnowenErrorMessage,
         ),
       );
     }

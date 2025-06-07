@@ -3,6 +3,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/CustomRatingInfoSection.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/CustomSendReviewInputs.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class ReviewInputAndSummarySection extends StatelessWidget {
@@ -28,7 +29,7 @@ class ReviewInputAndSummarySection extends StatelessWidget {
         Align(
             alignment: Alignment.centerRight,
             child: Text(
-              "${product.reviews!.length} مراجعه",
+              "${product.reviews!.length} ${S.of(context).reviews}",
               style: textStyles.textstyle13
                   .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
             )),

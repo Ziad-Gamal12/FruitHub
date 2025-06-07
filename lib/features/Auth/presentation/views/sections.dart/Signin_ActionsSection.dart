@@ -7,6 +7,7 @@ import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Auth/presentation/manager/SignIn/sign_in_cubit.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Signin_ActionsSection extends StatelessWidget {
   const Signin_ActionsSection({super.key});
@@ -17,7 +18,7 @@ class Signin_ActionsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          "نسيت كلمة المرور؟",
+          S.of(context).forgotPassword,
           style:
               textStyles.textstyle13.copyWith(color: const Color(0xFF2D9F5D)),
         ),
@@ -29,11 +30,12 @@ class Signin_ActionsSection extends StatelessWidget {
               if (variables.Loginkey.currentState!.validate()) {
                 BlocProvider.of<SignInCubit>(context)
                     .signInWithEmailAndPassword(
+                        context: context,
                         email: variables.LoginemailController.text,
                         password: variables.LoginPasswordController.text);
               }
             },
-            text: "تسجيل دخول"),
+            text: S.of(context).loginTitle),
         const SizedBox(
           height: 33,
         ),
@@ -41,7 +43,7 @@ class Signin_ActionsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "لا تمتلك حساب؟",
+              S.of(context).dontHaveAccount,
               style: textStyles.textstyle16
                   .copyWith(color: const Color(0xFF949D9E)),
             ),
@@ -50,7 +52,7 @@ class Signin_ActionsSection extends StatelessWidget {
                 Navigator.pushNamed(context, signupview.signupView);
               },
               child: Text(
-                "قم بإنشاء حساب",
+                S.of(context).createAccount,
                 style: textStyles.textstyle16
                     .copyWith(color: const Color(0xFF1B5E37)),
               ),

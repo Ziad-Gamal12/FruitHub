@@ -7,6 +7,7 @@ import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/Address/CheckOutAddressInputs.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Adressviewbody extends StatefulWidget {
   const Adressviewbody({super.key});
@@ -54,7 +55,7 @@ class _AdressviewbodyState extends State<Adressviewbody> {
               width: 8,
             ),
             Text(
-              "حفظ العنوان",
+              S.of(context).SaveAddress,
               style: textStyles.textstyle13.copyWith(
                   color: const Color(0xff949D9E), fontWeight: FontWeight.w600),
             ),
@@ -74,7 +75,7 @@ class _AdressviewbodyState extends State<Adressviewbody> {
                 formKey.currentState!.save();
               }
             },
-            text: "التالي")
+            text: S.of(context).next),
       ],
     );
   }

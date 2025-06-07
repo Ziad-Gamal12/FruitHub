@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class CustomAddOrderSuccessOrderInfo extends StatelessWidget {
@@ -33,7 +34,7 @@ class CustomAddOrderSuccessOrderInfo extends StatelessWidget {
           height: 33,
         ),
         Text(
-          "تم بنجاح !",
+          "${S.of(context).Success}!",
           style: textStyles.textstyle16.copyWith(
               color: const Color(0xff0C0D0D), fontWeight: FontWeight.w700),
         ),
@@ -44,7 +45,7 @@ class CustomAddOrderSuccessOrderInfo extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             TextSpan(children: [
               TextSpan(
-                  text: "رقم الطلب :",
+                  text: S.of(context).orderNumber,
                   style: textStyles.textstyle13
                       .copyWith(color: const Color(0xff4E5556))),
               TextSpan(

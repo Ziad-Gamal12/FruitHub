@@ -34,7 +34,8 @@ class _CustomBottomnavigationbarState extends State<CustomBottomnavigationbar> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 27, vertical: 20),
         child: Row(
-          children: BottomnavigationbarEntity.bottomnavigationbarEntityList()
+          children: BottomnavigationbarEntity.bottomnavigationbarEntityList(
+                  context: context)
               .asMap()
               .entries
               .map((e) {

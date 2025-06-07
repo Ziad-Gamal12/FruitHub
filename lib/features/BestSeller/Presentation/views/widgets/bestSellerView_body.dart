@@ -9,7 +9,6 @@ import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
 import 'package:fruits/features/BestSeller/Presentation/manager/get_best_seller_products_cubit/get_best_seller_products_cubit.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/widgets/BestsellerGideviewBestSellerBody.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/widgets/bestSellerGrideViewHeader.dart';
-import 'package:fruits/features/BestSeller/Presentation/views/widgets/customBestSellerAppBar.dart';
 
 class bestSellerView_body extends StatefulWidget {
   const bestSellerView_body({
@@ -53,10 +52,6 @@ class _bestSellerView_bodyState extends State<bestSellerView_body> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 16,
-                      ),
-                      Custombestsellerappbar(),
                       SizedBox(
                         height: 24,
                       ),

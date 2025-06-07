@@ -6,6 +6,7 @@ import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/Home/Presentation/views/homeView.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/OrderTrakingView.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class CustomAddOrderSuccessButtons extends StatelessWidget {
   const CustomAddOrderSuccessButtons({
@@ -20,7 +21,7 @@ class CustomAddOrderSuccessButtons extends StatelessWidget {
             Navigator.pushNamed(context, Ordertrakingview.routeName,
                 arguments: context.read<Orderentity>());
           },
-          text: "تتبع الطلب"),
+          text: S.of(context).trackOrder),
       const SizedBox(
         height: 16,
       ),
@@ -30,7 +31,7 @@ class CustomAddOrderSuccessButtons extends StatelessWidget {
               context, Homeview.homeView, (route) => false);
         },
         child: Text(
-          "الرئيسية",
+          S.of(context).Home,
           style: textStyles.textstyle16.copyWith(color: AppColors.MainColor),
         ),
       ),

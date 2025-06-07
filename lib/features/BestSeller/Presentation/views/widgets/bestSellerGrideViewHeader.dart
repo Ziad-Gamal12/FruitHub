@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class bestSellerGrideViewHeader extends StatelessWidget {
   const bestSellerGrideViewHeader({super.key});
@@ -9,7 +10,7 @@ class bestSellerGrideViewHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "الأكثر مبيعًا",
+      S.of(context).bestSelling,
       style: textStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
     );
   }

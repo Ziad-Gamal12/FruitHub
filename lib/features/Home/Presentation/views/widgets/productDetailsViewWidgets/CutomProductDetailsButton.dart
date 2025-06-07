@@ -7,6 +7,7 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Cart/domain/entities/CartProductEntity.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class CustomProductDetailsButton extends StatelessWidget {
@@ -29,7 +30,7 @@ class CustomProductDetailsButton extends StatelessWidget {
               if (existingProduct != null) {
                 cubit.updateCartItem(product: newCartProduct);
                 showSnackBar(
-                    message: "تم تحديث كمية المنتج في السلة",
+                    message: S.of(context).productQuantityUpdated,
                     context: context,
                     color: Colors.green,
                     textColor: Colors.white);
@@ -39,22 +40,24 @@ class CustomProductDetailsButton extends StatelessWidget {
                       .addCartProductEntity(product: newCartProduct);
                   cubit.updateCartItem(product: newCartProduct);
                   showSnackBar(
-                      message: "تم اضافة المنتج الى السلة",
+                      message: S.of(context).productAddedToCart,
                       context: context,
                       color: Colors.green,
                       textColor: Colors.white);
                 } else {
                   showSnackBar(
-                      message: "الكمية المطلوبة يجب ان تكون اكبر من 0",
+                      message: S.of(context).quantityMustBeGreaterThanZero,
                       context: context);
                 }
               }
             },
-            text: existingProduct != null ? "تحديث  المنتج" : "أضف إلى السلة",
+            text: existingProduct != null
+                ? S.of(context).updateProduct
+                : S.of(context).addToCart,
           )
         : Center(
             child: Text(
-              "غير متوفر",
+              S.of(context).notAvailable,
               style: textStyles.textstyle19.copyWith(color: Colors.red),
             ),
           );

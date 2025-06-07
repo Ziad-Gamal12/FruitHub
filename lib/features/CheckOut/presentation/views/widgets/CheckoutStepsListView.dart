@@ -18,10 +18,12 @@ class CheckoutStepsListView extends StatelessWidget {
       aspectRatio: 344 / 24,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: CheckoutstepitemEntity.checkoutstepitemEntityList().length,
+        itemCount:
+            CheckoutstepitemEntity.checkoutstepitemEntityList(context: context)
+                .length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(left: index == 3 ? 0 : 24),
+            padding: EdgeInsets.symmetric(horizontal: index == 3 ? 0 : 24),
             child: GestureDetector(
               onTap: () {
                 if (index < currentStep) {
@@ -36,8 +38,8 @@ class CheckoutStepsListView extends StatelessWidget {
               },
               child: Checkoutstepitem(
                   isSelected: currentStep >= index ? true : false,
-                  entity: CheckoutstepitemEntity.checkoutstepitemEntityList()[
-                      index]),
+                  entity: CheckoutstepitemEntity.checkoutstepitemEntityList(
+                      context: context)[index]),
             ),
           );
         },

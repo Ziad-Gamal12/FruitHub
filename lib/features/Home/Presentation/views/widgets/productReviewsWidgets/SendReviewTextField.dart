@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class SendReviewTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -19,10 +20,10 @@ class SendReviewTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFeiled(
       controller: controller,
-      hintText: "اكتب التعليق..",
+      hintText: S.of(context).writeAComment,
       validator: (value) {
         if (value!.isEmpty) {
-          return "ادخل التعليق";
+          return S.of(context).writeAComment;
         }
         return null;
       },

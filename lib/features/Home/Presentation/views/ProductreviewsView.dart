@@ -6,6 +6,7 @@ import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/core/widgets/CustomAppBar.dart';
 import 'package:fruits/features/Home/Presentation/manager/reviews_cubit/reviews_cubit.dart';
 import 'package:fruits/features/Home/Presentation/views/widgets/productReviewsWidgets/ProductreviewsViewBody.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class ProductreviewsView extends StatelessWidget {
@@ -20,7 +21,7 @@ class ProductreviewsView extends StatelessWidget {
         value: product,
         child: Scaffold(
           appBar: CustomAppBar(
-            appBartitle: "المراجعه",
+            appBartitle: S.of(context).reviews,
             isBack: true,
           ),
           body: ProductreviewsViewBody(),

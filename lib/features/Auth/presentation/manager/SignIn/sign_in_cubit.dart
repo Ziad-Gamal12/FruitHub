@@ -1,8 +1,10 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:fruits/features/Auth/domain/Entity/UserEntity.dart';
 import 'package:fruits/features/Auth/domain/Repos/AuthRepo.dart';
+
 part 'sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {
@@ -10,10 +12,12 @@ class SignInCubit extends Cubit<SignInState> {
   final AuthRepo authRepo;
 
   signInWithEmailAndPassword(
-      {required String email, required String password}) async {
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
     emit(SignInLoading());
     final resulte = await authRepo.signinWithEmailAndPassword(
-        email: email, password: password);
+        context: context, email: email, password: password);
     resulte.fold((failur) {
       emit(SignInFailure(message: failur.message));
     }, (userEntity) {
@@ -21,9 +25,9 @@ class SignInCubit extends Cubit<SignInState> {
     });
   }
 
-  signInWithGoogle() async {
+  signInWithGoogle({required BuildContext context}) async {
     emit(SignInLoading());
-    final resulte = await authRepo.signinWithGoogle();
+    final resulte = await authRepo.signinWithGoogle(context: context);
     resulte.fold((failur) {
       emit(SignInFailure(message: failur.message));
     }, (userEntity) {
@@ -31,9 +35,9 @@ class SignInCubit extends Cubit<SignInState> {
     });
   }
 
-  signinWithFacebook() async {
+  signinWithFacebook({required BuildContext context}) async {
     emit(SignInLoading());
-    final resulte = await authRepo.signinWithFaceBook();
+    final resulte = await authRepo.signinWithFaceBook(context: context);
     resulte.fold((failur) {
       emit(SignInFailure(message: failur.message));
     }, (userEntity) {
@@ -41,9 +45,9 @@ class SignInCubit extends Cubit<SignInState> {
     });
   }
 
-  siginWithApple() async {
+  siginWithApple({required BuildContext context}) async {
     emit(SignInLoading());
-    final resulte = await authRepo.signinWithApple();
+    final resulte = await authRepo.signinWithApple(context: context);
     resulte.fold((failur) {
       emit(SignInFailure(message: failur.message));
     }, (userEntity) {

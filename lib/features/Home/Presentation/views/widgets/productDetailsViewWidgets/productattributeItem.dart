@@ -12,7 +12,7 @@ class Productattributeitem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 12, bottom: 12, right: 24),
+      padding: const EdgeInsets.only(top: 12, bottom: 12, right: 24, left: 24),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300, width: 1),
         borderRadius: BorderRadius.circular(16),

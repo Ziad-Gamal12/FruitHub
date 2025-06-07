@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
@@ -7,9 +5,9 @@ import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
-import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cubit/proccess_steps_cubit.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/AddressSummarySection.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/OrderSummarySection.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Ordersummaryviewbody extends StatefulWidget {
   const Ordersummaryviewbody({super.key});
@@ -44,19 +42,19 @@ class _OrdersummaryviewbodyState extends State<Ordersummaryviewbody> {
                 )
               : CustomButton(
                   onPressed: () {
-                    log(context.read<Orderentity>().isPaidOnline.toString());
                     if (variables.currentShippingOptionIndex == 0) {
-                      context.read<ProccessStepsCubit>().changeStep();
-                      variables.checkoutProccessPageViewController.nextPage(
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeInOut);
+                      context
+                          .read<AddOrderCubit>()
+                          .paywithPaypal(context: context);
                     } else {
                       context
                           .read<AddOrderCubit>()
                           .addOrder(orderEntity: context.read<Orderentity>());
                     }
                   },
-                  text: "تأكيد الطلب")
+                  text: variables.currentShippingOptionIndex == 0
+                      ? S.of(context).payWithPayPal
+                      : S.of(context).verfyOrder),
         ],
       );
     });

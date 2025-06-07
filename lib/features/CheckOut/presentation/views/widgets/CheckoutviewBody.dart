@@ -11,7 +11,6 @@ import 'package:fruits/features/CheckOut/presentation/manager/proccess_steps_cub
 import 'package:fruits/features/CheckOut/presentation/views/AddOrderSuccessView.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/Address/AdressViewBody.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/CheckoutStepsListView.dart';
-import 'package:fruits/features/CheckOut/presentation/views/widgets/Paying/payingViewBody.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/OrderSummaryViewBOdy.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/shipping/ShippingViewBody.dart';
 
@@ -29,7 +28,6 @@ class _CheckoutviewBodyState extends State<CheckoutviewBody> {
     const Shippingviewbody(),
     const Adressviewbody(),
     const Ordersummaryviewbody(),
-    Payingviewbody(),
   ];
   @override
   Widget build(BuildContext context) {

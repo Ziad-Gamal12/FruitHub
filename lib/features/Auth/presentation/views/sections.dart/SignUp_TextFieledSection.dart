@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class SignUp_TextFieledSection extends StatefulWidget {
   const SignUp_TextFieledSection({super.key});
@@ -21,10 +22,10 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
       children: [
         CustomTextFeiled(
           controller: variables.signUpUserNameController,
-          hintText: "الاسم كامل",
+          hintText: S.of(context).fullName,
           validator: (value) {
             if (value!.isEmpty || value == "") {
-              return "الرجاء ادخال الاسم كامل";
+              return S.of(context).pleaseEnterYourFullName;
             }
             return null;
           },
@@ -36,10 +37,10 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
         ),
         CustomTextFeiled(
           controller: variables.SignupemailController,
-          hintText: "البريد الإلكتروني",
+          hintText: S.of(context).email,
           validator: (value) {
             if (value!.isEmpty || value == "") {
-              return "الرجاء ادخال البريد الإلكتروني";
+              return S.of(context).pleaseEnterYourEmail;
             }
             return null;
           },
@@ -51,10 +52,10 @@ class _SignUp_TextFieledSectionState extends State<SignUp_TextFieledSection> {
         ),
         CustomTextFeiled(
             controller: variables.SignupPasswordController,
-            hintText: "كلمة المرور",
+            hintText: S.of(context).password,
             validator: (value) {
               if (value!.isEmpty || value == "") {
-                return "الرجاء ادخال كلمة المرور";
+                return S.of(context).pleaseEnterYourPassword;
               }
               return null;
             },

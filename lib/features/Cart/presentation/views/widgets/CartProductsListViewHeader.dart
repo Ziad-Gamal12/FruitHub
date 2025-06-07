@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Cartproductslistviewheader extends StatelessWidget {
   const Cartproductslistviewheader({super.key});
@@ -14,7 +15,7 @@ class Cartproductslistviewheader extends StatelessWidget {
       width: double.infinity,
       color: const Color(0xffEBF9F1),
       child: Text(
-        "لديك ${context.watch<CartCubit>().cartentity.products.length} منتجات في سله التسوق",
+        "${S.of(context).youHave} ${context.watch<CartCubit>().cartentity.products.length} ${S.of(context).productsInCart}",
         style: textStyles.textstyle13.copyWith(
             color: const Color(0xff1B5E37), fontWeight: FontWeight.w400),
       ),

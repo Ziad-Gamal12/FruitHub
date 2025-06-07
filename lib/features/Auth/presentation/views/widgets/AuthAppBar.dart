@@ -18,7 +18,7 @@ class AuthAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: EdgeInsets.only(left: width * 0.32, top: 20, bottom: 24),
+      padding: const EdgeInsets.only(top: 20, bottom: 24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -26,13 +26,13 @@ class AuthAppBar extends StatelessWidget {
               ? GestureDetector(
                   onTap: onTapIcon,
                   child: SvgPicture.asset(Assets.assetsImagesArrowleft))
-              : const SizedBox(
-                  width: 20,
-                ),
+              : const SizedBox(),
+          const Spacer(),
           Text(
             appBarTitle,
             style: textStyles.textstyle19,
-          )
+          ),
+          const Spacer(),
         ],
       ),
     );

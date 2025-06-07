@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/features/Auth/presentation/manager/SignIn/sign_in_cubit.dart';
 import 'package:fruits/features/Auth/presentation/views/widgets/SocialLoginButton.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class SocialLoginSection extends StatelessWidget {
@@ -17,10 +18,11 @@ class SocialLoginSection extends StatelessWidget {
     return Column(children: [
       SocialLoginButton(
           onPressed: () {
-            BlocProvider.of<SignInCubit>(context).signInWithGoogle();
+            BlocProvider.of<SignInCubit>(context)
+                .signInWithGoogle(context: context);
           },
           icon: SvgPicture.asset(Assets.assetsImagesGoogleIcon),
-          text: "تسجيل بواسطة جوجل"),
+          text: S.of(context).loginWithGoogle),
       const SizedBox(
         height: 16,
       ),
@@ -29,10 +31,11 @@ class SocialLoginSection extends StatelessWidget {
               children: [
                 SocialLoginButton(
                     onPressed: () {
-                      BlocProvider.of<SignInCubit>(context).siginWithApple();
+                      BlocProvider.of<SignInCubit>(context)
+                          .siginWithApple(context: context);
                     },
                     icon: SvgPicture.asset(Assets.assetsImagesAppleIcon),
-                    text: "تسجيل بواسطة أبل"),
+                    text: S.of(context).loginWithApple),
                 const SizedBox(
                   height: 16,
                 ),
@@ -41,10 +44,11 @@ class SocialLoginSection extends StatelessWidget {
           : const SizedBox(),
       SocialLoginButton(
           onPressed: () {
-            BlocProvider.of<SignInCubit>(context).signinWithFacebook();
+            BlocProvider.of<SignInCubit>(context)
+                .signinWithFacebook(context: context);
           },
           icon: SvgPicture.asset(Assets.assetsImagesFacebookIcon),
-          text: "تسجيل بواسطة فيسبوك")
+          text: S.of(context).loginWithFacebook),
     ]);
   }
 }

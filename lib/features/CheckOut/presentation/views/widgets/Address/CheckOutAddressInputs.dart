@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class CheckOutAddressInputs extends StatelessWidget {
   const CheckOutAddressInputs({
@@ -19,10 +20,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.fullname = value;
           },
           controller: variables.CheckoutAddressFullNameController,
-          hintText: "الاسم كامل",
+          hintText: S.of(context).fullName,
           validator: (value) {
             if (value!.isEmpty) {
-              return "الاسم كامل مطلوب";
+              return S.of(context).pleaseEnterYourFullName;
             }
             return null;
           },
@@ -37,10 +38,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.email = value;
           },
           controller: variables.CheckoutAddressEmailAddressController,
-          hintText: "البريد الالكتروني",
+          hintText: S.of(context).email,
           validator: (value) {
             if (value!.isEmpty) {
-              return "البريد الالكتروني مطلوب";
+              return S.of(context).pleaseEnterYourEmail;
             }
             return null;
           },
@@ -55,10 +56,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.address = value;
           },
           controller: variables.CheckoutAddressAddressController,
-          hintText: "العنوان",
+          hintText: S.of(context).addresses,
           validator: (value) {
             if (value!.isEmpty) {
-              return "العنوان مطلوب";
+              return S.of(context).pleaseEnterYourAddress;
             }
             return null;
           },
@@ -73,10 +74,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.city = value;
           },
           controller: variables.CheckoutAddressCityController,
-          hintText: "المدينة",
+          hintText: S.of(context).city,
           validator: (value) {
             if (value!.isEmpty) {
-              return "المدينة مطلوب";
+              return S.of(context).pleaseEnterYourCity;
             }
             return null;
           },
@@ -91,10 +92,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.flatNumber = value;
           },
           controller: variables.CheckoutAddressFlatNumberController,
-          hintText: "رقم الطابق , رقم الشقه ..",
+          hintText: S.of(context).flatNumber,
           validator: (value) {
             if (value!.isEmpty) {
-              return "رقم الطابق مطلوب";
+              return S.of(context).pleaseEnterYourFlatNumber;
             }
             return null;
           },
@@ -109,10 +110,10 @@ class CheckOutAddressInputs extends StatelessWidget {
             orederentity!.phoneNumber = value;
           },
           controller: variables.CheckoutAddressphoneNumberController,
-          hintText: "رقم الهاتف",
+          hintText: S.of(context).phone,
           validator: (value) {
             if (value!.isEmpty) {
-              return "رقم الهاتف مطلوب";
+              return S.of(context).pleaseEnterYourPhoneNumber;
             }
             return null;
           },

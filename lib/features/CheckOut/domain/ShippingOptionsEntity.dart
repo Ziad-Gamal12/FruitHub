@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Shippingoptionsentity {
   String title, subtitle, price;
@@ -9,15 +10,15 @@ class Shippingoptionsentity {
   static List<Shippingoptionsentity> optionsList(BuildContext context) {
     return [
       Shippingoptionsentity(
-          title: "الدفع أونلاين ",
-          subtitle: "التسليم من المكان",
+          title: S.of(context).onlinePaymentTitle,
+          subtitle: S.of(context).onlinePaymentSubtitle,
           price:
-              "${context.read<Orderentity>().getOrderTotalPrice().toString()} جنيه"),
+              "${context.read<Orderentity>().getOrderTotalPrice().toString()} ${S.of(context).currency}"),
       Shippingoptionsentity(
-          title: "اشتري الان وادفع لاحقا",
-          subtitle: "يرجي تحديد طريقه الدفع",
+          title: S.of(context).buyNowPayLaterTitle,
+          subtitle: S.of(context).buyNowPayLaterSubtitle,
           price:
-              "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} جنيه"),
+              "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} ${S.of(context).currency}"),
     ];
   }
 }

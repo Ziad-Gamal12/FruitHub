@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomTextFeiled.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Signin_TextFieledSection extends StatefulWidget {
   const Signin_TextFieledSection({super.key});
@@ -24,12 +25,12 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
             obscureText: false,
             validator: (value) {
               if (value!.isEmpty || value == "") {
-                return "الرجاء ادخال البريد الإلكتروني";
+                return S.of(context).pleaseEnterYourEmail;
               }
               return null;
             },
             controller: variables.LoginemailController,
-            hintText: "البريد الإلكتروني"),
+            hintText: S.of(context).email),
         const SizedBox(
           height: 16,
         ),
@@ -38,12 +39,12 @@ class _Signin_TextFieledSectionState extends State<Signin_TextFieledSection> {
             obscureText: obscureText,
             validator: (value) {
               if (value!.isEmpty || value == "") {
-                return "الرجاء ادخال كلمة المرور";
+                return S.of(context).pleaseEnterYourPassword;
               }
               return null;
             },
             controller: variables.LoginPasswordController,
-            hintText: "كلمة المرور",
+            hintText: S.of(context).password,
             suffix: Padding(
               padding: const EdgeInsets.only(left: 33),
               child: IconButton(

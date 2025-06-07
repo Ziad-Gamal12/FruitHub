@@ -52,7 +52,8 @@ class _CheckoutviewState extends State<Checkoutview> {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
-            appBartitle: CheckoutstepitemEntity.checkoutstepitemEntityList()[
+            appBartitle: CheckoutstepitemEntity.checkoutstepitemEntityList(
+                        context: context)[
                     context.watch<ProccessStepsCubit>().currentStep]
                 .title,
           ),
