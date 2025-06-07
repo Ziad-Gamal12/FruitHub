@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/Backend_EndPoints.dart';
+import 'package:fruits/core/services/LocalNotifications.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/logout_button_bar.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/profile_actions_list.dart';
@@ -46,6 +47,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                       key: BackendEndpoints.isNotifacationAllowed,
                       value: value,
                     );
+                    if (value == false) {
+                      await LocalNotifications.cancelAllNotifications();
+                    }
                     setState(() {
                       isNotificationAllowed = value;
                     });

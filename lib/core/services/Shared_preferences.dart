@@ -25,4 +25,13 @@ abstract class shared_preferences_Services {
   static String? stringgetter({required String key}) {
     return sharedPreferences.getString(key);
   }
+
+  static Future<void> intSetter(
+      {required String key, required int value}) async {
+    await sharedPreferences.setInt(key, value);
+  }
+
+  static int? intgetter({required String key}) {
+    return sharedPreferences.getInt(key);
+  }
 }

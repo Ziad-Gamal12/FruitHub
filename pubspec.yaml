@@ -43,6 +43,7 @@ dependencies:
   flutter_animate: ^4.5.2
   flutter_bloc: ^9.1.1
   flutter_facebook_auth: ^7.0.1
+  flutter_local_notifications: ^19.2.1
   flutter_localizations:
     sdk: flutter
   flutter_paypal_payment: ^1.0.8
@@ -54,6 +55,8 @@ dependencies:
   meta: ^1.12.0
   modal_progress_hud_nsn: ^0.5.1
   provider: ^6.1.2
+  random_data_generator: ^0.0.2
+  rxdart: ^0.28.0
   shared_preferences: ^2.2.3
   sign_in_with_apple: ^6.1.1
   skeletonizer: ^2.0.1

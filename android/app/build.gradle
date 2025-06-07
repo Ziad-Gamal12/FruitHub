@@ -28,9 +28,12 @@ if (flutterVersionName == null) {
 android {
     namespace = "com.example.fruits"
     compileSdk =35
-    ndkVersion "25.1.8937393"
-
+    ndkVersion "26.1.10909125"
+    defaultConfig {
+        multiDexEnabled true
+    }
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -68,5 +71,6 @@ flutter {
     source = "../.."
 }
   dependencies {
+             coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
              implementation 'com.facebook.android:facebook-login:latest.release'
  }

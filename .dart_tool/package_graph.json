@@ -21,6 +21,7 @@
         "flutter_animate",
         "flutter_bloc",
         "flutter_facebook_auth",
+        "flutter_local_notifications",
         "flutter_localizations",
         "flutter_paypal_payment",
         "flutter_svg",
@@ -31,6 +32,8 @@
         "meta",
         "modal_progress_hud_nsn",
         "provider",
+        "random_data_generator",
+        "rxdart",
         "shared_preferences",
         "sign_in_with_apple",
         "skeletonizer",
@@ -158,6 +161,18 @@
       ]
     },
     {
+      "name": "rxdart",
+      "version": "0.28.0",
+      "dependencies": []
+    },
+    {
+      "name": "random_data_generator",
+      "version": "0.0.2",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "provider",
       "version": "6.1.5",
       "dependencies": [
@@ -247,6 +262,18 @@
         "meta",
         "path",
         "vector_math"
+      ]
+    },
+    {
+      "name": "flutter_local_notifications",
+      "version": "19.2.1",
+      "dependencies": [
+        "clock",
+        "flutter",
+        "flutter_local_notifications_linux",
+        "flutter_local_notifications_platform_interface",
+        "flutter_local_notifications_windows",
+        "timezone"
       ]
     },
     {
@@ -830,6 +857,45 @@
       ]
     },
     {
+      "name": "timezone",
+      "version": "0.10.1",
+      "dependencies": [
+        "http",
+        "path"
+      ]
+    },
+    {
+      "name": "flutter_local_notifications_platform_interface",
+      "version": "9.0.0",
+      "dependencies": [
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_local_notifications_windows",
+      "version": "1.0.0",
+      "dependencies": [
+        "ffi",
+        "flutter",
+        "flutter_local_notifications_platform_interface",
+        "meta",
+        "timezone",
+        "xml"
+      ]
+    },
+    {
+      "name": "flutter_local_notifications_linux",
+      "version": "6.0.0",
+      "dependencies": [
+        "dbus",
+        "ffi",
+        "flutter",
+        "flutter_local_notifications_platform_interface",
+        "path",
+        "xdg_directories"
+      ]
+    },
+    {
       "name": "facebook_auth_desktop",
       "version": "2.1.1",
       "dependencies": [
@@ -1149,11 +1215,6 @@
       ]
     },
     {
-      "name": "rxdart",
-      "version": "0.28.0",
-      "dependencies": []
-    },
-    {
       "name": "storage_client",
       "version": "2.4.0",
       "dependencies": [
@@ -1344,6 +1405,29 @@
       ]
     },
     {
+      "name": "ffi",
+      "version": "2.1.4",
+      "dependencies": []
+    },
+    {
+      "name": "xdg_directories",
+      "version": "1.1.0",
+      "dependencies": [
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "dbus",
+      "version": "0.7.11",
+      "dependencies": [
+        "args",
+        "ffi",
+        "meta",
+        "xml"
+      ]
+    },
+    {
       "name": "flutter_secure_storage",
       "version": "9.2.4",
       "dependencies": [
@@ -1422,22 +1506,9 @@
       ]
     },
     {
-      "name": "ffi",
-      "version": "2.1.4",
-      "dependencies": []
-    },
-    {
       "name": "platform",
       "version": "3.1.6",
       "dependencies": []
-    },
-    {
-      "name": "xdg_directories",
-      "version": "1.1.0",
-      "dependencies": [
-        "meta",
-        "path"
-      ]
     },
     {
       "name": "retry",

@@ -10,6 +10,7 @@ import 'package:fruits/features/Auth/presentation/views/sections.dart/Signin_Act
 import 'package:fruits/features/Auth/presentation/views/sections.dart/Signin_TextFieledSection.dart';
 import 'package:fruits/features/Auth/presentation/views/sections.dart/SocialLoginSection.dart';
 import 'package:fruits/features/Auth/presentation/views/widgets/AuthAppBar.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class SignInView_body_blocConsumer_builder extends StatelessWidget {
   const SignInView_body_blocConsumer_builder({
@@ -30,7 +31,7 @@ class SignInView_body_blocConsumer_builder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 AuthAppBar(
-                  appBarTitle: "تسجيل دخول",
+                  appBarTitle: S.of(context).loginTitle,
                   onTapIcon: () {
                     Navigator.of(context).pop();
                   },

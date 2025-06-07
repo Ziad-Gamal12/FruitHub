@@ -7,6 +7,7 @@ import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Onboarding/presentation/views/widgets/onboaring_PageView.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class onboardingView_body extends StatefulWidget {
   const onboardingView_body({super.key});
@@ -66,7 +67,7 @@ class _onboardingView_bodyState extends State<onboardingView_body> {
                         .pushReplacementNamed(SignIn_View.LoginViewRoute);
                   }
                 },
-                text: "ابدأ الان"),
+                text: S.of(context).next),
           ),
         )
       ],

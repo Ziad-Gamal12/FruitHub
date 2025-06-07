@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
+import 'package:fruits/core/services/LocalNotifications.dart';
 import 'package:fruits/core/widgets/AwesomeDialog.dart';
 import 'package:fruits/core/widgets/Custom_Search_textfield.dart';
 import 'package:fruits/core/widgets/custom_skeletonizerWidget.dart';
@@ -42,6 +43,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     if (context.read<FavoriteProductsCubit>().favouriteProducts.isEmpty) {
       context.read<FavoriteProductsCubit>().getFavouriteProducts();
     }
+
     super.initState();
   }
 
@@ -114,14 +116,23 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       ),
                       Stack(
                         children: [
-                          const Column(
+                          Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
                               AspectRatio(
                                 aspectRatio: 342 / 158,
-                                child: offersListView(),
+                                child: InkWell(
+                                    onTap: () async {
+                                      await LocalNotifications
+                                          .sendPeriodicNotification(
+                                              id: 0,
+                                              title: "test",
+                                              body: "This is a test",
+                                              payload: "test");
+                                    },
+                                    child: const offersListView()),
                               ),
                             ],
                           ),

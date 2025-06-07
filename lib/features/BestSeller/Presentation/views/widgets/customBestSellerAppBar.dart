@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomArrowBackWIdget.dart';
-import 'package:fruits/core/widgets/CustomNotification_Icon.dart';
 
 class Custombestsellerappbar extends StatelessWidget {
   const Custombestsellerappbar({super.key});
@@ -18,7 +17,6 @@ class Custombestsellerappbar extends StatelessWidget {
           "الأكثر مبيعًا",
           style: textStyles.textstyle19,
         ),
-        CustomNotification_Icon()
       ],
     );
   }

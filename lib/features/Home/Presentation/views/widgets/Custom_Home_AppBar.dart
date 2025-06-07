@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fruits/core/Helper_Funcitions/getUserData.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
-import 'package:fruits/core/widgets/CustomNotification_Icon.dart';
 
 class customHomeAppBar extends StatelessWidget {
   const customHomeAppBar({super.key});
@@ -24,7 +23,6 @@ class customHomeAppBar extends StatelessWidget {
         style: textStyles.textstyle16
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
-      trailing: const CustomNotification_Icon(),
     );
   }
 }

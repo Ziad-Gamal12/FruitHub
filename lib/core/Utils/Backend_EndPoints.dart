@@ -15,4 +15,6 @@ class BackendEndpoints {
   static const KuserData = "userData";
   static const addOrder = "orders";
   static const isNotifacationAllowed = "isNotifacationAllowed";
+  static const notificationContentStoredCount =
+      "notificationContentStoredCount";
 }

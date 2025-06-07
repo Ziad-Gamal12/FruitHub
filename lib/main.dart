@@ -9,6 +9,7 @@ import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/services/BlocObserver.dart';
+import 'package:fruits/core/services/LocalNotifications.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
 import 'package:fruits/core/services/get_it_Service.dart';
 import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.dart';
@@ -21,6 +22,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await LocalNotifications.init();
   Bloc.observer = Custom_Blocobserver();
   setup_Getit();
   await shared_preferences_Services.init();

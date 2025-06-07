@@ -25,7 +25,7 @@ class Customorderinfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Wrap(
                   children: [
                     Text(
                       "طلب رقم:",
@@ -37,7 +37,9 @@ class Customorderinfo extends StatelessWidget {
                     Text(
                       "${order.id}#",
                       style: textStyles.textstyle11.copyWith(
-                          fontWeight: FontWeight.w700, color: Colors.black),
+                          overflow: TextOverflow.ellipsis,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black),
                     ),
                   ],
                 ),

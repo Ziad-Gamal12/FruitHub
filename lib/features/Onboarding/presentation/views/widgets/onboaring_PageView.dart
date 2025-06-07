@@ -7,6 +7,7 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Onboarding/presentation/views/widgets/onboarding_pageview_item.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class onboaring_PageView extends StatelessWidget {
   const onboaring_PageView({super.key, required this.pageController});
@@ -23,8 +24,8 @@ class onboaring_PageView extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "مرحبًا بك في",
+                Text(
+                  S.of(context).onboardingWelcome,
                   style: textStyles.textstyle23,
                 ),
                 Text(
@@ -39,9 +40,8 @@ class onboaring_PageView extends StatelessWidget {
                 )
               ],
             ),
-            subtitle:
-                "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية."),
-        const onboarding_pageview_item(
+            subtitle: S.of(context).onboardingSubtitle1),
+        onboarding_pageview_item(
             currentpage: 1,
             BackGroundImage: Assets.assetsImagesPageViewItem2BackgroundImage,
             Logo: Assets.assetsImagesPageViewItem2Image,
@@ -49,13 +49,12 @@ class onboaring_PageView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "ابحث وتسوق",
+                  S.of(context).onboardingTitle2,
                   style: textStyles.textstyle23,
                 ),
               ],
             ),
-            subtitle:
-                "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية")
+            subtitle: S.of(context).onboardingSubtitle2)
       ],
     );
   }
