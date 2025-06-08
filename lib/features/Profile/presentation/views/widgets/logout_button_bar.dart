@@ -5,14 +5,16 @@ import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/services/FirebaseAuth_Service.dart';
-import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
+import 'package:fruits/features/Profile/presentation/views/widgets/LogoutDialog.dart';
+import 'package:svg_flutter/svg.dart';
 
 class LogoutButtonBar extends StatelessWidget {
   const LogoutButtonBar({super.key});
-
   @override
   Widget build(BuildContext context) {
+    String languageCode = Localizations.localeOf(context).languageCode;
+
     return Positioned(
       bottom: 33,
       left: 0,
@@ -20,57 +22,9 @@ class LogoutButtonBar extends StatelessWidget {
       child: InkWell(
         onTap: () {
           showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  backgroundColor: Colors.white,
-                  content: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 48, bottom: 30, left: 60, right: 60),
-                    child: Text(
-                      "هل انت متاكد من تسجيل الخروج؟",
-                      style: textStyles.textstyle13.copyWith(
-                        color: AppColors.MainColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  actions: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: CustomButton(
-                            onPressed: () async {
-                              await logout(
-                                context,
-                              );
-                            },
-                            text: "تأكيد",
-                            buttonColor: AppColors.MainColor,
-                            textColor: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: CustomButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            text: "لا ارغب",
-                            buttonColor: Colors.white,
-                            textColor: AppColors.MainColor,
-                            borderSide:
-                                const BorderSide(color: AppColors.MainColor),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                );
-              });
+            context: context,
+            builder: (context) => const LogoutDialog(),
+          );
         },
         child: Container(
           width: double.infinity,
@@ -87,7 +41,14 @@ class LogoutButtonBar extends StatelessWidget {
                 ),
               ),
               const Spacer(flex: 3),
-              Image.asset(Assets.assetsImagesArrowRight),
+              Transform.rotate(
+                angle: languageCode == 'en' ? 0 : 3.14,
+                child: SvgPicture.asset(
+                  Assets.assetsImagesArrowleft,
+                  height: 20,
+                  width: 20,
+                ),
+              ),
               const Spacer(flex: 2),
             ],
           ),

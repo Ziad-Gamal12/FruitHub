@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "SaveAddress": MessageLookupByLibrary.simpleMessage("Save Address"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
         "accepted": MessageLookupByLibrary.simpleMessage("Order Accepted"),
         "acceptedDescription": MessageLookupByLibrary.simpleMessage(
             "Your order has been accepted and is being prepared for shipment."),
@@ -128,9 +129,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "month9": MessageLookupByLibrary.simpleMessage("September"),
         "months": MessageLookupByLibrary.simpleMessage("Months"),
         "moreTitle": MessageLookupByLibrary.simpleMessage("More"),
+        "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "newAccount": MessageLookupByLibrary.simpleMessage("New Account"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and top quality."),
         "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(
@@ -196,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "productsInCart":
             MessageLookupByLibrary.simpleMessage("products in cart"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "publicSettingsTitle": MessageLookupByLibrary.simpleMessage("Public"),
         "quantityMustBeGreaterThanZero": MessageLookupByLibrary.simpleMessage(
             "Quantity must be greater than 0"),
         "rateProduct":

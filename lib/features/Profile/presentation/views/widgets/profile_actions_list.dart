@@ -4,6 +4,8 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/Profile/presentation/views/MyFavoriteProductsView.dart';
 import 'package:fruits/features/Profile/presentation/views/MyOrdersView.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/CustomProfileActionsItem.dart';
+import 'package:fruits/generated/l10n.dart';
+import 'package:svg_flutter/svg.dart';
 
 class ProfileActionsList extends StatelessWidget {
   final bool isNotificationAllowed;
@@ -17,6 +19,7 @@ class ProfileActionsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String languageCode = Localizations.localeOf(context).languageCode;
     return Column(
       children: [
         InkWell(
@@ -25,8 +28,15 @@ class ProfileActionsList extends StatelessWidget {
           },
           child: Customprofileactionsitem(
             image: Assets.assetsImagesOrdersIcon,
-            title: "طلباتي",
-            trailing: Image.asset(Assets.assetsImagesArrowRight),
+            title: S.of(context).myOrders,
+            trailing: Transform.rotate(
+              angle: languageCode == 'en' ? 0 : 3.14,
+              child: SvgPicture.asset(
+                Assets.assetsImagesArrowleft,
+                height: 20,
+                width: 20,
+              ),
+            ),
           ),
         ),
         InkWell(
@@ -35,13 +45,20 @@ class ProfileActionsList extends StatelessWidget {
           },
           child: Customprofileactionsitem(
             image: Assets.assetsImagesFavouritesIcon,
-            title: "المفضلة",
-            trailing: Image.asset(Assets.assetsImagesArrowRight),
+            title: S.of(context).favorites,
+            trailing: Transform.rotate(
+              angle: languageCode == 'en' ? 0 : 3.14,
+              child: SvgPicture.asset(
+                Assets.assetsImagesArrowleft,
+                height: 20,
+                width: 20,
+              ),
+            ),
           ),
         ),
         Customprofileactionsitem(
           image: Assets.assetsImagesNotificationsIcon,
-          title: "الاشعارات",
+          title: S.of(context).notifications,
           trailing: Switch(
             inactiveThumbColor: Colors.white,
             inactiveTrackColor: Colors.grey.shade400,
@@ -53,7 +70,7 @@ class ProfileActionsList extends StatelessWidget {
         ),
         Customprofileactionsitem(
           image: Assets.assetsImagesLanguageIcon,
-          title: "اللغة",
+          title: S.of(context).language,
           trailing: Row(
             children: [
               Text(
@@ -61,14 +78,28 @@ class ProfileActionsList extends StatelessWidget {
                 style: textStyles.textstyle13.copyWith(color: Colors.black),
               ),
               const SizedBox(width: 5),
-              Image.asset(Assets.assetsImagesArrowRight),
+              Transform.rotate(
+                angle: languageCode == 'en' ? 0 : 3.14,
+                child: SvgPicture.asset(
+                  Assets.assetsImagesArrowleft,
+                  height: 20,
+                  width: 20,
+                ),
+              ),
             ],
           ),
         ),
         Customprofileactionsitem(
           image: Assets.assetsImagesAboutUsIcon,
-          title: "من نحن",
-          trailing: Image.asset(Assets.assetsImagesArrowRight),
+          title: S.of(context).aboutUs,
+          trailing: Transform.rotate(
+            angle: languageCode == 'en' ? 0 : 3.14,
+            child: SvgPicture.asset(
+              Assets.assetsImagesArrowleft,
+              height: 20,
+              width: 20,
+            ),
+          ),
         ),
       ],
     );

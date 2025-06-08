@@ -149,6 +149,9 @@
   "month9": "September",
   "month10": "October",
   "month11": "November",
-  "month12": "December"
-
+  "month12": "December",
+  "publicSettingsTitle":"Public",
+  "myOrders": "My Orders",
+  "notifications": "Notifications",
+  "aboutUs": "About Us"
 }

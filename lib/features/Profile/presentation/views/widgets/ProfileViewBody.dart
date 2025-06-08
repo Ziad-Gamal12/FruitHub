@@ -7,6 +7,7 @@ import 'package:fruits/features/Profile/presentation/views/widgets/logout_button
 import 'package:fruits/features/Profile/presentation/views/widgets/profile_actions_list.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/profile_section_title.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/profile_user_info_section.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class ProfileViewBody extends StatefulWidget {
   const ProfileViewBody({super.key});
@@ -37,8 +38,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
               const SliverToBoxAdapter(child: SizedBox(height: 16)),
               const SliverToBoxAdapter(child: ProfileUserInfoSection()),
               const SliverToBoxAdapter(child: SizedBox(height: 32)),
-              const SliverToBoxAdapter(
-                  child: ProfileSectionTitle(title: "عام")),
+              SliverToBoxAdapter(
+                  child: ProfileSectionTitle(
+                      title: S.of(context).publicSettingsTitle)),
               SliverToBoxAdapter(
                 child: ProfileActionsList(
                   isNotificationAllowed: isNotificationAllowed,
