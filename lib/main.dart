@@ -62,7 +62,7 @@ class _Fruit_HubState extends State<Fruit_Hub> {
             create: (context) => FavoriteProductsCubit(getIt<Productsrepo>())),
       ],
       child: MaterialApp(
-        locale: _locale,
+        locale: _locale ?? const Locale('ar'),
         theme:
             ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
         localizationsDelegates: const [

@@ -1609,6 +1609,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Warning`
+  String get waring {
+    return Intl.message(
+      'Warning',
+      name: 'waring',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Info`
+  String get infoTitle {
+    return Intl.message(
+      'Info',
+      name: 'infoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify`
+  String get verfied {
+    return Intl.message(
+      'Verify',
+      name: 'verfied',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
+        "close": MessageLookupByLibrary.simpleMessage("Close"),
         "continueButton":
             MessageLookupByLibrary.simpleMessage("Let’s Continue"),
         "continueShopping":
@@ -105,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "We deliver the best and freshest fruit salad in town. Order for a combo today!"),
         "homeTitle": MessageLookupByLibrary.simpleMessage(
             "Get The Freshest Fruit Salad Combo"),
+        "infoTitle": MessageLookupByLibrary.simpleMessage("Info"),
         "kilo": MessageLookupByLibrary.simpleMessage("kilo"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
@@ -232,12 +234,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "An unknown error has occurred, please try again later."),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "updateProduct": MessageLookupByLibrary.simpleMessage("Update Product"),
+        "verfied": MessageLookupByLibrary.simpleMessage("Verify"),
         "verfyOrder": MessageLookupByLibrary.simpleMessage("Verify Order"),
         "verifyButton": MessageLookupByLibrary.simpleMessage("Verify"),
         "verifySubtitle": MessageLookupByLibrary.simpleMessage(
             "Enter the OTP sent to your email address"),
         "verifyTitle":
             MessageLookupByLibrary.simpleMessage("Verify your identity"),
+        "waring": MessageLookupByLibrary.simpleMessage("Warning"),
         "writeAComment":
             MessageLookupByLibrary.simpleMessage("Write a Comment..."),
         "youHave": MessageLookupByLibrary.simpleMessage("You have")

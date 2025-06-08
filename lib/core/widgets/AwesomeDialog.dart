@@ -39,16 +39,16 @@ AwesomeDialog warningdialog(
       context: context,
       dialogType: DialogType.warning,
       animType: AnimType.bottomSlide,
-      title: 'تحذير',
+      title: S.of(context).waring,
       desc: WarningMessage,
       btnCancel: CustomButton(
         onPressed: () {},
-        text: "اغلاق",
+        text: S.of(context).close,
         buttonColor: Colors.white,
         textColor: Colors.black,
         borderSide: const BorderSide(color: Colors.black),
       ),
-      btnOkText: 'تأكيد');
+      btnOkText: S.of(context).verfied);
 }
 
 AwesomeDialog infodialog({
@@ -63,7 +63,7 @@ AwesomeDialog infodialog({
       context: context,
       dialogType: DialogType.info,
       animType: AnimType.bottomSlide,
-      title: 'معلومات',
+      title: S.of(context).infoTitle,
       desc: InfoMessage,
       btnOkOnPress: btnOkOnPress,
       btnOkText: btnOkText,

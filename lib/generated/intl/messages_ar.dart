@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartTitle": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
         "checkout": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+        "close": MessageLookupByLibrary.simpleMessage("اغلاق"),
         "continueButton": MessageLookupByLibrary.simpleMessage("لنستمر"),
         "continueShopping":
             MessageLookupByLibrary.simpleMessage("متابعة التسوق"),
@@ -104,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "نقدم أفضل وأطزج سلطة فواكه في المدينة. اطلب كومبو الآن!"),
         "homeTitle": MessageLookupByLibrary.simpleMessage(
             "احصل على أشهى سلطة فواكه طازجة"),
+        "infoTitle": MessageLookupByLibrary.simpleMessage("معلومات"),
         "kilo": MessageLookupByLibrary.simpleMessage("كيلو"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -232,10 +234,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "حدث خطأ ما. الرجاء المحاولة مرة اخرى."),
         "update": MessageLookupByLibrary.simpleMessage("تحديث"),
         "updateProduct": MessageLookupByLibrary.simpleMessage("تحديث المنتج"),
+        "verfied": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "verifyButton": MessageLookupByLibrary.simpleMessage("تحقق"),
         "verifySubtitle": MessageLookupByLibrary.simpleMessage(
             "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني"),
         "verifyTitle": MessageLookupByLibrary.simpleMessage("تحقق من هويتك"),
+        "waring": MessageLookupByLibrary.simpleMessage("تحذير"),
         "writeAComment":
             MessageLookupByLibrary.simpleMessage("أكتب تعليقا ..."),
         "youHave": MessageLookupByLibrary.simpleMessage("لديك")

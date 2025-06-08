@@ -141,6 +141,8 @@ class FirebaseFirestoreservice implements Datebaseservice {
       } else {
         await firestore.collection(key).doc(docId).delete();
       }
-    } catch (e) {}
+    } catch (e) {
+      throw CustomException(message: "حدث خطأ ما");
+    }
   }
 }
