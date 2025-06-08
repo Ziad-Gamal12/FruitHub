@@ -13,8 +13,9 @@ class Customproductsappbar extends StatelessWidget {
         const Spacer(),
         Text(
           S.of(context).products,
-          style:
-              textStyles.textstyle19.copyWith(color: const Color(0xff0C0D0D)),
+          style: textStyles(context: context)
+              .textstyle19
+              .copyWith(color: const Color(0xff0C0D0D)),
         ),
         const Spacer(),
       ],

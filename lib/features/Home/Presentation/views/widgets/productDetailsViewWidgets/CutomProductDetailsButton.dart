@@ -58,7 +58,9 @@ class CustomProductDetailsButton extends StatelessWidget {
         : Center(
             child: Text(
               S.of(context).notAvailable,
-              style: textStyles.textstyle19.copyWith(color: Colors.red),
+              style: textStyles(context: context)
+                  .textstyle19
+                  .copyWith(color: Colors.red),
             ),
           );
   }

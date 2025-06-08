@@ -14,12 +14,14 @@ class CustomProfileUserNameAndEmail extends StatelessWidget {
         contentPadding: EdgeInsets.zero,
         title: Text(
           getUserData().name,
-          style: textStyles.textstyle16
+          style: textStyles(context: context)
+              .textstyle16
               .copyWith(fontWeight: FontWeight.w700, color: Colors.black),
         ),
         subtitle: Text(
           getUserData().email,
-          style: textStyles.textstyle13
+          style: textStyles(context: context)
+              .textstyle13
               .copyWith(fontWeight: FontWeight.w400, color: Colors.grey),
         ),
       ),

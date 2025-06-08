@@ -30,10 +30,10 @@ class FilterOptionRow extends StatelessWidget {
         const SizedBox(width: 16),
         Text(
           label,
-          style: textStyles.textstyle13.copyWith(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: textStyles(context: context).textstyle13.copyWith(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
         ),
       ],
     );

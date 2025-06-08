@@ -30,12 +30,14 @@ class Customorderstatusitem extends StatelessWidget {
           children: [
             Text(
               status.status,
-              style: textStyles.textstyle13
+              style: textStyles(context: context)
+                  .textstyle13
                   .copyWith(fontWeight: FontWeight.w700, color: Colors.black),
             ),
             Text(
               status.description,
-              style: textStyles.textstyle11
+              style: textStyles(context: context)
+                  .textstyle11
                   .copyWith(color: const Color(0xff949D9E)),
             ),
             const Flexible(

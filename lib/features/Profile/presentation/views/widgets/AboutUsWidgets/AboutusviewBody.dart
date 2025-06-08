@@ -26,7 +26,8 @@ class Aboutusviewbody extends StatelessWidget {
       child: SizedBox(
         child: Text(S.of(context).AboutUsContent,
             textAlign: TextAlign.justify,
-            style: textStyles.textstyle16
+            style: textStyles(context: context)
+                .textstyle16
                 .copyWith(color: const Color(0xFF949D9E))),
       ),
     );

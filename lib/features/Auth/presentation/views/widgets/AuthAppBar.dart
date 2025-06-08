@@ -30,7 +30,7 @@ class AuthAppBar extends StatelessWidget {
           const Spacer(),
           Text(
             appBarTitle,
-            style: textStyles.textstyle19,
+            style: textStyles(context: context).textstyle19,
           ),
           const Spacer(),
         ],

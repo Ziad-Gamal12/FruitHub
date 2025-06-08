@@ -16,12 +16,13 @@ class customHomeAppBar extends StatelessWidget {
       leading: Image.asset(Assets.assetsImagesProfilePicture),
       title: Text(
         welcomeMessage(DateTime.now(), context),
-        style: textStyles.textstyle16.copyWith(
+        style: textStyles(context: context).textstyle16.copyWith(
             fontWeight: FontWeight.w400, color: const Color(0xff949D9E)),
       ),
       subtitle: Text(
         getUserData().name,
-        style: textStyles.textstyle16
+        style: textStyles(context: context)
+            .textstyle16
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
     );

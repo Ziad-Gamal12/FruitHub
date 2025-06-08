@@ -84,9 +84,11 @@ class _CartproductslistviewitemState extends State<Cartproductslistviewitem> {
                           const Spacer(),
                           Text(
                             "${widget.product.calclulateTotalPrice()} جنيه ",
-                            style: textStyles.textstyle16.copyWith(
-                                color: AppColors.KsecondaryColor,
-                                fontWeight: FontWeight.bold),
+                            style: textStyles(context: context)
+                                .textstyle16
+                                .copyWith(
+                                    color: AppColors.KsecondaryColor,
+                                    fontWeight: FontWeight.bold),
                           )
                         ],
                       ),

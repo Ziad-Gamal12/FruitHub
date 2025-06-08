@@ -16,15 +16,16 @@ class CartProductListViewItemDetails extends StatelessWidget {
       children: [
         Text(
           product.productsentity.name,
-          style:
-              textStyles.textstyle13.copyWith(color: const Color(0xff06161C)),
+          style: textStyles(context: context)
+              .textstyle13
+              .copyWith(color: const Color(0xff06161C)),
         ),
         const SizedBox(
           height: 2,
         ),
         Text(
           "${product.calclulateTotalWeight()} كم",
-          style: textStyles.textstyle13.copyWith(
+          style: textStyles(context: context).textstyle13.copyWith(
               color: const Color(0xffF4A91F), fontWeight: FontWeight.w400),
         )
       ],

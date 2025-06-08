@@ -35,7 +35,7 @@ class CustomAddOrderSuccessOrderInfo extends StatelessWidget {
         ),
         Text(
           "${S.of(context).Success}!",
-          style: textStyles.textstyle16.copyWith(
+          style: textStyles(context: context).textstyle16.copyWith(
               color: const Color(0xff0C0D0D), fontWeight: FontWeight.w700),
         ),
         const SizedBox(
@@ -46,11 +46,12 @@ class CustomAddOrderSuccessOrderInfo extends StatelessWidget {
             TextSpan(children: [
               TextSpan(
                   text: S.of(context).orderNumber,
-                  style: textStyles.textstyle13
+                  style: textStyles(context: context)
+                      .textstyle13
                       .copyWith(color: const Color(0xff4E5556))),
               TextSpan(
                   text: " #${order.id}",
-                  style: textStyles.textstyle13.copyWith(
+                  style: textStyles(context: context).textstyle13.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700)),
             ])),

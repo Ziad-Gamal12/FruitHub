@@ -12,7 +12,9 @@ class ProfileSectionTitle extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Text(
         title,
-        style: textStyles.textstyle16.copyWith(color: Colors.black),
+        style: textStyles(context: context)
+            .textstyle16
+            .copyWith(color: Colors.black),
       ),
     );
   }

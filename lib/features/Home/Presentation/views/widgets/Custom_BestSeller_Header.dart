@@ -15,7 +15,7 @@ class CustomBestsellerHeader extends StatelessWidget {
       children: [
         Text(
           S.of(context).bestSelling,
-          style: textStyles.textstyle16.copyWith(
+          style: textStyles(context: context).textstyle16.copyWith(
               fontWeight: FontWeight.bold, color: const Color(0xff0C0D0D)),
         ),
         GestureDetector(
@@ -24,7 +24,7 @@ class CustomBestsellerHeader extends StatelessWidget {
           },
           child: Text(
             S.of(context).moreTitle,
-            style: textStyles.textstyle13.copyWith(
+            style: textStyles(context: context).textstyle13.copyWith(
                 fontWeight: FontWeight.w400, color: const Color(0xff949D9E)),
           ),
         ),

@@ -15,7 +15,7 @@ class CustomProductDetailsDescription extends StatelessWidget {
     return SizedBox(
       child: Text(
         product.description ?? "",
-        style: textStyles.textstyle13.copyWith(
+        style: textStyles(context: context).textstyle13.copyWith(
             color: const Color(0xff979899), fontWeight: FontWeight.w400),
       ),
     );

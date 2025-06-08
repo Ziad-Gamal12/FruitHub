@@ -22,14 +22,14 @@ class OrderSummarySection extends StatelessWidget {
               children: [
                 Text(
                   S.of(context).subtotalLabel,
-                  style: textStyles.textstyle13.copyWith(
+                  style: textStyles(context: context).textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w400),
                 ),
                 const Spacer(),
                 Text(
                   "${context.read<Orderentity>().getOrderTotalPrice().toString()} ${S.of(context).currency}",
-                  style: textStyles.textstyle16.copyWith(
+                  style: textStyles(context: context).textstyle16.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w600),
                 ),
@@ -42,14 +42,14 @@ class OrderSummarySection extends StatelessWidget {
               children: [
                 Text(
                   S.of(context).deliveryLabel,
-                  style: textStyles.textstyle13.copyWith(
+                  style: textStyles(context: context).textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w400),
                 ),
                 const Spacer(),
                 Text(
                   "30 ${S.of(context).currency}",
-                  style: textStyles.textstyle13.copyWith(
+                  style: textStyles(context: context).textstyle13.copyWith(
                       color: const Color(0xff4E5556),
                       fontWeight: FontWeight.w600),
                 ),
@@ -69,14 +69,14 @@ class OrderSummarySection extends StatelessWidget {
               children: [
                 Text(
                   S.of(context).totalLabel,
-                  style: textStyles.textstyle16.copyWith(
+                  style: textStyles(context: context).textstyle16.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700),
                 ),
                 const Spacer(),
                 Text(
                   "${(context.read<Orderentity>().getOrderTotalPrice() + 30).toString()} ${S.of(context).currency}",
-                  style: textStyles.textstyle19.copyWith(
+                  style: textStyles(context: context).textstyle19.copyWith(
                       color: const Color(0xff0C0D0D),
                       fontWeight: FontWeight.w700),
                 ),

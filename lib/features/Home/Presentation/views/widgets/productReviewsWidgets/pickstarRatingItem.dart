@@ -29,7 +29,9 @@ class Pickstarratingitem extends StatelessWidget {
             width: 2,
           ),
           Text(text,
-              style: textStyles.textstyle19.copyWith(color: Colors.black))
+              style: textStyles(context: context)
+                  .textstyle19
+                  .copyWith(color: Colors.black))
         ],
       ),
     );

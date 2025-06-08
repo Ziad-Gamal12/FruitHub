@@ -30,11 +30,13 @@ class TermsAndConditions extends StatelessWidget {
                 child: Text.rich(TextSpan(children: [
                   TextSpan(
                       text: S.of(context).agreeTermsText1,
-                      style: textStyles.textstyle13
+                      style: textStyles(context: context)
+                          .textstyle13
                           .copyWith(color: const Color(0xff949D9E))),
                   TextSpan(
                       text: S.of(context).agreeTermsText2,
-                      style: textStyles.textstyle13
+                      style: textStyles(context: context)
+                          .textstyle13
                           .copyWith(color: AppColors.lightmaincolor))
                 ])),
               ),

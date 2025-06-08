@@ -11,7 +11,7 @@ void showSnackBar(
       padding: const EdgeInsets.all(8.0),
       child: Text(
         message,
-        style: textStyles.textstyle11.copyWith(
+        style: textStyles(context: context).textstyle11.copyWith(
             color: textColor ?? Colors.black, fontWeight: FontWeight.w700),
         textAlign: TextAlign.center,
       ),

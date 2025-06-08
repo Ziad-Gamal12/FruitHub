@@ -36,7 +36,7 @@ class Productattributeitem extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: textStyles.textstyle16.copyWith(
+                style: textStyles(context: context).textstyle16.copyWith(
                     color: const Color(0xff23AA49),
                     fontWeight: FontWeight.w700),
               ),
@@ -45,7 +45,7 @@ class Productattributeitem extends StatelessWidget {
               ),
               Text(
                 description,
-                style: textStyles.textstyle13.copyWith(
+                style: textStyles(context: context).textstyle13.copyWith(
                     color: const Color(0xff979899),
                     fontWeight: FontWeight.w600),
               ),

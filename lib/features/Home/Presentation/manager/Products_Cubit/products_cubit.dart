@@ -30,6 +30,15 @@ class ProductsCubit extends Cubit<ProductsState> {
     return (ratings / product.reviews!.length);
   }
 
+  double calculateOverallReviewPercentage(List<int> reviewsRatings) {
+    if (reviewsRatings.isEmpty) return 0;
+
+    int total = reviewsRatings.reduce((a, b) => a + b);
+    double average = total / reviewsRatings.length;
+
+    return (average / 5.0) * 100;
+  }
+
   void getSearchProducts({required String keyword}) async {
     emit(GetSearchProductsLoading());
     final result = await productsrepo.getSeachProducts(

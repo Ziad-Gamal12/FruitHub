@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-
 import 'package:fruits/core/Utils/textStyles.dart';
 
 class SocialLoginButton extends StatelessWidget {
@@ -31,10 +30,7 @@ class SocialLoginButton extends StatelessWidget {
             const SizedBox(
               width: 53,
             ),
-            Text(
-              text,
-              style: textStyles.textstyle16,
-            )
+            Text(text, style: textStyles(context: context).textstyle16)
           ],
         ),
       ),

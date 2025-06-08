@@ -30,7 +30,8 @@ class ReviewInputAndSummarySection extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               "${product.reviews!.length} ${S.of(context).reviews}",
-              style: textStyles.textstyle13
+              style: textStyles(context: context)
+                  .textstyle13
                   .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
             )),
         const SizedBox(

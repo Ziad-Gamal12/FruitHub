@@ -56,7 +56,7 @@ class _AdressviewbodyState extends State<Adressviewbody> {
             ),
             Text(
               S.of(context).SaveAddress,
-              style: textStyles.textstyle13.copyWith(
+              style: textStyles(context: context).textstyle13.copyWith(
                   color: const Color(0xff949D9E), fontWeight: FontWeight.w600),
             ),
           ],

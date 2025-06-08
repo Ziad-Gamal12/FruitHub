@@ -22,7 +22,7 @@ class Checkoutactivestep extends StatelessWidget {
         ),
         Text(
           entity.title,
-          style: textStyles.textstyle13.copyWith(
+          style: textStyles(context: context).textstyle13.copyWith(
               color: AppColors.MainColor, fontWeight: FontWeight.w700),
         )
       ],

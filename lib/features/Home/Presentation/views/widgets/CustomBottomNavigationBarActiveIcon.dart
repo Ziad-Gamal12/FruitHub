@@ -36,8 +36,9 @@ class Custombottomnavigationbaractiveicon extends StatelessWidget {
             ),
             Text(
               title,
-              style:
-                  textStyles.textstyle11.copyWith(color: AppColors.MainColor),
+              style: textStyles(context: context)
+                  .textstyle11
+                  .copyWith(color: AppColors.MainColor),
             )
           ],
         ),

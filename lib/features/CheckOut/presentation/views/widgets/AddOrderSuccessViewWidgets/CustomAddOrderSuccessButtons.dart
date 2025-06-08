@@ -32,7 +32,9 @@ class CustomAddOrderSuccessButtons extends StatelessWidget {
         },
         child: Text(
           S.of(context).Home,
-          style: textStyles.textstyle16.copyWith(color: AppColors.MainColor),
+          style: textStyles(context: context)
+              .textstyle16
+              .copyWith(color: AppColors.MainColor),
         ),
       ),
     ]);

@@ -81,7 +81,8 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                     children: [
                       Text(
                         S.of(context).alreadyHaveAccount,
-                        style: textStyles.textstyle16
+                        style: textStyles(context: context)
+                            .textstyle16
                             .copyWith(color: const Color(0xFF949D9E)),
                       ),
                       InkWell(
@@ -90,7 +91,8 @@ class SignUpView_body_blocConsumer_builder extends StatelessWidget {
                         },
                         child: Text(
                           S.of(context).loginTitle,
-                          style: textStyles.textstyle16
+                          style: textStyles(context: context)
+                              .textstyle16
                               .copyWith(color: const Color(0xFF1B5E37)),
                         ),
                       )

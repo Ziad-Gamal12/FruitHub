@@ -11,7 +11,9 @@ class bestSellerGrideViewHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       S.of(context).bestSelling,
-      style: textStyles.textstyle16.copyWith(fontWeight: FontWeight.bold),
+      style: textStyles(context: context)
+          .textstyle16
+          .copyWith(fontWeight: FontWeight.bold),
     );
   }
 }

@@ -29,13 +29,14 @@ class ProductDetailsRating extends StatelessWidget {
               .read<ProductsCubit>()
               .getproductStarRate(product: product)
               .toString(),
-          style: textStyles.textstyle13
+          style: textStyles(context: context)
+              .textstyle13
               .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
         ),
         const SizedBox(width: 8),
         Text(
           "(${product.reviews!.length})",
-          style: textStyles.textstyle13.copyWith(
+          style: textStyles(context: context).textstyle13.copyWith(
               color: const Color(0xff616A6B), fontWeight: FontWeight.w400),
         ),
         const SizedBox(width: 8),
@@ -48,7 +49,7 @@ class ProductDetailsRating extends StatelessWidget {
           },
           child: Text(
             S.of(context).reviews,
-            style: textStyles.textstyle13.copyWith(
+            style: textStyles(context: context).textstyle13.copyWith(
                 color: AppColors.MainColor, fontWeight: FontWeight.w700),
           ),
         )

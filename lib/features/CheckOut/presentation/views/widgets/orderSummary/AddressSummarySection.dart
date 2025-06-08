@@ -25,7 +25,8 @@ class AddressSummarySection extends StatelessWidget {
             children: [
               Text(
                 S.of(context).deliveryAddressTitle,
-                style: textStyles.textstyle13
+                style: textStyles(context: context)
+                    .textstyle13
                     .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
               ),
               const Spacer(),
@@ -50,7 +51,7 @@ class AddressSummarySection extends StatelessWidget {
                     ),
                     Text(
                       S.of(context).editLabel,
-                      style: textStyles.textstyle13.copyWith(
+                      style: textStyles(context: context).textstyle13.copyWith(
                           color: const Color(0xff949D9E),
                           fontWeight: FontWeight.w600),
                     )
@@ -72,7 +73,7 @@ class AddressSummarySection extends StatelessWidget {
                 child: SizedBox(
                   child: Text(
                     "${context.read<Orderentity>().addressEntity}",
-                    style: textStyles.textstyle16.copyWith(
+                    style: textStyles(context: context).textstyle16.copyWith(
                         color: const Color(0xff4E5556),
                         fontWeight: FontWeight.w400),
                   ),

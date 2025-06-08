@@ -35,10 +35,10 @@ class LogoutButtonBar extends StatelessWidget {
               const Spacer(flex: 5),
               Text(
                 "تسجيل الخروج",
-                style: textStyles.textstyle13.copyWith(
-                  color: AppColors.MainColor,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: textStyles(context: context).textstyle13.copyWith(
+                      color: AppColors.MainColor,
+                      fontWeight: FontWeight.w600,
+                    ),
               ),
               const Spacer(flex: 3),
               Transform.rotate(

@@ -16,7 +16,7 @@ class Cartproductslistviewheader extends StatelessWidget {
       color: const Color(0xffEBF9F1),
       child: Text(
         "${S.of(context).youHave} ${context.watch<CartCubit>().cartentity.products.length} ${S.of(context).productsInCart}",
-        style: textStyles.textstyle13.copyWith(
+        style: textStyles(context: context).textstyle13.copyWith(
             color: const Color(0xff1B5E37), fontWeight: FontWeight.w400),
       ),
     );

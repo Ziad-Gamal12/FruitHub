@@ -23,27 +23,30 @@ class Customsearchlistitem extends StatelessWidget {
               CustomCachedNetWorkImage(imageUrl: productsentity.imageUrl ?? ""),
           title: Text(
             productsentity.name,
-            style: textStyles.textstyle16.copyWith(fontWeight: FontWeight.w700),
+            style: textStyles(context: context)
+                .textstyle16
+                .copyWith(fontWeight: FontWeight.w700),
           ),
           subtitle: Row(
             children: [
               Text(
                 "${productsentity.price}جنية /",
-                style: textStyles.textstyle13.copyWith(
+                style: textStyles(context: context).textstyle13.copyWith(
                     fontWeight: FontWeight.bold,
                     color: AppColors.KsecondaryColor),
               ),
               Text(
                 "الكيلو",
-                style: textStyles.textstyle13
+                style: textStyles(context: context)
+                    .textstyle13
                     .copyWith(color: AppColors.KlightSecondaryColor),
               ),
             ],
           ),
           trailing: productsentity.amout == 0
-              ? const Text(
+              ? Text(
                   "غير متوفر",
-                  style: textStyles.textstyle13,
+                  style: textStyles(context: context).textstyle13,
                 )
               : CustomAddProductToCartButton(productsentity: productsentity),
         ),

@@ -38,7 +38,7 @@ class CustomTextFeiled extends StatelessWidget {
       decoration: InputDecoration(
           suffixIcon: suffix,
           hintText: hintText,
-          hintStyle: textStyles.textstyle13.copyWith(
+          hintStyle: textStyles(context: context).textstyle13.copyWith(
               fontWeight: FontWeight.w700, color: const Color(0xff949D9E)),
           filled: true,
           fillColor: const Color(0xFFF9FAFA),

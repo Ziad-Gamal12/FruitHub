@@ -31,7 +31,7 @@ class Customprofileactionsitem extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: textStyles.textstyle13.copyWith(
+                  style: textStyles(context: context).textstyle13.copyWith(
                       fontWeight: FontWeight.w600, color: Colors.grey),
                 ),
                 const Spacer(),

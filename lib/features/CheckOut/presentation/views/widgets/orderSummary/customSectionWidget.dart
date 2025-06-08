@@ -14,7 +14,8 @@ class Customsectionwidget extends StatelessWidget {
         title != null
             ? Text(
                 title!,
-                style: textStyles.textstyle13
+                style: textStyles(context: context)
+                    .textstyle13
                     .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
               )
             : const SizedBox(),

@@ -30,14 +30,14 @@ class Customorderinfo extends StatelessWidget {
                   children: [
                     Text(
                       S.of(context).orderNumber,
-                      style: textStyles.textstyle13.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: textStyles(context: context).textstyle13.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          ),
                     ),
                     Text(
                       "${order.id}#",
-                      style: textStyles.textstyle11.copyWith(
+                      style: textStyles(context: context).textstyle11.copyWith(
                           overflow: TextOverflow.ellipsis,
                           fontWeight: FontWeight.w700,
                           color: Colors.black),
@@ -46,7 +46,8 @@ class Customorderinfo extends StatelessWidget {
                 ),
                 Text(
                   "${S.of(context).orderedAt} ${order.createdAt.day}-${getThemonth(order.createdAt.month, context)}-${order.createdAt.year}",
-                  style: textStyles.textstyle11
+                  style: textStyles(context: context)
+                      .textstyle11
                       .copyWith(color: const Color(0xff949D9E)),
                 ),
                 const SizedBox(
@@ -57,19 +58,23 @@ class Customorderinfo extends StatelessWidget {
                     Text.rich(TextSpan(children: [
                       TextSpan(
                           text: S.of(context).orderCount,
-                          style: textStyles.textstyle13
+                          style: textStyles(context: context)
+                              .textstyle13
                               .copyWith(color: const Color(0xff949D9E))),
                       TextSpan(
                           text: " ${order.orderProducts.length}",
-                          style: textStyles.textstyle13.copyWith(
-                              fontWeight: FontWeight.w700, color: Colors.black))
+                          style: textStyles(context: context)
+                              .textstyle13
+                              .copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black))
                     ])),
                     const SizedBox(
                       width: 10,
                     ),
                     Text(
                       "${order.orderProducts.map((e) => double.parse(e.productsentity.price)).reduce((a, b) => a + b)} ${S.of(context).currency}",
-                      style: textStyles.textstyle13.copyWith(
+                      style: textStyles(context: context).textstyle13.copyWith(
                           color: Colors.black, fontWeight: FontWeight.w700),
                     )
                   ],

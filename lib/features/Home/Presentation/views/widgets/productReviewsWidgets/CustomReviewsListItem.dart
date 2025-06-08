@@ -16,7 +16,9 @@ class Customreviewslistitem extends StatelessWidget {
           minLeadingWidth: 70,
           title: Text(
             reviewentity.name,
-            style: textStyles.textstyle16.copyWith(color: Colors.black),
+            style: textStyles(context: context)
+                .textstyle16
+                .copyWith(color: Colors.black),
           ),
           leading: Stack(
             children: [
@@ -53,7 +55,7 @@ class Customreviewslistitem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12)),
                     child: Text(
                       "${reviewentity.reating}.0",
-                      style: textStyles.textstyle11.copyWith(
+                      style: textStyles(context: context).textstyle11.copyWith(
                           color: Colors.white, fontWeight: FontWeight.w600),
                     ),
                   ))
@@ -67,8 +69,9 @@ class Customreviewslistitem extends StatelessWidget {
           padding: const EdgeInsets.only(right: 20),
           child: Text(
             reviewentity.reviewDescription,
-            style:
-                textStyles.textstyle13.copyWith(color: const Color(0xff949D9E)),
+            style: textStyles(context: context)
+                .textstyle13
+                .copyWith(color: const Color(0xff949D9E)),
           ),
         ),
       ],

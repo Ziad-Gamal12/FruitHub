@@ -19,8 +19,9 @@ class Signin_ActionsSection extends StatelessWidget {
       children: [
         Text(
           S.of(context).forgotPassword,
-          style:
-              textStyles.textstyle13.copyWith(color: const Color(0xFF2D9F5D)),
+          style: textStyles(context: context)
+              .textstyle13
+              .copyWith(color: const Color(0xFF2D9F5D)),
         ),
         const SizedBox(
           height: 33,
@@ -44,7 +45,8 @@ class Signin_ActionsSection extends StatelessWidget {
           children: [
             Text(
               S.of(context).dontHaveAccount,
-              style: textStyles.textstyle16
+              style: textStyles(context: context)
+                  .textstyle16
                   .copyWith(color: const Color(0xFF949D9E)),
             ),
             InkWell(
@@ -53,7 +55,8 @@ class Signin_ActionsSection extends StatelessWidget {
               },
               child: Text(
                 S.of(context).createAccount,
-                style: textStyles.textstyle16
+                style: textStyles(context: context)
+                    .textstyle16
                     .copyWith(color: const Color(0xFF1B5E37)),
               ),
             )

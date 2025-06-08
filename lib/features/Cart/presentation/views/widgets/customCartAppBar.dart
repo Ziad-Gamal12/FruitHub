@@ -12,8 +12,9 @@ class Customcartappbar extends StatelessWidget {
       children: [
         Text(
           S.of(context).cartTitle,
-          style:
-              textStyles.textstyle19.copyWith(color: const Color(0xff0C0D0D)),
+          style: textStyles(context: context)
+              .textstyle19
+              .copyWith(color: const Color(0xff0C0D0D)),
         ),
       ],
     );

@@ -32,17 +32,19 @@ class ShippingOptionItem extends StatelessWidget {
               : const ShippingItem_NotSelectedRadio(),
           title: Text(
             shippingoptionsentity.title,
-            style: textStyles.textstyle13
+            style: textStyles(context: context)
+                .textstyle13
                 .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
           ),
           subtitle: Text(
             shippingoptionsentity.subtitle,
-            style: textStyles.textstyle13
+            style: textStyles(context: context)
+                .textstyle13
                 .copyWith(fontWeight: FontWeight.w400, color: Colors.grey),
           ),
           trailing: Text(
             shippingoptionsentity.price,
-            style: textStyles.textstyle13.copyWith(
+            style: textStyles(context: context).textstyle13.copyWith(
                 fontWeight: FontWeight.w700, color: AppColors.MainColor),
           ),
         ));

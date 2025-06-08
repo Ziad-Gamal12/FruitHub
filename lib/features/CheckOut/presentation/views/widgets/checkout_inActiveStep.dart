@@ -17,7 +17,8 @@ class CheckoutInactivestep extends StatelessWidget {
         CircleAvatar(
           backgroundColor: const Color(0xffF2F3F3),
           child: Text(entity.index.toString(),
-              style: textStyles.textstyle13
+              style: textStyles(context: context)
+                  .textstyle13
                   .copyWith(fontWeight: FontWeight.w600, color: Colors.black)),
         ),
         const SizedBox(
@@ -25,7 +26,7 @@ class CheckoutInactivestep extends StatelessWidget {
         ),
         Text(
           entity.title,
-          style: textStyles.textstyle13.copyWith(
+          style: textStyles(context: context).textstyle13.copyWith(
               color: const Color(0xffAAAAAA), fontWeight: FontWeight.w700),
         )
       ],

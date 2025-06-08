@@ -23,17 +23,18 @@ class ProductDetailsTile extends StatelessWidget {
     return ListTile(
       title: Text(
         product.name,
-        style: textStyles.textstyle16
+        style: textStyles(context: context)
+            .textstyle16
             .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
       ),
       subtitle: Text.rich(TextSpan(children: [
         TextSpan(
             text: "${product.price} ${S.of(context).pound} /",
-            style: textStyles.textstyle13.copyWith(
+            style: textStyles(context: context).textstyle13.copyWith(
                 color: AppColors.KsecondaryColor, fontWeight: FontWeight.w700)),
         TextSpan(
             text: S.of(context).kilo,
-            style: textStyles.textstyle13.copyWith(
+            style: textStyles(context: context).textstyle13.copyWith(
                 color: AppColors.KlightSecondaryColor,
                 fontWeight: FontWeight.w600)),
       ])),

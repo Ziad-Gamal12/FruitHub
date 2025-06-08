@@ -22,7 +22,7 @@ class Productsviewbodygridviewheader extends StatelessWidget {
       children: [
         Text(
           "$resluteCount ${S.of(context).results}",
-          style: textStyles.textstyle16.copyWith(
+          style: textStyles(context: context).textstyle16.copyWith(
               fontWeight: FontWeight.bold, color: const Color(0xff0C0D0D)),
         ),
         const Spacer(),

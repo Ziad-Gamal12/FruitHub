@@ -20,10 +20,10 @@ class LogoutDialog extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
         child: Text(
           "هل انت متأكد من تسجيل الخروج؟",
-          style: textStyles.textstyle13.copyWith(
-            color: AppColors.MainColor,
-            fontWeight: FontWeight.w600,
-          ),
+          style: textStyles(context: context).textstyle13.copyWith(
+                color: AppColors.MainColor,
+                fontWeight: FontWeight.w600,
+              ),
           textAlign: TextAlign.center,
         ),
       ),

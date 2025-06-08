@@ -20,7 +20,9 @@ class FilterOptionsSection extends StatelessWidget {
       children: [
         Text(
           S.of(context).sortBy,
-          style: textStyles.textstyle19.copyWith(color: Colors.black),
+          style: textStyles(context: context)
+              .textstyle19
+              .copyWith(color: Colors.black),
         ),
         const SizedBox(height: 11),
         FilterOptionRow(

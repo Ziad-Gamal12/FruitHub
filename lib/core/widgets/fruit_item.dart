@@ -55,9 +55,9 @@ class FruitItem extends StatelessWidget {
                       CustomFruitItemInfo(product: product),
                       const Spacer(),
                       product.amout == 0
-                          ? const Text(
+                          ? Text(
                               "غير متوفر",
-                              style: textStyles.textstyle13,
+                              style: textStyles(context: context).textstyle13,
                             )
                           : CustomAddProductToCartButton(
                               productsentity: product)

@@ -51,7 +51,7 @@ class onboarding_pageview_item extends StatelessWidget {
                     },
                     child: Text(
                       "تخط",
-                      style: textStyles.textstyle13.copyWith(
+                      style: textStyles(context: context).textstyle13.copyWith(
                           fontWeight: FontWeight.w400,
                           color: Color(0xff949D9E)),
                     ),
@@ -70,7 +70,9 @@ class onboarding_pageview_item extends StatelessWidget {
         ),
         Text(
           subtitle,
-          style: textStyles.textstyle13.copyWith(color: Color(0xff4E5556)),
+          style: textStyles(context: context)
+              .textstyle13
+              .copyWith(color: Color(0xff4E5556)),
           textAlign: TextAlign.center,
         )
       ],

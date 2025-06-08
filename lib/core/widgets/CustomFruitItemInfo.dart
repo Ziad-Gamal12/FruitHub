@@ -18,7 +18,7 @@ class CustomFruitItemInfo extends StatelessWidget {
       children: [
         Text(
           product.name,
-          style: textStyles.textstyle13,
+          style: textStyles(context: context).textstyle13,
         ),
         const SizedBox(
           height: 4,
@@ -27,13 +27,14 @@ class CustomFruitItemInfo extends StatelessWidget {
           children: [
             Text(
               "${product.price}جنية /",
-              style: textStyles.textstyle13.copyWith(
+              style: textStyles(context: context).textstyle13.copyWith(
                   fontWeight: FontWeight.bold,
                   color: AppColors.KsecondaryColor),
             ),
             Text(
               "الكيلو",
-              style: textStyles.textstyle13
+              style: textStyles(context: context)
+                  .textstyle13
                   .copyWith(color: AppColors.KlightSecondaryColor),
             ),
           ],

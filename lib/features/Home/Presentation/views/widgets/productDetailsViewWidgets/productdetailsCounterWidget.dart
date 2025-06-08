@@ -41,8 +41,9 @@ class _ProductdetailsCounterWidgetState
         ),
         Text(
           widget.product.count.toString(),
-          style:
-              textStyles.textstyle16.copyWith(color: const Color(0xff06140C)),
+          style: textStyles(context: context)
+              .textstyle16
+              .copyWith(color: const Color(0xff06140C)),
         ),
         const SizedBox(
           width: 16,

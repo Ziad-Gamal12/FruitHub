@@ -26,16 +26,18 @@ class onboaring_PageView extends StatelessWidget {
               children: [
                 Text(
                   S.of(context).onboardingWelcome,
-                  style: textStyles.textstyle23,
+                  style: textStyles(context: context).textstyle23,
                 ),
                 Text(
                   "HUB",
-                  style: textStyles.textstyle23
+                  style: textStyles(context: context)
+                      .textstyle23
                       .copyWith(color: const Color(0xffF4A91F)),
                 ),
                 Text(
                   "Fruit",
-                  style: textStyles.textstyle23
+                  style: textStyles(context: context)
+                      .textstyle23
                       .copyWith(color: AppColors.MainColor),
                 )
               ],
@@ -50,7 +52,7 @@ class onboaring_PageView extends StatelessWidget {
               children: [
                 Text(
                   S.of(context).onboardingTitle2,
-                  style: textStyles.textstyle23,
+                  style: textStyles(context: context).textstyle23,
                 ),
               ],
             ),
