@@ -23,7 +23,8 @@ class Ordertrakingviewbody extends StatelessWidget {
           ),
           Expanded(
               child: Orderstatuslistview(
-                  statusList: Orderstatusitementity.orderStatus()))
+                  statusList:
+                      Orderstatusitementity.orderStatus(context: context))),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/widgets/CustomCard.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/widgets/CustomCircelarImage.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Customorderinfo extends StatelessWidget {
   const Customorderinfo({super.key, required this.order});
@@ -28,7 +29,7 @@ class Customorderinfo extends StatelessWidget {
                 Wrap(
                   children: [
                     Text(
-                      "طلب رقم:",
+                      S.of(context).orderNumber,
                       style: textStyles.textstyle13.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
@@ -44,7 +45,7 @@ class Customorderinfo extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "تم الطلب : ${order.createdAt.day}-${getThemonth(order.createdAt.month)}-${order.createdAt.year}",
+                  "${S.of(context).orderedAt} ${order.createdAt.day}-${getThemonth(order.createdAt.month, context)}-${order.createdAt.year}",
                   style: textStyles.textstyle11
                       .copyWith(color: const Color(0xff949D9E)),
                 ),
@@ -55,7 +56,7 @@ class Customorderinfo extends StatelessWidget {
                   children: [
                     Text.rich(TextSpan(children: [
                       TextSpan(
-                          text: "عدد الطلبات :",
+                          text: S.of(context).orderCount,
                           style: textStyles.textstyle13
                               .copyWith(color: const Color(0xff949D9E))),
                       TextSpan(
@@ -67,7 +68,7 @@ class Customorderinfo extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "${order.orderProducts.map((e) => double.parse(e.productsentity.price)).reduce((a, b) => a + b)} جنية",
+                      "${order.orderProducts.map((e) => double.parse(e.productsentity.price)).reduce((a, b) => a + b)} ${S.of(context).currency}",
                       style: textStyles.textstyle13.copyWith(
                           color: Colors.black, fontWeight: FontWeight.w700),
                     )
@@ -79,32 +80,32 @@ class Customorderinfo extends StatelessWidget {
     ));
   }
 
-  String getThemonth(int month) {
+  String getThemonth(int month, BuildContext context) {
     switch (month) {
       case 1:
-        return "يناير";
+        return S.of(context).month1;
       case 2:
-        return "فبراير";
+        return S.of(context).month2;
       case 3:
-        return "مارس";
+        return S.of(context).month3;
       case 4:
-        return "ابريل";
+        return S.of(context).month4;
       case 5:
-        return "مايو";
+        return S.of(context).month5;
       case 6:
-        return "يونيو";
+        return S.of(context).month6;
       case 7:
-        return "يوليو";
+        return S.of(context).month7;
       case 8:
-        return "اغسطس";
+        return S.of(context).month8;
       case 9:
-        return "سبتمبر";
+        return S.of(context).month9;
       case 10:
-        return "اكتوبر";
+        return S.of(context).month10;
       case 11:
-        return "نوفمبر";
+        return S.of(context).month11;
       case 12:
-        return "ديسمبر";
+        return S.of(context).month12;
       default:
         return "";
     }

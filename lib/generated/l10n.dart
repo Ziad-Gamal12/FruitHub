@@ -1329,6 +1329,226 @@ class S {
       args: [],
     );
   }
+
+  /// `Ordered at:`
+  String get orderedAt {
+    return Intl.message(
+      'Ordered at:',
+      name: 'orderedAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items:`
+  String get orderCount {
+    return Intl.message(
+      'Items:',
+      name: 'orderCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message(
+      'Pending',
+      name: 'pending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order is under review and will be processed soon.`
+  String get pendingDescription {
+    return Intl.message(
+      'Your order is under review and will be processed soon.',
+      name: 'pendingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Accepted`
+  String get accepted {
+    return Intl.message(
+      'Order Accepted',
+      name: 'accepted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order has been accepted and is being prepared for shipment.`
+  String get acceptedDescription {
+    return Intl.message(
+      'Your order has been accepted and is being prepared for shipment.',
+      name: 'acceptedDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipped`
+  String get shipped {
+    return Intl.message(
+      'Shipped',
+      name: 'shipped',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order is on the way via the delivery agent.`
+  String get shippedDescription {
+    return Intl.message(
+      'Your order is on the way via the delivery agent.',
+      name: 'shippedDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get delivered {
+    return Intl.message(
+      'Delivered',
+      name: 'delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The order has been successfully delivered. We hope you like it.`
+  String get deliveredDescription {
+    return Intl.message(
+      'The order has been successfully delivered. We hope you like it.',
+      name: 'deliveredDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `January`
+  String get month1 {
+    return Intl.message(
+      'January',
+      name: 'month1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `February`
+  String get month2 {
+    return Intl.message(
+      'February',
+      name: 'month2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `March`
+  String get month3 {
+    return Intl.message(
+      'March',
+      name: 'month3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `April`
+  String get month4 {
+    return Intl.message(
+      'April',
+      name: 'month4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `May`
+  String get month5 {
+    return Intl.message(
+      'May',
+      name: 'month5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `June`
+  String get month6 {
+    return Intl.message(
+      'June',
+      name: 'month6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `July`
+  String get month7 {
+    return Intl.message(
+      'July',
+      name: 'month7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `August`
+  String get month8 {
+    return Intl.message(
+      'August',
+      name: 'month8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `September`
+  String get month9 {
+    return Intl.message(
+      'September',
+      name: 'month9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `October`
+  String get month10 {
+    return Intl.message(
+      'October',
+      name: 'month10',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `November`
+  String get month11 {
+    return Intl.message(
+      'November',
+      name: 'month11',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `December`
+  String get month12 {
+    return Intl.message(
+      'December',
+      name: 'month12',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

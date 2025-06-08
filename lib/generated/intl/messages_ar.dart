@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended": MessageLookupByLibrary.simpleMessage("موصى به"),
         "SaveAddress": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
         "Success": MessageLookupByLibrary.simpleMessage("نجاح"),
+        "accepted": MessageLookupByLibrary.simpleMessage("قبول الطلب"),
+        "acceptedDescription": MessageLookupByLibrary.simpleMessage(
+            "تم قبول طلبك وجاري تحضيره للإرسال"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("أضف عنوانًا جديدًا"),
@@ -55,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount":
             MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
         "currency": MessageLookupByLibrary.simpleMessage("جنيه"),
+        "delivered": MessageLookupByLibrary.simpleMessage("تم التسليم"),
+        "deliveredDescription": MessageLookupByLibrary.simpleMessage(
+            "تم توصيل الطلب بنجاح، نتمنى أن ينال إعجابك"),
         "deliveryAddressTitle":
             MessageLookupByLibrary.simpleMessage("عنوان التوصيل"),
         "deliveryLabel": MessageLookupByLibrary.simpleMessage("التوصيل  :"),
@@ -107,6 +113,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل دخول بواسطة جوجل"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "month1": MessageLookupByLibrary.simpleMessage("يناير"),
+        "month10": MessageLookupByLibrary.simpleMessage("أكتوبر"),
+        "month11": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+        "month12": MessageLookupByLibrary.simpleMessage("ديسمبر"),
+        "month2": MessageLookupByLibrary.simpleMessage("فبراير"),
+        "month3": MessageLookupByLibrary.simpleMessage("مارس"),
+        "month4": MessageLookupByLibrary.simpleMessage("إبريل"),
+        "month5": MessageLookupByLibrary.simpleMessage("مايو"),
+        "month6": MessageLookupByLibrary.simpleMessage("يونيو"),
+        "month7": MessageLookupByLibrary.simpleMessage("يوليو"),
+        "month8": MessageLookupByLibrary.simpleMessage("أغسطس"),
+        "month9": MessageLookupByLibrary.simpleMessage("سبتمبر"),
         "months": MessageLookupByLibrary.simpleMessage("شهور"),
         "moreTitle": MessageLookupByLibrary.simpleMessage("المزيد"),
         "newAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
@@ -128,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onlinePaymentTitle":
             MessageLookupByLibrary.simpleMessage("الدفع أونلاين"),
         "or": MessageLookupByLibrary.simpleMessage("او"),
+        "orderCount": MessageLookupByLibrary.simpleMessage("عدد الطلبات :"),
         "orderNumber": MessageLookupByLibrary.simpleMessage("رقم الطلب :"),
         "orderSuccessSubtitle":
             MessageLookupByLibrary.simpleMessage("تم تقديم طلبك بنجاح"),
@@ -135,11 +154,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم الطلب بنجاح!"),
         "orderSummaryTitle":
             MessageLookupByLibrary.simpleMessage("ملخص الطلب :"),
+        "orderedAt": MessageLookupByLibrary.simpleMessage("تم الطلب :"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "pay": MessageLookupByLibrary.simpleMessage("الدفع"),
         "payWithPayPal":
             MessageLookupByLibrary.simpleMessage("ادفع باستخدام PayPal"),
         "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+        "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+        "pendingDescription": MessageLookupByLibrary.simpleMessage(
+            "طلبك قيد المراجعة وسيتم معالجته قريبًا"),
         "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "plaeseSelectShippingMethod":
             MessageLookupByLibrary.simpleMessage("الرجاء اختيار خيار الشحن"),
@@ -183,6 +206,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "reviews": MessageLookupByLibrary.simpleMessage("المراجعه"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن...."),
+        "shipped": MessageLookupByLibrary.simpleMessage("خرج للتوصيل"),
+        "shippedDescription": MessageLookupByLibrary.simpleMessage(
+            "طلبك الآن في طريقه إليك عبر مندوب التوصيل"),
         "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "signupSubtitle":

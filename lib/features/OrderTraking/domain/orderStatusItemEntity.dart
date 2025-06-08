@@ -1,29 +1,33 @@
+import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Orderstatusitementity {
   final String status, description, image;
 
   Orderstatusitementity(
       {required this.status, required this.description, required this.image});
-  static List<Orderstatusitementity> orderStatus() => [
+  static List<Orderstatusitementity> orderStatus(
+          {required BuildContext context}) =>
+      [
         Orderstatusitementity(
-          status: "قيد الانتظار",
-          description: "طلبك قيد المراجعة وسيتم معالجته قريبًا",
+          status: S.of(context).pending,
+          description: S.of(context).pendingDescription,
           image: Assets.assetsImagesPenddingStatusIcon,
         ),
         Orderstatusitementity(
-          status: "قبول الطلب",
-          description: "تم قبول طلبك وجاري تحضيره للإرسال",
+          status: S.of(context).accepted,
+          description: S.of(context).acceptedDescription,
           image: Assets.assetsImagesAcceptedStatusIcon,
         ),
         Orderstatusitementity(
-          status: "خرج للتوصيل",
-          description: "طلبك الآن في طريقه إليك عبر مندوب التوصيل",
+          status: S.of(context).shipped,
+          description: S.of(context).shippedDescription,
           image: Assets.assetsImagesShippedStatusIcons,
         ),
         Orderstatusitementity(
-          status: "تم التسليم",
-          description: "تم توصيل الطلب بنجاح، نتمنى أن ينال إعجابك",
+          status: S.of(context).delivered,
+          description: S.of(context).deliveredDescription,
           image: Assets.assetsImagesDeliveredStatusIcon,
         ),
       ];

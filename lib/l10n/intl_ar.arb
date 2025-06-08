@@ -124,8 +124,29 @@
   "payment": "الدفع",
   "payWithPayPal": "ادفع باستخدام PayPal",
   "orderNumber": "رقم الطلب :",
-  "trackOrder": "تتبع الطلب"
-
+  "trackOrder": "تتبع الطلب",
+  "orderedAt": "تم الطلب :",
+  "orderCount": "عدد الطلبات :",
+  "pending": "قيد الانتظار",
+  "pendingDescription": "طلبك قيد المراجعة وسيتم معالجته قريبًا",
+  "accepted": "قبول الطلب",
+  "acceptedDescription": "تم قبول طلبك وجاري تحضيره للإرسال",
+  "shipped": "خرج للتوصيل",
+  "shippedDescription": "طلبك الآن في طريقه إليك عبر مندوب التوصيل",
+  "delivered": "تم التسليم",
+  "deliveredDescription": "تم توصيل الطلب بنجاح، نتمنى أن ينال إعجابك",
+  "month1": "يناير",
+  "month2": "فبراير",
+  "month3": "مارس",
+  "month4": "إبريل",
+  "month5": "مايو",
+  "month6": "يونيو",
+  "month7": "يوليو",
+  "month8": "أغسطس",
+  "month9": "سبتمبر",
+  "month10": "أكتوبر",
+  "month11": "نوفمبر",
+  "month12": "ديسمبر"
   }
 
 

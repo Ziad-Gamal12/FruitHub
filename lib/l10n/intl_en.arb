@@ -127,9 +127,28 @@
   "payment": "Payment",
   "payWithPayPal": "Pay with PayPal",
   "orderNumber": "Order Number :",
-  "trackOrder": "Track Order"
-
-
-
+  "trackOrder": "Track Order",
+  "orderedAt": "Ordered at:",
+  "orderCount": "Items:",
+  "pending": "Pending",
+  "pendingDescription": "Your order is under review and will be processed soon.",
+  "accepted": "Order Accepted",
+  "acceptedDescription": "Your order has been accepted and is being prepared for shipment.",
+  "shipped": "Shipped",
+  "shippedDescription": "Your order is on the way via the delivery agent.",
+  "delivered": "Delivered",
+  "deliveredDescription": "The order has been successfully delivered. We hope you like it.",
+  "month1": "January",
+  "month2": "February",
+  "month3": "March",
+  "month4": "April",
+  "month5": "May",
+  "month6": "June",
+  "month7": "July",
+  "month8": "August",
+  "month9": "September",
+  "month10": "October",
+  "month11": "November",
+  "month12": "December"
 
 }

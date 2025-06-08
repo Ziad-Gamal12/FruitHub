@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "SaveAddress": MessageLookupByLibrary.simpleMessage("Save Address"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "accepted": MessageLookupByLibrary.simpleMessage("Order Accepted"),
+        "acceptedDescription": MessageLookupByLibrary.simpleMessage(
+            "Your order has been accepted and is being prepared for shipment."),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("Add New Address"),
@@ -56,6 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create New Account"),
         "currency": MessageLookupByLibrary.simpleMessage("EGP"),
+        "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "deliveredDescription": MessageLookupByLibrary.simpleMessage(
+            "The order has been successfully delivered. We hope you like it."),
         "deliveryAddressTitle":
             MessageLookupByLibrary.simpleMessage("Delivery Address"),
         "deliveryLabel": MessageLookupByLibrary.simpleMessage("Delivery:"),
@@ -108,6 +114,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("Login with Google"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "month1": MessageLookupByLibrary.simpleMessage("January"),
+        "month10": MessageLookupByLibrary.simpleMessage("October"),
+        "month11": MessageLookupByLibrary.simpleMessage("November"),
+        "month12": MessageLookupByLibrary.simpleMessage("December"),
+        "month2": MessageLookupByLibrary.simpleMessage("February"),
+        "month3": MessageLookupByLibrary.simpleMessage("March"),
+        "month4": MessageLookupByLibrary.simpleMessage("April"),
+        "month5": MessageLookupByLibrary.simpleMessage("May"),
+        "month6": MessageLookupByLibrary.simpleMessage("June"),
+        "month7": MessageLookupByLibrary.simpleMessage("July"),
+        "month8": MessageLookupByLibrary.simpleMessage("August"),
+        "month9": MessageLookupByLibrary.simpleMessage("September"),
         "months": MessageLookupByLibrary.simpleMessage("Months"),
         "moreTitle": MessageLookupByLibrary.simpleMessage("More"),
         "newAccount": MessageLookupByLibrary.simpleMessage("New Account"),
@@ -129,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onlinePaymentTitle":
             MessageLookupByLibrary.simpleMessage("Online Payment"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
+        "orderCount": MessageLookupByLibrary.simpleMessage("Items:"),
         "orderNumber": MessageLookupByLibrary.simpleMessage("Order Number :"),
         "orderSuccessSubtitle": MessageLookupByLibrary.simpleMessage(
             "Your order has been placed successfully"),
@@ -136,11 +155,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Order Successful!"),
         "orderSummaryTitle":
             MessageLookupByLibrary.simpleMessage("Order Summary:"),
+        "orderedAt": MessageLookupByLibrary.simpleMessage("Ordered at:"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "payWithPayPal":
             MessageLookupByLibrary.simpleMessage("Pay with PayPal"),
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+        "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+        "pendingDescription": MessageLookupByLibrary.simpleMessage(
+            "Your order is under review and will be processed soon."),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "plaeseSelectShippingMethod": MessageLookupByLibrary.simpleMessage(
             "Please select payment method"),
@@ -184,6 +207,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search on ...."),
+        "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
+        "shippedDescription": MessageLookupByLibrary.simpleMessage(
+            "Your order is on the way via the delivery agent."),
         "shipping": MessageLookupByLibrary.simpleMessage("Shipping"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSubtitle":

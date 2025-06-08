@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/assets.dart';
@@ -16,6 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   AppBar build(BuildContext context) {
+    String languageCode = Localizations.localeOf(context).languageCode;
     return AppBar(
       leadingWidth: 40,
       leading: isBack == null || isBack == false
@@ -26,10 +27,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                child: SvgPicture.asset(
-                  Assets.assetsImagesArrowleft,
-                  height: 20,
-                  width: 20,
+                child: Transform.rotate(
+                  angle: languageCode == 'ar' ? 0 : 3.14,
+                  child: SvgPicture.asset(
+                    Assets.assetsImagesArrowleft,
+                    height: 20,
+                    width: 20,
+                  ),
                 ),
               ),
             ),
