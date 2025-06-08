@@ -17,4 +17,5 @@ class BackendEndpoints {
   static const isNotifacationAllowed = "isNotifacationAllowed";
   static const notificationContentStoredCount =
       "notificationContentStoredCount";
+  static const languageCode = "languageCode";
 }

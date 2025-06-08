@@ -28,7 +28,7 @@ class customHomeAppBar extends StatelessWidget {
   }
 
   String welcomeMessage(DateTime time, BuildContext context) {
-    if (time.hour >= 12) {
+    if (time.hour >= 17) {
       return S.of(context).goodNightMessage;
     } else {
       return S.of(context).goodMorningMessage;

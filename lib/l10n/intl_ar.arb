@@ -150,7 +150,9 @@
   "publicSettingsTitle":"عام",
   "myOrders": "طلباتي",
   "notifications": "الاشعارات",
-  "aboutUs": "من نحن"
+  "aboutUs": "من نحن",
+  "NoOrder":"لا يوجد طلبات حاليا"
+
   }
 
 

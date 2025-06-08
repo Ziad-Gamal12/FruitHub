@@ -26,13 +26,32 @@ void main() async {
   Bloc.observer = Custom_Blocobserver();
   setup_Getit();
   await shared_preferences_Services.init();
+
   runApp(
     const Fruit_Hub(),
   );
 }
 
-class Fruit_Hub extends StatelessWidget {
+class Fruit_Hub extends StatefulWidget {
   const Fruit_Hub({super.key});
+  static void setLocale(BuildContext context, Locale newLocale) {
+    final _Fruit_HubState? state =
+        context.findAncestorStateOfType<_Fruit_HubState>();
+    state?.setLocale(newLocale);
+  }
+
+  @override
+  State<Fruit_Hub> createState() => _Fruit_HubState();
+}
+
+class _Fruit_HubState extends State<Fruit_Hub> {
+  Locale? _locale;
+
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +62,7 @@ class Fruit_Hub extends StatelessWidget {
             create: (context) => FavoriteProductsCubit(getIt<Productsrepo>())),
       ],
       child: MaterialApp(
-        locale: const Locale("en"),
+        locale: _locale,
         theme:
             ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
         localizationsDelegates: const [

@@ -4,6 +4,7 @@ import 'package:fruits/constent.dart';
 import 'package:fruits/core/widgets/CustomOrderInfo.dart';
 import 'package:fruits/features/OrderTraking/presentation/Views/OrderTrakingView.dart';
 import 'package:fruits/features/Profile/presentation/manager/profile_cubit/profile_cubit.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Myordersviewbody extends StatefulWidget {
   const Myordersviewbody({
@@ -33,8 +34,8 @@ class _MyordersviewbodyState extends State<Myordersviewbody> {
         } else if (state is ProfileGetMyOrdersSuccess) {
           List orders = state.orders;
           return orders.isEmpty
-              ? const Center(
-                  child: Text("No orders"),
+              ? Center(
+                  child: Text(S.of(context).NoOrder),
                 )
               : ListView.builder(
                   itemCount: orders.length,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/widgets/CustomAppBar.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/MyFavoriteProductsWidgets/MyfavoriteproductsViewBody.dart';
+import 'package:fruits/generated/l10n.dart';
 
 class Myfavoriteproductsview extends StatelessWidget {
   const Myfavoriteproductsview({super.key});
@@ -9,7 +10,7 @@ class Myfavoriteproductsview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        appBartitle: "المفضلة",
+        appBartitle: S.of(context).favorites,
         isBack: true,
       ),
       body: const MyfavoriteproductsViewBody(),
