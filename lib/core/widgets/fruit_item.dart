@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Helper_Funcitions/showSnackBar.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
-import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
+import 'package:fruits/core/managers/favorite_products_cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/widgets/CustomAddProductToCartButton.dart';
 import 'package:fruits/core/widgets/CustomFruitItemImage.dart';
 import 'package:fruits/core/widgets/CustomFruitItemInfo.dart';

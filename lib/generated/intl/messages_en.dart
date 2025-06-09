@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Organic": MessageLookupByLibrary.simpleMessage("Organic"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "SaveAddress": MessageLookupByLibrary.simpleMessage("Save Address"),
+        "SentResetPasswordSuccess": MessageLookupByLibrary.simpleMessage(
+            "Successfully, a verification message was sent to your email."),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
         "accepted": MessageLookupByLibrary.simpleMessage("Order Accepted"),
@@ -210,6 +212,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "rateProduct":
             MessageLookupByLibrary.simpleMessage("Please rate the product"),
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "resetPasswordButtonTitle":
+            MessageLookupByLibrary.simpleMessage("Forget Password"),
+        "resetPasswordDescription": MessageLookupByLibrary.simpleMessage(
+            "If you have forgotten your password, don’t worry — we’re here to help! Please enter your registered email address below, and we’ll send you a message with detailed instructions to reset your password. Make sure to check your inbox and spam folder. If you don’t receive the message within a few minutes, you can try again."),
+        "resetPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("Reset Password"),
         "results": MessageLookupByLibrary.simpleMessage("Results"),
         "review": MessageLookupByLibrary.simpleMessage("Review"),
         "reviewAdded": MessageLookupByLibrary.simpleMessage("Review added"),

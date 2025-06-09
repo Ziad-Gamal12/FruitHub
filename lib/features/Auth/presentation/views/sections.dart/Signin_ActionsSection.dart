@@ -6,6 +6,7 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/Auth/presentation/manager/SignIn/sign_in_cubit.dart';
+import 'package:fruits/features/Auth/presentation/views/CustomResetPasswordView.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
 import 'package:fruits/generated/l10n.dart';
 
@@ -17,11 +18,16 @@ class Signin_ActionsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text(
-          S.of(context).forgotPassword,
-          style: textStyles(context: context)
-              .textstyle13
-              .copyWith(color: const Color(0xFF2D9F5D)),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, CustomResetPasswordView.routeName);
+          },
+          child: Text(
+            S.of(context).forgotPassword,
+            style: textStyles(context: context)
+                .textstyle13
+                .copyWith(color: const Color(0xFF2D9F5D)),
+          ),
         ),
         const SizedBox(
           height: 33,

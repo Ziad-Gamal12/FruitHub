@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Organic": MessageLookupByLibrary.simpleMessage("أورجانيك"),
         "Recommended": MessageLookupByLibrary.simpleMessage("موصى به"),
         "SaveAddress": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
+        "SentResetPasswordSuccess": MessageLookupByLibrary.simpleMessage(
+            "بنجاح,تم ارسال رسالة تحقق على بريدك الالكتروني"),
         "Success": MessageLookupByLibrary.simpleMessage("نجاح"),
         "aboutUs": MessageLookupByLibrary.simpleMessage("من نحن"),
         "accepted": MessageLookupByLibrary.simpleMessage("قبول الطلب"),
@@ -209,6 +211,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "rateProduct":
             MessageLookupByLibrary.simpleMessage("يرجى تقييم المنتج"),
         "resendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+        "resetPasswordButtonTitle":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "resetPasswordDescription": MessageLookupByLibrary.simpleMessage(
+            "إذا كنت قد نسيت كلمة المرور الخاصة بك، لا داعي للقلق. نحن هنا لمساعدتك! يرجى إدخال عنوان بريدك الإلكتروني المسجل في الحقل أدناه. بعد ذلك، سنرسل لك رسالة تحتوي على تعليمات مفصلة لإعادة تعيين كلمة المرور الخاصة بك. تأكد من التحقق من صندوق الوارد والبريد غير الهام (سبام) الخاص بك. إذا لم تصلك الرسالة خلال بضع دقائق، يمكنك إعادة المحاولة."),
+        "resetPasswordTitle":
+            MessageLookupByLibrary.simpleMessage("استعادة كلمة المرور"),
         "results": MessageLookupByLibrary.simpleMessage("نتايج"),
         "review": MessageLookupByLibrary.simpleMessage("المراجعه"),
         "reviewAdded": MessageLookupByLibrary.simpleMessage("تم اضافة التعليق"),

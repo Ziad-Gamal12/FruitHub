@@ -7,7 +7,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits/core/Helper_Funcitions/OnGenrateRoute.dart';
 import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
-import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
+import 'package:fruits/core/Utils/Backend_EndPoints.dart';
+import 'package:fruits/core/managers/favorite_products_cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/services/BlocObserver.dart';
 import 'package:fruits/core/services/LocalNotifications.dart';
 import 'package:fruits/core/services/Shared_preferences.dart';
@@ -62,7 +63,10 @@ class _Fruit_HubState extends State<Fruit_Hub> {
             create: (context) => FavoriteProductsCubit(getIt<Productsrepo>())),
       ],
       child: MaterialApp(
-        locale: _locale ?? const Locale('ar'),
+        locale: _locale ??
+            Locale(shared_preferences_Services.stringgetter(
+                    key: BackendEndpoints.languageCode) ??
+                'ar'),
         theme:
             ThemeData(fontFamily: "Cairo", primaryColor: AppColors.MainColor),
         localizationsDelegates: const [

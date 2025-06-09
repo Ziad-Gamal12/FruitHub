@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
+import 'package:fruits/features/Auth/presentation/views/CustomResetPasswordView.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dart';
@@ -69,6 +70,9 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
           builder: (context) => const Myfavoriteproductsview());
     case Aboutusview.routeName:
       return MaterialPageRoute(builder: (context) => const Aboutusview());
+    case CustomResetPasswordView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const CustomResetPasswordView());
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());
   }

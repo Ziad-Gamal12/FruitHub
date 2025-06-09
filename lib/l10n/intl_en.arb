@@ -155,9 +155,14 @@
   "notifications": "Notifications",
   "aboutUs": "About Us",
   "NoOrder":"No orders, yet",
-  "AboutUsContent":       "Welcome to Fruit Hub, your trusted online marketplace dedicated to bringing the freshest and highest quality fruits directly from farms to your doorstep. We are passionate about promoting a healthy lifestyle by making fresh fruit accessible and affordable to everyone. At Fruit Hub, we carefully select our fruit suppliers to ensure only the best seasonal, organic, and exotic fruits are available for you. Our mission is to connect consumers with nature’s finest offerings while supporting local farmers and sustainable farming practices. We offer a seamless shopping experience through our user-friendly app that lets you browse, compare, and order fruits with just a few taps. Enjoy fast and reliable delivery, secure payments, and excellent customer support every step of the way. Whether you’re stocking up for your family, preparing for a special event, or simply craving a healthy snack, Fruit Hub is here to meet all your fruit needs with freshness and quality guaranteed. Join our community of health-conscious customers and discover the convenience of having nature’s best delivered right to your door. Fruit Hub - where health and freshness come together in every bite."
- , "waring": "Warning",
+  "AboutUsContent":       "Welcome to Fruit Hub, your trusted online marketplace dedicated to bringing the freshest and highest quality fruits directly from farms to your doorstep. We are passionate about promoting a healthy lifestyle by making fresh fruit accessible and affordable to everyone. At Fruit Hub, we carefully select our fruit suppliers to ensure only the best seasonal, organic, and exotic fruits are available for you. Our mission is to connect consumers with nature’s finest offerings while supporting local farmers and sustainable farming practices. We offer a seamless shopping experience through our user-friendly app that lets you browse, compare, and order fruits with just a few taps. Enjoy fast and reliable delivery, secure payments, and excellent customer support every step of the way. Whether you’re stocking up for your family, preparing for a special event, or simply craving a healthy snack, Fruit Hub is here to meet all your fruit needs with freshness and quality guaranteed. Join our community of health-conscious customers and discover the convenience of having nature’s best delivered right to your door. Fruit Hub - where health and freshness come together in every bite.",
+  "waring": "Warning",
   "close":"Close",
   "infoTitle":"Info",
-  "verfied": "Verify"
+  "verfied": "Verify",
+  "resetPasswordTitle": "Reset Password",
+  "resetPasswordDescription":"If you have forgotten your password, don’t worry — we’re here to help! Please enter your registered email address below, and we’ll send you a message with detailed instructions to reset your password. Make sure to check your inbox and spam folder. If you don’t receive the message within a few minutes, you can try again.",
+  "resetPasswordButtonTitle":"Forget Password",
+  "SentResetPasswordSuccess":"Successfully, a verification message was sent to your email."
+
 }

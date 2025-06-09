@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/assets.dart';
-import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
+import 'package:fruits/core/managers/favorite_products_cubit/favorite_products_cubit.dart';
 import 'package:svg_flutter/svg.dart';
 
 class customAddFavoriteProductIcon extends StatelessWidget {

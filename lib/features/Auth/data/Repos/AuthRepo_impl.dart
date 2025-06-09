@@ -210,4 +210,19 @@ class AuthRepo_impl implements AuthRepo {
     await shared_preferences_Services.stringSetter(
         key: BackendEndpoints.KuserData, value: jsonData);
   }
+
+  @override
+  Future<Either<Failure, void>> resetPassword(
+      {required String email, required BuildContext context}) async {
+    try {
+      await authService.sendPasswordResetEmail(email: email);
+      return right(null);
+    } catch (e) {
+      return left(
+        ServerFailure(
+          message: S.of(context).unKnowenErrorMessage,
+        ),
+      );
+    }
+  }
 }

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/core/Utils/assets.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
-import 'package:fruits/features/Home/Presentation/manager/Products_Cubit/products_cubit.dart';
+import 'package:fruits/features/Home/Presentation/manager/reviews_cubit/reviews_cubit.dart';
 import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -21,7 +21,7 @@ class CustomRatingSummary extends StatelessWidget {
           children: [
             Text(
               context
-                  .read<ProductsCubit>()
+                  .read<ReviewsCubit>()
                   .getproductStarRate(product: context.read<Productsentity>())
                   .toString(),
               style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
@@ -31,7 +31,7 @@ class CustomRatingSummary extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         Text(
-          "${context.read<ProductsCubit>().calculateOverallReviewPercentage(context.read<Productsentity>().reviews!.map((e) => e.reating.round()).toList())}%",
+          "${context.read<ReviewsCubit>().calculateOverallReviewPercentage(context.read<Productsentity>().reviews!.map((e) => e.reating.round()).toList())}%",
           style: textStyles(context: context)
               .textstyle16
               .copyWith(fontWeight: FontWeight.w400, color: Colors.black),

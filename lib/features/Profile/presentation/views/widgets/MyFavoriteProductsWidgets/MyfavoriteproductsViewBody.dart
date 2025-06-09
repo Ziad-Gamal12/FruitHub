@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/ProductsEntity.dart';
-import 'package:fruits/core/managers/cubit/favorite_products_cubit.dart';
+import 'package:fruits/core/managers/favorite_products_cubit/favorite_products_cubit.dart';
 import 'package:fruits/core/widgets/fruit_item.dart';
 import 'package:provider/provider.dart';
 

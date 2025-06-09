@@ -1649,6 +1649,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Reset Password`
+  String get resetPasswordTitle {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have forgotten your password, don’t worry — we’re here to help! Please enter your registered email address below, and we’ll send you a message with detailed instructions to reset your password. Make sure to check your inbox and spam folder. If you don’t receive the message within a few minutes, you can try again.`
+  String get resetPasswordDescription {
+    return Intl.message(
+      'If you have forgotten your password, don’t worry — we’re here to help! Please enter your registered email address below, and we’ll send you a message with detailed instructions to reset your password. Make sure to check your inbox and spam folder. If you don’t receive the message within a few minutes, you can try again.',
+      name: 'resetPasswordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password`
+  String get resetPasswordButtonTitle {
+    return Intl.message(
+      'Forget Password',
+      name: 'resetPasswordButtonTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully, a verification message was sent to your email.`
+  String get SentResetPasswordSuccess {
+    return Intl.message(
+      'Successfully, a verification message was sent to your email.',
+      name: 'SentResetPasswordSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
