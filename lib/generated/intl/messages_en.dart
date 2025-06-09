@@ -224,6 +224,46 @@ class MessageLookup extends MessageLookupByLibrary {
         "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search on ...."),
+        "section_changes_content": MessageLookupByLibrary.simpleMessage(
+            "We may update these terms. Continued use means you accept the new terms."),
+        "section_changes_title":
+            MessageLookupByLibrary.simpleMessage("9. Changes to Terms"),
+        "section_contact_content": MessageLookupByLibrary.simpleMessage(
+            "For questions, contact us at ziadgamal123@gmail.com or +201280316031"),
+        "section_contact_title":
+            MessageLookupByLibrary.simpleMessage("10. Contact Us"),
+        "section_ip_content": MessageLookupByLibrary.simpleMessage(
+            "All logos, images, and content belong to Fruit Hub and may not be used without permission."),
+        "section_ip_title":
+            MessageLookupByLibrary.simpleMessage("8. Intellectual Property"),
+        "section_orders_content": MessageLookupByLibrary.simpleMessage(
+            "Orders are final once confirmed. Delivery times are estimates. Please inspect items on delivery for quality."),
+        "section_orders_title":
+            MessageLookupByLibrary.simpleMessage("4. Orders and Delivery"),
+        "section_pricing_content": MessageLookupByLibrary.simpleMessage(
+            "Prices may change without notice. Payment must be made using the available methods. We may cancel suspicious orders."),
+        "section_pricing_title":
+            MessageLookupByLibrary.simpleMessage("3. Pricing and Payment"),
+        "section_privacy_content": MessageLookupByLibrary.simpleMessage(
+            "Your data is secure and used only to process orders and improve service. We don\'t share your data without your consent, unless legally required."),
+        "section_privacy_title":
+            MessageLookupByLibrary.simpleMessage("6. User Data and Privacy"),
+        "section_products_content": MessageLookupByLibrary.simpleMessage(
+            "All products are subject to availability. Product images are for illustration and may vary slightly. We strive to keep information up to date."),
+        "section_products_title": MessageLookupByLibrary.simpleMessage(
+            "2. Products and Availability"),
+        "section_prohibited_content": MessageLookupByLibrary.simpleMessage(
+            "You may not misuse the app (e.g., spam, hack, or spread viruses). Fraudulent behavior may result in account termination."),
+        "section_prohibited_title":
+            MessageLookupByLibrary.simpleMessage("7. Prohibited Activities"),
+        "section_returns_content": MessageLookupByLibrary.simpleMessage(
+            "If you receive a damaged or wrong item, contact us within 24 hours with a photo and order ID. Refunds or replacements are at our discretion."),
+        "section_returns_title":
+            MessageLookupByLibrary.simpleMessage("5. Returns and Complaints"),
+        "section_use_content": MessageLookupByLibrary.simpleMessage(
+            "Fruit Hub is for personal use only. You must be at least 18 years old to place orders. You agree to provide accurate information when registering or ordering."),
+        "section_use_title":
+            MessageLookupByLibrary.simpleMessage("1. Use of the App"),
         "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
         "shippedDescription": MessageLookupByLibrary.simpleMessage(
             "Your order is on the way via the delivery agent."),
@@ -235,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort by:"),
         "starRating": MessageLookupByLibrary.simpleMessage("Review"),
         "subtotalLabel": MessageLookupByLibrary.simpleMessage("Subtotal:"),
+        "termsAndConditionsTitle":
+            MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "totalLabel": MessageLookupByLibrary.simpleMessage("Total"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("Track Order"),

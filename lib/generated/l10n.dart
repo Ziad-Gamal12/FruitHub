@@ -1689,6 +1689,216 @@ class S {
       args: [],
     );
   }
+
+  /// `Terms and Conditions`
+  String get termsAndConditionsTitle {
+    return Intl.message(
+      'Terms and Conditions',
+      name: 'termsAndConditionsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Use of the App`
+  String get section_use_title {
+    return Intl.message(
+      '1. Use of the App',
+      name: 'section_use_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fruit Hub is for personal use only. You must be at least 18 years old to place orders. You agree to provide accurate information when registering or ordering.`
+  String get section_use_content {
+    return Intl.message(
+      'Fruit Hub is for personal use only. You must be at least 18 years old to place orders. You agree to provide accurate information when registering or ordering.',
+      name: 'section_use_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2. Products and Availability`
+  String get section_products_title {
+    return Intl.message(
+      '2. Products and Availability',
+      name: 'section_products_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All products are subject to availability. Product images are for illustration and may vary slightly. We strive to keep information up to date.`
+  String get section_products_content {
+    return Intl.message(
+      'All products are subject to availability. Product images are for illustration and may vary slightly. We strive to keep information up to date.',
+      name: 'section_products_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3. Pricing and Payment`
+  String get section_pricing_title {
+    return Intl.message(
+      '3. Pricing and Payment',
+      name: 'section_pricing_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prices may change without notice. Payment must be made using the available methods. We may cancel suspicious orders.`
+  String get section_pricing_content {
+    return Intl.message(
+      'Prices may change without notice. Payment must be made using the available methods. We may cancel suspicious orders.',
+      name: 'section_pricing_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4. Orders and Delivery`
+  String get section_orders_title {
+    return Intl.message(
+      '4. Orders and Delivery',
+      name: 'section_orders_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders are final once confirmed. Delivery times are estimates. Please inspect items on delivery for quality.`
+  String get section_orders_content {
+    return Intl.message(
+      'Orders are final once confirmed. Delivery times are estimates. Please inspect items on delivery for quality.',
+      name: 'section_orders_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `5. Returns and Complaints`
+  String get section_returns_title {
+    return Intl.message(
+      '5. Returns and Complaints',
+      name: 'section_returns_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you receive a damaged or wrong item, contact us within 24 hours with a photo and order ID. Refunds or replacements are at our discretion.`
+  String get section_returns_content {
+    return Intl.message(
+      'If you receive a damaged or wrong item, contact us within 24 hours with a photo and order ID. Refunds or replacements are at our discretion.',
+      name: 'section_returns_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `6. User Data and Privacy`
+  String get section_privacy_title {
+    return Intl.message(
+      '6. User Data and Privacy',
+      name: 'section_privacy_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your data is secure and used only to process orders and improve service. We don't share your data without your consent, unless legally required.`
+  String get section_privacy_content {
+    return Intl.message(
+      'Your data is secure and used only to process orders and improve service. We don\'t share your data without your consent, unless legally required.',
+      name: 'section_privacy_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `7. Prohibited Activities`
+  String get section_prohibited_title {
+    return Intl.message(
+      '7. Prohibited Activities',
+      name: 'section_prohibited_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You may not misuse the app (e.g., spam, hack, or spread viruses). Fraudulent behavior may result in account termination.`
+  String get section_prohibited_content {
+    return Intl.message(
+      'You may not misuse the app (e.g., spam, hack, or spread viruses). Fraudulent behavior may result in account termination.',
+      name: 'section_prohibited_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `8. Intellectual Property`
+  String get section_ip_title {
+    return Intl.message(
+      '8. Intellectual Property',
+      name: 'section_ip_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All logos, images, and content belong to Fruit Hub and may not be used without permission.`
+  String get section_ip_content {
+    return Intl.message(
+      'All logos, images, and content belong to Fruit Hub and may not be used without permission.',
+      name: 'section_ip_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `9. Changes to Terms`
+  String get section_changes_title {
+    return Intl.message(
+      '9. Changes to Terms',
+      name: 'section_changes_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We may update these terms. Continued use means you accept the new terms.`
+  String get section_changes_content {
+    return Intl.message(
+      'We may update these terms. Continued use means you accept the new terms.',
+      name: 'section_changes_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `10. Contact Us`
+  String get section_contact_title {
+    return Intl.message(
+      '10. Contact Us',
+      name: 'section_contact_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For questions, contact us at ziadgamal123@gmail.com or +201280316031`
+  String get section_contact_content {
+    return Intl.message(
+      'For questions, contact us at ziadgamal123@gmail.com or +201280316031',
+      name: 'section_contact_content',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

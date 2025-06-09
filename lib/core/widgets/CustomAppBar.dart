@@ -18,6 +18,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   AppBar build(BuildContext context) {
     String languageCode = Localizations.localeOf(context).languageCode;
     return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
       leadingWidth: 40,
       leading: isBack == null || isBack == false
           ? const SizedBox()

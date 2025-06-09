@@ -5,6 +5,7 @@ import 'package:fruits/core/Entities/ProductsEntity.dart';
 import 'package:fruits/features/Auth/presentation/views/CustomResetPasswordView.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Auth/presentation/views/SignUpView.dart';
+import 'package:fruits/features/Auth/presentation/views/TermsAndConditionsView.dart';
 import 'package:fruits/features/BestSeller/Presentation/views/bestSellerView.dart';
 import 'package:fruits/features/Cart/domain/entities/CartEntity.dart';
 import 'package:fruits/features/Cart/presentation/views/CartView.dart';
@@ -73,6 +74,10 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case CustomResetPasswordView.routeName:
       return MaterialPageRoute(
           builder: (context) => const CustomResetPasswordView());
+    case Termsandconditionsview.routeName:
+      return MaterialPageRoute(
+          builder: (context) => const Termsandconditionsview());
+
     default:
       return MaterialPageRoute(builder: (context) => const Splash_View());
   }

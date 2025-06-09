@@ -223,6 +223,46 @@ class MessageLookup extends MessageLookupByLibrary {
         "reviews": MessageLookupByLibrary.simpleMessage("المراجعه"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن...."),
+        "section_changes_content": MessageLookupByLibrary.simpleMessage(
+            "قد نقوم بتحديث هذه الشروط. استمرار استخدامك للتطبيق يعني موافقتك على الشروط الجديدة."),
+        "section_changes_title":
+            MessageLookupByLibrary.simpleMessage("٩. التعديلات على الشروط"),
+        "section_contact_content": MessageLookupByLibrary.simpleMessage(
+            "للاستفسارات، تواصل معنا على ziadgemy123@gmail.com أو +201280316031."),
+        "section_contact_title":
+            MessageLookupByLibrary.simpleMessage("١٠. تواصل معنا"),
+        "section_ip_content": MessageLookupByLibrary.simpleMessage(
+            "جميع الشعارات والصور والمحتوى ملك لتطبيق فروت هب ولا يجوز استخدامها بدون إذن."),
+        "section_ip_title":
+            MessageLookupByLibrary.simpleMessage("٨. حقوق الملكية"),
+        "section_orders_content": MessageLookupByLibrary.simpleMessage(
+            "الطلبات نهائية بعد تأكيدها. أوقات التوصيل تقديرية. يرجى فحص الطلب عند الاستلام."),
+        "section_orders_title":
+            MessageLookupByLibrary.simpleMessage("٤. الطلبات والتوصيل"),
+        "section_pricing_content": MessageLookupByLibrary.simpleMessage(
+            "قد تتغير الأسعار دون إشعار. يجب الدفع باستخدام الطرق المتوفرة. قد نلغي الطلبات المشبوهة."),
+        "section_pricing_title":
+            MessageLookupByLibrary.simpleMessage("٣. الأسعار والدفع"),
+        "section_privacy_content": MessageLookupByLibrary.simpleMessage(
+            "يتم حفظ بياناتك بأمان وتُستخدم فقط لمعالجة الطلبات وتحسين الخدمة. لا نشاركها إلا بموافقة منك أو إذا طُلب منا قانونيًا."),
+        "section_privacy_title": MessageLookupByLibrary.simpleMessage(
+            "٦. بيانات المستخدم والخصوصية"),
+        "section_products_content": MessageLookupByLibrary.simpleMessage(
+            "جميع المنتجات خاضعة للتوافر. الصور لأغراض التوضيح وقد تختلف قليلًا. نحاول دائمًا تحديث المعلومات."),
+        "section_products_title":
+            MessageLookupByLibrary.simpleMessage("٢. المنتجات والتوافر"),
+        "section_prohibited_content": MessageLookupByLibrary.simpleMessage(
+            "يُمنع إساءة استخدام التطبيق (مثل السبام أو الاختراق أو نشر فيروسات). أي نشاط احتيالي يؤدي إلى إغلاق الحساب."),
+        "section_prohibited_title":
+            MessageLookupByLibrary.simpleMessage("٧. الأنشطة المحظورة"),
+        "section_returns_content": MessageLookupByLibrary.simpleMessage(
+            "إذا استلمت منتجًا تالفًا أو خاطئًا، تواصل معنا خلال ٢٤ ساعة مع صورة ورقم الطلب. يتم الاسترداد أو الاستبدال وفقًا لتقديرنا."),
+        "section_returns_title":
+            MessageLookupByLibrary.simpleMessage("٥. الاسترجاع والشكاوى"),
+        "section_use_content": MessageLookupByLibrary.simpleMessage(
+            "تطبيق فروت هب مخصص للاستخدام الشخصي فقط. يجب أن يكون عمرك 18 عامًا على الأقل لإجراء الطلبات. توافق على تقديم معلومات دقيقة عند التسجيل أو الطلب."),
+        "section_use_title":
+            MessageLookupByLibrary.simpleMessage("١. استخدام التطبيق"),
         "shipped": MessageLookupByLibrary.simpleMessage("خرج للتوصيل"),
         "shippedDescription": MessageLookupByLibrary.simpleMessage(
             "طلبك الآن في طريقه إليك عبر مندوب التوصيل"),
@@ -235,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "starRating": MessageLookupByLibrary.simpleMessage("تقييم"),
         "subtotalLabel":
             MessageLookupByLibrary.simpleMessage("المجموع الفرعي :"),
+        "termsAndConditionsTitle":
+            MessageLookupByLibrary.simpleMessage("الشروط والاحكام"),
         "total": MessageLookupByLibrary.simpleMessage("الإجمالي"),
         "totalLabel": MessageLookupByLibrary.simpleMessage("الكلي"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),

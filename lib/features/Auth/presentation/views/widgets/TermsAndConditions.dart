@@ -5,6 +5,7 @@ import 'package:fruits/constent.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/widgets/CustomCheckBox.dart';
+import 'package:fruits/features/Auth/presentation/views/TermsAndConditionsView.dart';
 import 'package:fruits/generated/l10n.dart';
 
 class TermsAndConditions extends StatelessWidget {
@@ -26,19 +27,25 @@ class TermsAndConditions extends StatelessWidget {
               width: 16,
             ),
             Expanded(
-              child: SizedBox(
-                child: Text.rich(TextSpan(children: [
-                  TextSpan(
-                      text: S.of(context).agreeTermsText1,
-                      style: textStyles(context: context)
-                          .textstyle13
-                          .copyWith(color: const Color(0xff949D9E))),
-                  TextSpan(
-                      text: S.of(context).agreeTermsText2,
-                      style: textStyles(context: context)
-                          .textstyle13
-                          .copyWith(color: AppColors.lightmaincolor))
-                ])),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, Termsandconditionsview.routeName);
+                },
+                child: SizedBox(
+                  child: Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text: S.of(context).agreeTermsText1,
+                        style: textStyles(context: context)
+                            .textstyle13
+                            .copyWith(color: const Color(0xff949D9E))),
+                    TextSpan(
+                        text: S.of(context).agreeTermsText2,
+                        style: textStyles(context: context)
+                            .textstyle13
+                            .copyWith(color: AppColors.lightmaincolor))
+                  ])),
+                ),
               ),
             )
           ],
