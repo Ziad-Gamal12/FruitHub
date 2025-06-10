@@ -7,6 +7,7 @@ class BackendEndpoints {
   static const removeFavouriteProduct = "users";
   static const getFavouriteProducts = "users";
   static const getProducts = "products";
+  static const shippingAddressesList = "shippingAddresses";
   static const favouriteProducts = "favourites";
   static const updateProdust = "products";
   static const updateUser = "users";

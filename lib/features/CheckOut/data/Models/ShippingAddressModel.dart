@@ -2,7 +2,6 @@ import 'package:fruits/features/CheckOut/domain/OrderAddressEntity.dart';
 
 class Shippingaddressmodel {
   final String userId, fullname, email, address, city, flatNumber, phoneNumber;
-
   Shippingaddressmodel(
       {required this.fullname,
       required this.email,

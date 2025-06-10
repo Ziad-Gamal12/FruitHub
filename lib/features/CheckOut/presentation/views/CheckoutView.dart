@@ -37,6 +37,7 @@ class _CheckoutviewState extends State<Checkoutview> {
     super.initState();
   }
 
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -50,6 +51,7 @@ class _CheckoutviewState extends State<Checkoutview> {
       ],
       child: Builder(builder: (context) {
         return Scaffold(
+          key: scaffoldKey,
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
             appBartitle: CheckoutstepitemEntity.checkoutstepitemEntityList(
@@ -58,7 +60,10 @@ class _CheckoutviewState extends State<Checkoutview> {
                 .title,
           ),
           body: Provider.value(
-              value: orderentity, child: const CheckoutviewBody()),
+              value: orderentity,
+              child: CheckoutviewBody(
+                scaffoldKey: scaffoldKey,
+              )),
         );
       }),
     );

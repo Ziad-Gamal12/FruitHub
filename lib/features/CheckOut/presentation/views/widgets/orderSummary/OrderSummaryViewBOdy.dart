@@ -5,7 +5,7 @@ import 'package:fruits/core/Utils/variables.dart';
 import 'package:fruits/core/widgets/CustomButton.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
 import 'package:fruits/features/CheckOut/presentation/manager/add_order_cubit/add_order_cubit.dart';
-import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/AddressSummarySection.dart';
+import 'package:fruits/features/CheckOut/presentation/views/widgets/Address/AddressSummarySection.dart';
 import 'package:fruits/features/CheckOut/presentation/views/widgets/orderSummary/OrderSummarySection.dart';
 import 'package:fruits/generated/l10n.dart';
 

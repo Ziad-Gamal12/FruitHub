@@ -268,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "shippedDescription": MessageLookupByLibrary.simpleMessage(
             "Your order is on the way via the delivery agent."),
         "shipping": MessageLookupByLibrary.simpleMessage("Shipping"),
+        "showSavedAddresses":
+            MessageLookupByLibrary.simpleMessage("Show Saved Addresses"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSubtitle":
             MessageLookupByLibrary.simpleMessage("Create your account"),

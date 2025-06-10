@@ -1899,6 +1899,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Show Saved Addresses`
+  String get showSavedAddresses {
+    return Intl.message(
+      'Show Saved Addresses',
+      name: 'showSavedAddresses',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -17,21 +17,25 @@ import 'package:fruits/features/CheckOut/presentation/views/widgets/shipping/Shi
 class CheckoutviewBody extends StatefulWidget {
   const CheckoutviewBody({
     super.key,
+    required this.scaffoldKey,
   });
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   State<CheckoutviewBody> createState() => _CheckoutviewBodyState();
 }
 
 class _CheckoutviewBodyState extends State<CheckoutviewBody> {
-  List<Widget> proccess = [
-    const Shippingviewbody(),
-    const Adressviewbody(),
-    const Ordersummaryviewbody(),
-  ];
   @override
   Widget build(BuildContext context) {
     Orderentity order = context.read<Orderentity>();
+    List<Widget> proccess = [
+      const Shippingviewbody(),
+      Adressviewbody(
+        checkOutScaffoldKey: widget.scaffoldKey,
+      ),
+      const Ordersummaryviewbody(),
+    ];
     return BlocListener<AddOrderCubit, AddOrderState>(
       listener: (context, state) {
         if (state is AddOrderSuccess) {

@@ -34,6 +34,8 @@ abstract class variables {
   static PageController checkoutProccessPageViewController = PageController();
   static int? currentShippingOptionIndex;
   static GlobalKey<FormState> Loginkey = GlobalKey();
+  static GlobalKey<ScaffoldState> CheckOutScaffoldKey = GlobalKey();
+
   static GlobalKey<FormState> SignUpkey = GlobalKey();
   static List<Map<String, String>> fruitHubNotifications = [
     {

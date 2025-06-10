@@ -6,10 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:fruits/constent.dart';
 import 'package:fruits/core/Entities/paypal_payment_entity/paypal_payment_entity.dart';
+import 'package:fruits/core/Helper_Funcitions/showSnackBar.dart';
 import 'package:fruits/core/Repos/Orders/orders_Repo.dart';
 import 'package:fruits/core/Repos/Products/productsRepo.dart';
 import 'package:fruits/core/errors/Failures.dart';
 import 'package:fruits/features/CheckOut/domain/OrderEntity.dart';
+import 'package:fruits/generated/l10n.dart';
 
 part 'add_order_state.dart';
 
@@ -73,7 +75,7 @@ class AddOrderCubit extends Cubit<AddOrderState> {
     );
   }
 
-  paywithPaypal({required BuildContext context}) {
+  void paywithPaypal({required BuildContext context}) {
     var orderEntity = context.read<Orderentity>();
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context1) => PaypalCheckoutView(
@@ -86,6 +88,9 @@ class AddOrderCubit extends Cubit<AddOrderState> {
           addOrder(orderEntity: orderEntity);
         },
         onError: (error) {
+          showSnackBar(
+              message: S.of(context).unKnowenErrorMessage, context: context);
+          log(error.toString());
           Navigator.of(context).pop();
         },
         onCancel: () {

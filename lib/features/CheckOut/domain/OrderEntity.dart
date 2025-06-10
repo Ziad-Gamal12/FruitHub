@@ -28,11 +28,14 @@ class Orderentity {
     return 0;
   }
 
-  getOrderTotalPrice() {
-    return ((orderProducts
-                .map((e) => e.calclulateTotalPrice())
-                .reduce((a, b) => a + b) +
-            geteshippingDiscount()) *
-        ((100 - geteshippingDiscount()) / 100));
+  double getOrderTotalPrice() {
+    double subtotal = orderProducts
+        .map((e) => e.calclulateTotalPrice())
+        .reduce((a, b) => a + b);
+
+    int discountPercentage = geteshippingDiscount();
+    double discountMultiplier = (100 - discountPercentage) / 100;
+
+    return subtotal * discountMultiplier;
   }
 }

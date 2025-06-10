@@ -73,7 +73,7 @@ class Customorderinfo extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "${order.orderProducts.map((e) => double.parse(e.productsentity.price)).reduce((a, b) => a + b)} ${S.of(context).currency}",
+                      "${order.orderProducts.map((e) => e.calclulateTotalPrice()).reduce((a, b) => a + b)} ${S.of(context).currency}",
                       style: textStyles(context: context).textstyle13.copyWith(
                           color: Colors.black, fontWeight: FontWeight.w700),
                     )

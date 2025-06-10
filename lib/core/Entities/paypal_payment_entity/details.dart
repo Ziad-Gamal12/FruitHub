@@ -10,7 +10,7 @@ class Details {
     return Details(
         shipping: orederentity.getShippingcost().toString(),
         subtotal: orederentity.orderProducts
-            .map((e) => e.productsentity.price)
+            .map((e) => e.calclulateTotalPrice())
             .reduce((a, b) => a + b)
             .toString(),
         shippingDiscount: orederentity.geteshippingDiscount());
