@@ -2,6 +2,7 @@
 
 Fruit Hub is a modern Flutter application designed for fruit lovers who want fresh and healthy fruits delivered right to their doorstep. With a clean interface, smooth animations, and easy navigation, Fruit Hub makes fruit shopping fast, fun, and convenient.
 Whether you’re looking for seasonal favorites, exotic fruits, or daily essentials, Fruit Hub has it all in one place.
+
 ---
 
 ## ✨ Features
