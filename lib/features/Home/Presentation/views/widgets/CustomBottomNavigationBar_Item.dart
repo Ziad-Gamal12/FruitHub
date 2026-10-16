@@ -9,17 +9,21 @@ class CustombottomnavigationbarItem extends StatelessWidget {
   const CustombottomnavigationbarItem(
       {super.key,
       required this.isSelected,
+      required this.index,
       required this.bottomnavigationbarEntity});
   final bool isSelected;
+  final int index;
   final BottomnavigationbarEntity bottomnavigationbarEntity;
 
   @override
   Widget build(BuildContext context) {
     return isSelected == false
         ? Custombottomnavigationbar_inActiveicon(
+            index: index,
             inactiveIconPath: bottomnavigationbarEntity.inActiveIconPath,
           )
         : Custombottomnavigationbaractiveicon(
+            index: index,
             activeIconPath: bottomnavigationbarEntity.activeIconPath,
             title: bottomnavigationbarEntity.title,
           );

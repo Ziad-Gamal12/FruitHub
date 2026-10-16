@@ -36,7 +36,11 @@ abstract class variables {
   static GlobalKey<FormState> Loginkey = GlobalKey();
   static GlobalKey<ScaffoldState> CheckOutScaffoldKey = GlobalKey();
 
+  static GlobalKey cartKey = GlobalKey();
+  static GlobalKey<FormState> fruitItemKey = GlobalKey();
+
   static GlobalKey<FormState> SignUpkey = GlobalKey();
+
   static List<Map<String, String>> fruitHubNotifications = [
     {
       'title': 'تذوق نكهات الموسم!',

@@ -50,11 +50,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "42782022592-at94uqne413rhn9mf5snvgp4efrqejke.apps.googleusercontent.com",
+          "client_id": "42782022592-478utb58n9kd1e77epkqbdkpbvl17gi5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.fruits",
-            "certificate_hash": "f0d539880469f9f333cd599d25f8c5ccad7a8f79"
+            "certificate_hash": "11710e009c84949f412229f463796b54464b7267"
           }
         },
         {

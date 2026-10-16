@@ -15,11 +15,12 @@ import 'package:fruits/features/Cart/presentation/manager/cart_cubit/cart_cubit.
 import 'package:fruits/features/Home/Presentation/views/productDetailsView.dart';
 
 class FruitItem extends StatelessWidget {
-  const FruitItem({
+  FruitItem({
     super.key,
     required this.product,
   });
   final Productsentity product;
+  bool isShowing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -112,19 +113,29 @@ class FruitItem extends StatelessWidget {
     }
   }
 
-  handleCartBlocListener(CartState state, BuildContext context) {
-    if (state is CartAdded) {
+  void handleCartBlocListener(CartState state, BuildContext context) {
+    if (state is CartAdded && !isShowing) {
+      isShowing = true;
       showSnackBar(
-          message: "تم اضافة المنتج للسلة",
-          context: context,
-          color: Colors.green,
-          textColor: Colors.white);
-    } else if (state is CartRemoved) {
+        message: "تم اضافة المنتج للسلة",
+        context: context,
+        color: Colors.green,
+        textColor: Colors.white,
+      );
+      Future.delayed(const Duration(seconds: 2), () {
+        isShowing = false;
+      });
+    } else if (state is CartRemoved && !isShowing) {
+      isShowing = true;
       showSnackBar(
-          message: "تم حذف المنتج من السلة",
-          context: context,
-          color: Colors.red,
-          textColor: Colors.white);
+        message: "تم حذف المنتج من السلة",
+        context: context,
+        color: Colors.red,
+        textColor: Colors.white,
+      );
+      Future.delayed(const Duration(seconds: 2), () {
+        isShowing = false;
+      });
     }
   }
 }

@@ -3,16 +3,22 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/Utils/App_Colors.dart';
 import 'package:fruits/core/Utils/textStyles.dart';
+import 'package:fruits/core/Utils/variables.dart';
 import 'package:svg_flutter/svg.dart';
 
 class Custombottomnavigationbaractiveicon extends StatelessWidget {
   const Custombottomnavigationbaractiveicon(
-      {super.key, required this.activeIconPath, required this.title});
+      {super.key,
+      required this.activeIconPath,
+      required this.title,
+      required this.index});
   final String activeIconPath;
   final String title;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: index == 2 ? variables.cartKey : null,
       alignment: Alignment.centerRight,
       decoration: BoxDecoration(
           color: const Color(0xffeeeeee),

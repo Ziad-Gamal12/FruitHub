@@ -7,6 +7,7 @@ import 'package:fruits/core/Utils/textStyles.dart';
 import 'package:fruits/core/services/FirebaseAuth_Service.dart';
 import 'package:fruits/features/Auth/presentation/views/SignIn_View.dart';
 import 'package:fruits/features/Profile/presentation/views/widgets/LogoutDialog.dart';
+import 'package:fruits/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
 class LogoutButtonBar extends StatelessWidget {
@@ -34,7 +35,7 @@ class LogoutButtonBar extends StatelessWidget {
             children: [
               const Spacer(flex: 5),
               Text(
-                "تسجيل الخروج",
+                S.of(context).logout,
                 style: textStyles(context: context).textstyle13.copyWith(
                       color: AppColors.MainColor,
                       fontWeight: FontWeight.w600,

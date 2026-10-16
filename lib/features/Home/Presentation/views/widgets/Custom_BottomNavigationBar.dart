@@ -51,6 +51,7 @@ class _CustomBottomnavigationbarState extends State<CustomBottomnavigationbar> {
                   });
                 },
                 child: CustombottomnavigationbarItem(
+                  index: index,
                   isSelected: currentIndex == index ? true : false,
                   bottomnavigationbarEntity: bottomnavigationbarEntity,
                 ),

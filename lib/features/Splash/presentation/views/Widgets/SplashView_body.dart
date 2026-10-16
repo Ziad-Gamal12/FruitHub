@@ -31,13 +31,16 @@ class _SplashView_bodyState extends State<SplashView_body> {
 
   @override
   Widget build(BuildContext context) {
+    String languageCode = Localizations.localeOf(context).languageCode;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [SvgPicture.asset(Assets.assetsImagesSplashTree)]),
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Transform.rotate(
+              angle: languageCode == 'ar' ? 0 : 1.57,
+              child: SvgPicture.asset(Assets.assetsImagesSplashTree))
+        ]),
         SvgPicture.asset(Assets.assetsImagesSplashLogo),
         SvgPicture.asset(
           Assets.assetsImagesSplashCircles,
