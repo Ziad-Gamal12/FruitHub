@@ -16,7 +16,8 @@ class LocalNotifications {
       iOS: initializationSettingsDarwin,
     );
 
-    await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    await _flutterLocalNotificationsPlugin.initialize(
+        settings: initializationSettings);
   }
 
   static Future<void> sendPeriodicNotification(
@@ -34,12 +35,10 @@ class LocalNotifications {
         NotificationDetails(android: androidNotificationDetails);
     await _flutterLocalNotificationsPlugin.periodicallyShow(
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        id,
-        title,
-        body,
-        RepeatInterval.daily,
-        notificationDetails,
-        payload: payload);
+        payload: payload,
+        id: id,
+        repeatInterval: RepeatInterval.daily,
+        notificationDetails: notificationDetails);
   }
 
   static Future<void> cancelAllNotifications() async {

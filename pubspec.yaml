@@ -29,50 +29,50 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   awesome_dialog: ^3.2.1
-  cached_network_image: ^3.4.1
-  cloud_firestore: ^5.2.1
+  cached_network_image: ^4.0.7
+  cloud_firestore: ^7.2.0
   crypto: ^3.0.3
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^2.0.0
   dartz: ^0.10.1
-  dots_indicator: ^3.0.0
-  equatable: ^2.0.7
-  firebase_auth: ^5.1.2
-  firebase_core: ^3.2.0
+  dots_indicator: ^5.0.0
+  equatable: ^3.0.0
+  firebase_auth: ^7.1.0
+  firebase_core: ^5.2.0
   flutter:
     sdk: flutter
   flutter_animate: ^4.5.2
   flutter_bloc: ^9.1.1
   flutter_facebook_auth: ^7.0.1
-  flutter_local_notifications: ^19.2.1
+  flutter_local_notifications: ^23.0.4
   flutter_localizations:
     sdk: flutter
   flutter_paypal_payment: ^1.0.8
   flutter_svg: ^2.1.0
   flutter_svg_provider: ^1.0.7
-  font_awesome_flutter: ^10.7.0
-  get_it: ^7.7.0
-  google_sign_in: ^6.2.1
+  font_awesome_flutter: ^11.0.0
+  get_it: ^9.3.0
+  google_sign_in: ^7.2.0
   meta: ^1.12.0
   modal_progress_hud_nsn: ^0.5.1
   provider: ^6.1.2
   random_data_generator: ^0.0.2
   rxdart: ^0.28.0
   shared_preferences: ^2.2.3
-  sign_in_with_apple: ^6.1.1
-  skeletonizer: ^2.0.1
-  smooth_page_indicator: ^1.2.0+3
+  sign_in_with_apple: ^8.2.0
+  skeletonizer: ^3.0.0
+  smooth_page_indicator: ^3.0.0
   supabase_flutter: ^2.8.1
   svg_flutter: ^0.0.1
 
 dev_dependencies:
-  flutter_launcher_icons: "^0.13.1"
+  flutter_launcher_icons: ^0.14.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 

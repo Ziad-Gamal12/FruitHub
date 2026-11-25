@@ -92,16 +92,26 @@ class firebaseAuthService {
 
   Future<User> signinWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+      final GoogleSignInAccount account =
+          await GoogleSignIn.instance.authenticate();
+
+      final String? idToken = account.authentication.idToken;
+      if (idToken == null) {
+        throw CustomException(message: "حدث خطأ ما");
+      }
+
+      final OAuthCredential credential = GoogleAuthProvider.credential(
+        idToken: idToken,
       );
+
       final UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
-      return userCredential.user!;
+
+      final User? user = userCredential.user;
+      if (user == null) {
+        throw CustomException(message: "حدث خطأ ما");
+      }
+      return user;
     } on FirebaseAuthException catch (e) {
       log("Exception from FirebaseAuthService.signinWithGoogle in catch With Firebase Exception: ${e.toString()} and the Firebase Code is ${e.code}");
       if (e.code == "network-request-failed") {

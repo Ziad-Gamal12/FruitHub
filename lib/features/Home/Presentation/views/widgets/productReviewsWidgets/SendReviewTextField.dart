@@ -36,7 +36,7 @@ class SendReviewTextField extends StatelessWidget {
             )
           : IconButton(
               onPressed: onSend,
-              icon: const Icon(
+              icon: const FaIcon(
                 FontAwesomeIcons.paperPlane,
                 color: Colors.black,
               ),

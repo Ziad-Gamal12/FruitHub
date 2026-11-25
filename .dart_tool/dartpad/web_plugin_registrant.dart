@@ -12,6 +12,7 @@ import 'package:firebase_auth_web/firebase_auth_web.dart';
 import 'package:firebase_core_web/firebase_core_web.dart';
 import 'package:flutter_facebook_auth_web/flutter_facebook_auth_web.dart';
 import 'package:flutter_inappwebview_web/web/main.dart';
+import 'package:flutter_local_notifications_web/flutter_local_notifications_web.dart';
 import 'package:flutter_secure_storage_web/flutter_secure_storage_web.dart';
 import 'package:google_sign_in_web/google_sign_in_web.dart';
 import 'package:rive_native/rive_native_plugin_web.dart';
@@ -28,6 +29,7 @@ void registerPlugins([final Registrar? pluginRegistrar]) {
   FirebaseCoreWeb.registerWith(registrar);
   FlutterFacebookAuthPlugin.registerWith(registrar);
   InAppWebViewFlutterPlugin.registerWith(registrar);
+  WebFlutterLocalNotificationsPlugin.registerWith(registrar);
   FlutterSecureStorageWeb.registerWith(registrar);
   GoogleSignInPlugin.registerWith(registrar);
   RiveNativePlugin.registerWith(registrar);
